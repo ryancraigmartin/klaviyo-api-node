@@ -15,7 +15,7 @@ import { SendSmsActionData } from './sendSmsActionData';
 import { SendSmsEnum } from './sendSmsEnum';
 export class SendSmsAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

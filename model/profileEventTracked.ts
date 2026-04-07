@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { ProfileEventTrackedEnum } from './profileEventTrackedEnum';
 import { ProfileEventTrackedProperties } from './profileEventTrackedProperties';
 export class ProfileEventTracked {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': ProfileEventTrackedEnum | 'profile_event_tracked';
     'properties': ProfileEventTrackedProperties;

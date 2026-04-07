@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { CouponCodeResponseObjectResource } from './couponCodeResponseObjectResource';
 import { GetCouponCodeCreateJobResponseCollectionCompoundDocumentDataInner } from './getCouponCodeCreateJobResponseCollectionCompoundDocumentDataInner';
+import { ObjectLinks } from './objectLinks';
 export class GetCouponCodeCreateJobResponseCompoundDocument {
     'data': GetCouponCodeCreateJobResponseCollectionCompoundDocumentDataInner;
     'included'?: Array<CouponCodeResponseObjectResource>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetCouponCodeCreateJobResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<CouponCodeResponseObjectResource>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

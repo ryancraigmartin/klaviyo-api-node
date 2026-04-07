@@ -14,6 +14,9 @@ import { SpinToWinEnum } from './spinToWinEnum';
 import { SpinToWinProperties } from './spinToWinProperties';
 import { SpinToWinStyles } from './spinToWinStyles';
 export class SpinToWin {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'properties': SpinToWinProperties;
     'type': SpinToWinEnum | 'spin_to_win';

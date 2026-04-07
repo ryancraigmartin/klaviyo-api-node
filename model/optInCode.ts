@@ -14,6 +14,9 @@ import { OptInCodeEnum } from './optInCodeEnum';
 import { OptInCodeProperties } from './optInCodeProperties';
 import { OptInCodeStyles } from './optInCodeStyles';
 export class OptInCode {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': OptInCodeEnum | 'opt_in_code';
     'styles'?: OptInCodeStyles;

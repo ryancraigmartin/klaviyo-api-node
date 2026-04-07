@@ -11,10 +11,13 @@
 
 import { RequestFile } from './models';
 import { FlowsProfileMetricCondition } from './flowsProfileMetricCondition';
-import { NumericOperatorFilter } from './numericOperatorFilter';
+import { IntegerFilter } from './integerFilter';
+import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
+import { ProfileHasCustomObjectCondition } from './profileHasCustomObjectCondition';
+import { ProfileHasCustomObjectFilter } from './profileHasCustomObjectFilter';
 import { ProfileHasGroupMembershipCondition } from './profileHasGroupMembershipCondition';
-import { ProfileHasNotReceivedEmailMessageConditionTimeframeFilter } from './profileHasNotReceivedEmailMessageConditionTimeframeFilter';
 import { ProfileHasNotReceivedPushMessageCondition } from './profileHasNotReceivedPushMessageCondition';
+import { ProfileHasNotReceivedPushMessageConditionTimeframeFilter } from './profileHasNotReceivedPushMessageConditionTimeframeFilter';
 import { ProfileMarketingConsentCondition } from './profileMarketingConsentCondition';
 import { ProfileMarketingConsentConditionConsent } from './profileMarketingConsentConditionConsent';
 import { ProfileMetricPropertyFilter } from './profileMetricPropertyFilter';
@@ -29,4 +32,4 @@ import { ProfilePredictiveAnalyticsStringCondition } from './profilePredictiveAn
 import { ProfilePropertyCondition } from './profilePropertyCondition';
 import { ProfileRandomSampleCondition } from './profileRandomSampleCondition';
 import { ProfileRegionCondition } from './profileRegionCondition';
-export type FlowPushNotificationAdditionalFiltersConditionGroupsInnerConditionsInner = ProfilePropertyCondition | ProfileHasGroupMembershipCondition | ProfileNoGroupMembershipCondition | ProfileRegionCondition | ProfilePostalCodeDistanceCondition | ProfilePredictiveAnalyticsDateCondition | ProfilePredictiveAnalyticsStringCondition | ProfilePredictiveAnalyticsNumericCondition | ProfileMarketingConsentCondition | FlowsProfileMetricCondition | ProfileRandomSampleCondition | ProfilePermissionsCondition | ProfileHasNotReceivedPushMessageCondition;
+export type FlowPushNotificationAdditionalFiltersConditionGroupsInnerConditionsInner = ProfilePropertyCondition | ProfileHasGroupMembershipCondition | ProfileNoGroupMembershipCondition | ProfileRegionCondition | ProfilePostalCodeDistanceCondition | ProfilePredictiveAnalyticsDateCondition | ProfilePredictiveAnalyticsStringCondition | ProfilePredictiveAnalyticsNumericCondition | ProfileMarketingConsentCondition | FlowsProfileMetricCondition | ProfileRandomSampleCondition | ProfileHasCustomObjectCondition | ProfilePermissionsCondition | ProfileHasNotReceivedPushMessageCondition;

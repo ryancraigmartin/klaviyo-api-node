@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { BackInStockEnum } from './backInStockEnum';
 import { BackInStockProperties } from './backInStockProperties';
 export class BackInStock {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': BackInStockEnum | 'back_in_stock';
     'properties'?: BackInStockProperties;

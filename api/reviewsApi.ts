@@ -70,7 +70,7 @@ export class ReviewsApi {
      * @param id The ID of the review
      * @param fieldsEvent For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsReview For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getReview (id: string, options: { fieldsEvent?: Array<'timestamp' | 'event_properties' | 'datetime' | 'uuid'>, fieldsReview?: Array<'email' | 'status' | 'status.value' | 'status.rejection_reason' | 'status.rejection_reason.reason' | 'status.rejection_reason.status_explanation' | 'verified' | 'review_type' | 'created' | 'updated' | 'images' | 'product' | 'product.url' | 'product.name' | 'product.image_url' | 'product.external_id' | 'rating' | 'author' | 'content' | 'title' | 'smart_quote' | 'public_reply' | 'public_reply.content' | 'public_reply.author' | 'public_reply.updated'>, include?: Array<'events'>,  } = {}): Promise<{ response: AxiosResponse; body: GetReviewResponseDTOCompoundDocument;  }> {
+    public async getReview (id: string, options: { fieldsEvent?: Array<'datetime' | 'event_properties' | 'timestamp' | 'uuid'>, fieldsReview?: Array<'author' | 'content' | 'created' | 'email' | 'images' | 'product' | 'product.external_id' | 'product.image_url' | 'product.name' | 'product.url' | 'public_reply' | 'public_reply.author' | 'public_reply.content' | 'public_reply.updated' | 'rating' | 'review_type' | 'smart_quote' | 'status' | 'status.rejection_reason' | 'status.rejection_reason.reason' | 'status.rejection_reason.status_explanation' | 'status.value' | 'title' | 'updated' | 'verified'>, include?: Array<'events'>,  } = {}): Promise<{ response: AxiosResponse; body: GetReviewResponseDTOCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/reviews/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -90,11 +90,11 @@ export class ReviewsApi {
         }
 
         if (options.fieldsEvent !== undefined) {
-            localVarQueryParameters['fields[event]'] = ObjectSerializer.serialize(options.fieldsEvent, "Array<'timestamp' | 'event_properties' | 'datetime' | 'uuid'>");
+            localVarQueryParameters['fields[event]'] = ObjectSerializer.serialize(options.fieldsEvent, "Array<'datetime' | 'event_properties' | 'timestamp' | 'uuid'>");
         }
 
         if (options.fieldsReview !== undefined) {
-            localVarQueryParameters['fields[review]'] = ObjectSerializer.serialize(options.fieldsReview, "Array<'email' | 'status' | 'status.value' | 'status.rejection_reason' | 'status.rejection_reason.reason' | 'status.rejection_reason.status_explanation' | 'verified' | 'review_type' | 'created' | 'updated' | 'images' | 'product' | 'product.url' | 'product.name' | 'product.image_url' | 'product.external_id' | 'rating' | 'author' | 'content' | 'title' | 'smart_quote' | 'public_reply' | 'public_reply.content' | 'public_reply.author' | 'public_reply.updated'>");
+            localVarQueryParameters['fields[review]'] = ObjectSerializer.serialize(options.fieldsReview, "Array<'author' | 'content' | 'created' | 'email' | 'images' | 'product' | 'product.external_id' | 'product.image_url' | 'product.name' | 'product.url' | 'public_reply' | 'public_reply.author' | 'public_reply.content' | 'public_reply.updated' | 'rating' | 'review_type' | 'smart_quote' | 'status' | 'status.rejection_reason' | 'status.rejection_reason.reason' | 'status.rejection_reason.status_explanation' | 'status.value' | 'title' | 'updated' | 'verified'>");
         }
 
         if (options.include !== undefined) {
@@ -135,7 +135,7 @@ export class ReviewsApi {
      
      * @param fieldsEvent For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsReview For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;created&#x60;: &#x60;greater-or-equal&#x60;, &#x60;less-or-equal&#x60;&lt;br&gt;&#x60;rating&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;, &#x60;greater-or-equal&#x60;, &#x60;less-or-equal&#x60;&lt;br&gt;&#x60;id&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;item.id&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;content&#x60;: &#x60;contains&#x60;&lt;br&gt;&#x60;status&#x60;: &#x60;equals&#x60;&lt;br&gt;&#x60;review_type&#x60;: &#x60;equals&#x60;&lt;br&gt;&#x60;verified&#x60;: &#x60;equals&#x60;* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#pagination* @param pageSize Default: 20. Min: 1. Max: 100.* @param sort For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sorting
      */
-    public async getReviews (options: { fieldsEvent?: Array<'timestamp' | 'event_properties' | 'datetime' | 'uuid'>, fieldsReview?: Array<'email' | 'status' | 'status.value' | 'status.rejection_reason' | 'status.rejection_reason.reason' | 'status.rejection_reason.status_explanation' | 'verified' | 'review_type' | 'created' | 'updated' | 'images' | 'product' | 'product.url' | 'product.name' | 'product.image_url' | 'product.external_id' | 'rating' | 'author' | 'content' | 'title' | 'smart_quote' | 'public_reply' | 'public_reply.content' | 'public_reply.author' | 'public_reply.updated'>, filter?: string, include?: Array<'events'>, pageCursor?: string, pageSize?: number, sort?: 'created' | '-created' | 'rating' | '-rating' | 'updated' | '-updated',  } = {}): Promise<{ response: AxiosResponse; body: GetReviewResponseDTOCollectionCompoundDocument;  }> {
+    public async getReviews (options: { fieldsEvent?: Array<'datetime' | 'event_properties' | 'timestamp' | 'uuid'>, fieldsReview?: Array<'author' | 'content' | 'created' | 'email' | 'images' | 'product' | 'product.external_id' | 'product.image_url' | 'product.name' | 'product.url' | 'public_reply' | 'public_reply.author' | 'public_reply.content' | 'public_reply.updated' | 'rating' | 'review_type' | 'smart_quote' | 'status' | 'status.rejection_reason' | 'status.rejection_reason.reason' | 'status.rejection_reason.status_explanation' | 'status.value' | 'title' | 'updated' | 'verified'>, filter?: string, include?: Array<'events'>, pageCursor?: string, pageSize?: number, sort?: 'created' | '-created' | 'rating' | '-rating' | 'updated' | '-updated',  } = {}): Promise<{ response: AxiosResponse; body: GetReviewResponseDTOCollectionCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/reviews';
         let localVarQueryParameters: any = {};
@@ -149,11 +149,11 @@ export class ReviewsApi {
         }
 
         if (options.fieldsEvent !== undefined) {
-            localVarQueryParameters['fields[event]'] = ObjectSerializer.serialize(options.fieldsEvent, "Array<'timestamp' | 'event_properties' | 'datetime' | 'uuid'>");
+            localVarQueryParameters['fields[event]'] = ObjectSerializer.serialize(options.fieldsEvent, "Array<'datetime' | 'event_properties' | 'timestamp' | 'uuid'>");
         }
 
         if (options.fieldsReview !== undefined) {
-            localVarQueryParameters['fields[review]'] = ObjectSerializer.serialize(options.fieldsReview, "Array<'email' | 'status' | 'status.value' | 'status.rejection_reason' | 'status.rejection_reason.reason' | 'status.rejection_reason.status_explanation' | 'verified' | 'review_type' | 'created' | 'updated' | 'images' | 'product' | 'product.url' | 'product.name' | 'product.image_url' | 'product.external_id' | 'rating' | 'author' | 'content' | 'title' | 'smart_quote' | 'public_reply' | 'public_reply.content' | 'public_reply.author' | 'public_reply.updated'>");
+            localVarQueryParameters['fields[review]'] = ObjectSerializer.serialize(options.fieldsReview, "Array<'author' | 'content' | 'created' | 'email' | 'images' | 'product' | 'product.external_id' | 'product.image_url' | 'product.name' | 'product.url' | 'public_reply' | 'public_reply.author' | 'public_reply.content' | 'public_reply.updated' | 'rating' | 'review_type' | 'smart_quote' | 'status' | 'status.rejection_reason' | 'status.rejection_reason.reason' | 'status.rejection_reason.status_explanation' | 'status.value' | 'title' | 'updated' | 'verified'>");
         }
 
         if (options.filter !== undefined) {

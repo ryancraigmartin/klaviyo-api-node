@@ -14,6 +14,9 @@ import { CheckboxesEnum } from './checkboxesEnum';
 import { CheckboxesProperties } from './checkboxesProperties';
 import { CheckboxesStyles } from './checkboxesStyles';
 export class Checkboxes {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': CheckboxesEnum | 'checkboxes';
     'styles'?: CheckboxesStyles;

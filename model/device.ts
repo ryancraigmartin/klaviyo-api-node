@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { DeviceEnum } from './deviceEnum';
 import { DeviceProperties } from './deviceProperties';
 export class Device {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': DeviceEnum | 'device';
     'properties'?: DeviceProperties;

@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { DelayEnum } from './delayEnum';
 import { DelayProperties } from './delayProperties';
 export class Delay {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': DelayEnum | 'delay';
     'properties'?: DelayProperties;

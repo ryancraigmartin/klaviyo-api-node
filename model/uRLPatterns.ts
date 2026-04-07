@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { URLPatternsProperties } from './uRLPatternsProperties';
 import { UrlPatternsEnum } from './urlPatternsEnum';
 export class URLPatterns {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': UrlPatternsEnum | 'url_patterns';
     'properties'?: URLPatternsProperties;

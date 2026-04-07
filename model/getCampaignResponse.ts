@@ -11,8 +11,10 @@
 
 import { RequestFile } from './models';
 import { GetCampaignResponseData } from './getCampaignResponseData';
+import { ObjectLinks } from './objectLinks';
 export class GetCampaignResponse {
     'data': GetCampaignResponseData;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -20,6 +22,11 @@ export class GetCampaignResponse {
             "name": "data",
             "baseName": "data",
             "type": "GetCampaignResponseData"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

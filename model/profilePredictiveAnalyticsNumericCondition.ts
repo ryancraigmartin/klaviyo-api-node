@@ -10,7 +10,7 @@
  */
 
 import { RequestFile } from './models';
-import { NumericOperatorFilter } from './numericOperatorFilter';
+import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
 import { ProfilePredictiveAnalyticsEnum } from './profilePredictiveAnalyticsEnum';
 export class ProfilePredictiveAnalyticsNumericCondition {
     'type': ProfilePredictiveAnalyticsEnum | 'profile-predictive-analytics';
@@ -18,7 +18,7 @@ export class ProfilePredictiveAnalyticsNumericCondition {
     * Dimensions for numeric profile predictive analytics conditions.
     */
     'dimension': ProfilePredictiveAnalyticsNumericCondition.DimensionEnum | 'average_days_between_orders' | 'average_order_value' | 'churn_probability' | 'historic_clv' | 'historic_number_of_orders' | 'predicted_clv' | 'predicted_number_of_orders' | 'total_clv';
-    'filter': NumericOperatorFilter;
+    'filter': NumericOperatorNumericFilter;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -35,7 +35,7 @@ export class ProfilePredictiveAnalyticsNumericCondition {
         {
             "name": "filter",
             "baseName": "filter",
-            "type": "NumericOperatorFilter"
+            "type": "NumericOperatorNumericFilter"
         }    ];
 
     static getAttributeTypeMap() {

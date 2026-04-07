@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { GetCampaignMessageResponseCompoundDocumentData } from './getCampaignMessageResponseCompoundDocumentData';
 import { GetCampaignMessageResponseCompoundDocumentIncludedInner } from './getCampaignMessageResponseCompoundDocumentIncludedInner';
+import { ObjectLinks } from './objectLinks';
 export class GetCampaignMessageResponseCompoundDocument {
     'data': GetCampaignMessageResponseCompoundDocumentData;
     'included'?: Array<GetCampaignMessageResponseCompoundDocumentIncludedInner>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetCampaignMessageResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<GetCampaignMessageResponseCompoundDocumentIncludedInner>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

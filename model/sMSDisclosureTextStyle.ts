@@ -22,6 +22,8 @@ export class SMSDisclosureTextStyle {
     'fontWeight'?: SMSDisclosureTextStyle.FontWeightEnum | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | null = SMSDisclosureTextStyle.FontWeightEnum.NUMBER_400;
     'textColor'?: string = '#000000';
     'characterSpacing'?: number | null = 0;
+    'fontStyle'?: string | null;
+    'textDecoration'?: string | null;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -49,6 +51,16 @@ export class SMSDisclosureTextStyle {
             "name": "characterSpacing",
             "baseName": "character_spacing",
             "type": "number"
+        },
+        {
+            "name": "fontStyle",
+            "baseName": "font_style",
+            "type": "string"
+        },
+        {
+            "name": "textDecoration",
+            "baseName": "text_decoration",
+            "type": "string"
         }    ];
 
     static getAttributeTypeMap() {

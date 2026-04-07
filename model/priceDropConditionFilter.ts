@@ -10,16 +10,16 @@
  */
 
 import { RequestFile } from './models';
-import { PriceDropConditionGroup } from './priceDropConditionGroup';
+import { PriceDropConditionConditionGroup } from './priceDropConditionConditionGroup';
 export class PriceDropConditionFilter {
-    'conditionGroups': Array<PriceDropConditionGroup>;
+    'conditionGroups': Array<PriceDropConditionConditionGroup>;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "conditionGroups",
             "baseName": "condition_groups",
-            "type": "Array<PriceDropConditionGroup>"
+            "type": "Array<PriceDropConditionConditionGroup>"
         }    ];
 
     static getAttributeTypeMap() {

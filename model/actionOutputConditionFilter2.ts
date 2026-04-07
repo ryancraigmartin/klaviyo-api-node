@@ -12,9 +12,9 @@
 import { RequestFile } from './models';
 import { BooleanFilter } from './booleanFilter';
 import { ExistenceEnum } from './existenceEnum';
-import { ExistenceOperatorFilter } from './existenceOperatorFilter';
-import { NumericOperatorFilter } from './numericOperatorFilter';
+import { ExistenceOperatorExistenceFilter } from './existenceOperatorExistenceFilter';
+import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
 import { NumericRangeFilter } from './numericRangeFilter';
-import { StringArrayOperatorFilter } from './stringArrayOperatorFilter';
-import { StringOperatorFilter } from './stringOperatorFilter';
-export type ActionOutputConditionFilter2 = StringOperatorFilter | StringArrayOperatorFilter | NumericOperatorFilter | NumericRangeFilter | BooleanFilter | ExistenceOperatorFilter;
+import { StringArrayOperatorStringArrayFilter } from './stringArrayOperatorStringArrayFilter';
+import { StringOperatorStringFilter } from './stringOperatorStringFilter';
+export type ActionOutputConditionFilter2 = StringOperatorStringFilter | StringArrayOperatorStringArrayFilter | NumericOperatorNumericFilter | NumericRangeFilter | BooleanFilter | ExistenceOperatorExistenceFilter;

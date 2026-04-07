@@ -12,9 +12,10 @@
 import { RequestFile } from './models';
 import { ContentExperimentEnum } from './contentExperimentEnum';
 import { Link } from './link';
+import { SendPushNotificationActionContentExperimentActionData } from './sendPushNotificationActionContentExperimentActionData';
 export class ContentExperimentAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**
@@ -23,7 +24,7 @@ export class ContentExperimentAction {
     'temporaryId'?: string | null;
     'type': ContentExperimentEnum | 'content-experiment';
     'links'?: Link;
-    'data'?: any | null;
+    'data': SendPushNotificationActionContentExperimentActionData;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -50,7 +51,7 @@ export class ContentExperimentAction {
         {
             "name": "data",
             "baseName": "data",
-            "type": "any"
+            "type": "SendPushNotificationActionContentExperimentActionData"
         }    ];
 
     static getAttributeTypeMap() {

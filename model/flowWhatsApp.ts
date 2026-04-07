@@ -12,11 +12,15 @@
 import { RequestFile } from './models';
 import { ConditionalBranchActionDataProfileFilter } from './conditionalBranchActionDataProfileFilter';
 export class FlowWhatsApp {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'name'?: string | null;
     'vendorId'?: string | null;
     'smartSendingEnabled'?: boolean = true;
     'transactional'?: boolean = false;
+    'addTrackingParams'?: boolean = false;
     'additionalFilters'?: ConditionalBranchActionDataProfileFilter | null;
 
 
@@ -44,6 +48,11 @@ export class FlowWhatsApp {
         {
             "name": "transactional",
             "baseName": "transactional",
+            "type": "boolean"
+        },
+        {
+            "name": "addTrackingParams",
+            "baseName": "add_tracking_params",
             "type": "boolean"
         },
         {

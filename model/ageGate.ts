@@ -14,6 +14,9 @@ import { AgeGateEnum } from './ageGateEnum';
 import { AgeGateProperties } from './ageGateProperties';
 import { AgeGateStyles } from './ageGateStyles';
 export class AgeGate {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': AgeGateEnum | 'age_gate';
     'styles'?: AgeGateStyles;

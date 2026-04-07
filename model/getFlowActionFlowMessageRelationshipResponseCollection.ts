@@ -10,9 +10,11 @@
  */
 
 import { RequestFile } from './models';
+import { CollectionLinks } from './collectionLinks';
 import { GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationshipsFlowMessagesDataInner } from './getFlowActionEncodedResponseCompoundDocumentDataAllOfRelationshipsFlowMessagesDataInner';
 export class GetFlowActionFlowMessageRelationshipResponseCollection {
     'data': Array<GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationshipsFlowMessagesDataInner>;
+    'links'?: CollectionLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -20,6 +22,11 @@ export class GetFlowActionFlowMessageRelationshipResponseCollection {
             "name": "data",
             "baseName": "data",
             "type": "Array<GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationshipsFlowMessagesDataInner>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "CollectionLinks"
         }    ];
 
     static getAttributeTypeMap() {

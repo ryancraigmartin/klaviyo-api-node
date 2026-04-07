@@ -172,7 +172,7 @@ export class CustomObjectsApi {
         return request(config)
     }
     /**
-     * Create a data source record import job to create a single record.  The maximum allowed payload size per-record is 512KB.  To learn more, see our [Custom Objects API overview](https://developers.klaviyo.com/en/reference/custom_objects_api_overview).<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `700/m`  **Scopes:** `custom-objects:write`
+     * Create a data source record import job to create a single record.  The maximum allowed payload size per-record is 512KB.  To learn more, see our [Custom Objects API overview](https://developers.klaviyo.com/en/reference/custom_objects_api_overview).<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `custom-objects:write`
      * @summary Create Data Source Record
      * @param dataSourceRecordCreateJobCreateQuery Create a data source record job
      
@@ -281,7 +281,7 @@ export class CustomObjectsApi {
      * @param id The ID of the data source
      * @param fieldsDataSource For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getDataSource (id: string, options: { fieldsDataSource?: Array<'title' | 'visibility' | 'description'>,  } = {}): Promise<{ response: AxiosResponse; body: GetDataSourceResponse;  }> {
+    public async getDataSource (id: string, options: { fieldsDataSource?: Array<'description' | 'namespace' | 'title' | 'visibility'>,  } = {}): Promise<{ response: AxiosResponse; body: GetDataSourceResponse;  }> {
 
         const localVarPath = this.basePath + '/api/data-sources/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -301,7 +301,7 @@ export class CustomObjectsApi {
         }
 
         if (options.fieldsDataSource !== undefined) {
-            localVarQueryParameters['fields[data-source]'] = ObjectSerializer.serialize(options.fieldsDataSource, "Array<'title' | 'visibility' | 'description'>");
+            localVarQueryParameters['fields[data-source]'] = ObjectSerializer.serialize(options.fieldsDataSource, "Array<'description' | 'namespace' | 'title' | 'visibility'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -338,7 +338,7 @@ export class CustomObjectsApi {
      
      * @param fieldsDataSource For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#pagination* @param pageSize Default: 20. Min: 1. Max: 100.
      */
-    public async getDataSources (options: { fieldsDataSource?: Array<'title' | 'visibility' | 'description'>, pageCursor?: string, pageSize?: number,  } = {}): Promise<{ response: AxiosResponse; body: GetDataSourceResponseCollection;  }> {
+    public async getDataSources (options: { fieldsDataSource?: Array<'description' | 'namespace' | 'title' | 'visibility'>, pageCursor?: string, pageSize?: number,  } = {}): Promise<{ response: AxiosResponse; body: GetDataSourceResponseCollection;  }> {
 
         const localVarPath = this.basePath + '/api/data-sources';
         let localVarQueryParameters: any = {};
@@ -352,7 +352,7 @@ export class CustomObjectsApi {
         }
 
         if (options.fieldsDataSource !== undefined) {
-            localVarQueryParameters['fields[data-source]'] = ObjectSerializer.serialize(options.fieldsDataSource, "Array<'title' | 'visibility' | 'description'>");
+            localVarQueryParameters['fields[data-source]'] = ObjectSerializer.serialize(options.fieldsDataSource, "Array<'description' | 'namespace' | 'title' | 'visibility'>");
         }
 
         if (options.pageCursor !== undefined) {

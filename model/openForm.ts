@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { OpenFormEnum } from './openFormEnum';
 import { OpenFormProperties } from './openFormProperties';
 export class OpenForm {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': OpenFormEnum | 'open_form';
     'submit'?: boolean = true;

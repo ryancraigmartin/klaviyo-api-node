@@ -14,6 +14,9 @@ import { SMSDisclosureProperties } from './sMSDisclosureProperties';
 import { SMSDisclosureStyles } from './sMSDisclosureStyles';
 import { SmsDisclosureEnum } from './smsDisclosureEnum';
 export class SMSDisclosure {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': SmsDisclosureEnum | 'sms_disclosure';
     'styles'?: SMSDisclosureStyles;

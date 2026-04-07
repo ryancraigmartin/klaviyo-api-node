@@ -15,7 +15,7 @@ import { AbTestEnum } from './abTestEnum';
 import { Link } from './link';
 export class AbTestAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

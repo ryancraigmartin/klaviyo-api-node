@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { NextStepEnum } from './nextStepEnum';
 import { NextStepProperties } from './nextStepProperties';
 export class NextStep {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit': boolean;
     'type': NextStepEnum | 'next_step';

@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { ListsAndSegmentsEnum } from './listsAndSegmentsEnum';
 import { ListsAndSegmentsProperties } from './listsAndSegmentsProperties';
 export class ListsAndSegments {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': ListsAndSegmentsEnum | 'lists_and_segments';
     'properties': ListsAndSegmentsProperties;

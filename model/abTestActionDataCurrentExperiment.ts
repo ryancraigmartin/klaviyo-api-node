@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { AbTestActionDataMainAction } from './abTestActionDataMainAction';
 import { AutomaticWinnerSelectionSettings } from './automaticWinnerSelectionSettings';
 export class AbTestActionDataCurrentExperiment {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'name'?: string | null;
     'variations': Array<AbTestActionDataMainAction>;

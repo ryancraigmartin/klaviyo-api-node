@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { GetFlowMessageEncodedResponseCompoundDocumentData } from './getFlowMessageEncodedResponseCompoundDocumentData';
 import { GetFlowMessageEncodedResponseCompoundDocumentIncludedInner } from './getFlowMessageEncodedResponseCompoundDocumentIncludedInner';
+import { ObjectLinks } from './objectLinks';
 export class GetFlowMessageEncodedResponseCompoundDocument {
     'data': GetFlowMessageEncodedResponseCompoundDocumentData;
     'included'?: Array<GetFlowMessageEncodedResponseCompoundDocumentIncludedInner>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetFlowMessageEncodedResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<GetFlowMessageEncodedResponseCompoundDocumentIncludedInner>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { CloseEnum } from './closeEnum';
 import { CloseProperties } from './closeProperties';
 export class Close {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit': boolean;
     'type': CloseEnum | 'close';

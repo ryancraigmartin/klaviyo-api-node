@@ -10,16 +10,16 @@
  */
 
 import { RequestFile } from './models';
-import { LowInventoryConditionGroup } from './lowInventoryConditionGroup';
+import { LowInventoryConditionConditionGroup } from './lowInventoryConditionConditionGroup';
 export class LowInventoryConditionFilter {
-    'conditionGroups': Array<LowInventoryConditionGroup>;
+    'conditionGroups': Array<LowInventoryConditionConditionGroup>;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "conditionGroups",
             "baseName": "condition_groups",
-            "type": "Array<LowInventoryConditionGroup>"
+            "type": "Array<LowInventoryConditionConditionGroup>"
         }    ];
 
     static getAttributeTypeMap() {

@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { GetMetricPropertyResponseCompoundDocumentData } from './getMetricPropertyResponseCompoundDocumentData';
 import { MetricResponseObjectResource } from './metricResponseObjectResource';
+import { ObjectLinks } from './objectLinks';
 export class GetMetricPropertyResponseCompoundDocument {
     'data': GetMetricPropertyResponseCompoundDocumentData;
     'included'?: Array<MetricResponseObjectResource>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetMetricPropertyResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<MetricResponseObjectResource>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

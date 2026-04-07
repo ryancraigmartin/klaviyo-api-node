@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { SubscribeViaWhatsAppProperties } from './subscribeViaWhatsAppProperties';
 import { SubscribeViaWhatsappEnum } from './subscribeViaWhatsappEnum';
 export class SubscribeViaWhatsApp {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit'?: boolean = true;
     'type': SubscribeViaWhatsappEnum | 'subscribe_via_whatsapp';

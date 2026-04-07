@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { GetMappedMetricResponseCollectionCompoundDocumentDataInner } from './getMappedMetricResponseCollectionCompoundDocumentDataInner';
 import { GetMappedMetricResponseCollectionCompoundDocumentIncludedInner } from './getMappedMetricResponseCollectionCompoundDocumentIncludedInner';
+import { ObjectLinks } from './objectLinks';
 export class GetMappedMetricResponseCompoundDocument {
     'data': GetMappedMetricResponseCollectionCompoundDocumentDataInner;
     'included'?: Array<GetMappedMetricResponseCollectionCompoundDocumentIncludedInner>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetMappedMetricResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<GetMappedMetricResponseCollectionCompoundDocumentIncludedInner>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

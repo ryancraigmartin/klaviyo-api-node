@@ -15,7 +15,7 @@ import { CountdownDelayEnum } from './countdownDelayEnum';
 import { Link } from './link';
 export class CountdownDelayAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

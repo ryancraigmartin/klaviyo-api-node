@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { EventResponseObjectResource } from './eventResponseObjectResource';
 import { GetReviewResponseDTOCollectionCompoundDocumentDataInner } from './getReviewResponseDTOCollectionCompoundDocumentDataInner';
+import { ObjectLinks } from './objectLinks';
 export class GetReviewResponseDTOCompoundDocument {
     'data': GetReviewResponseDTOCollectionCompoundDocumentDataInner;
     'included'?: Array<EventResponseObjectResource>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetReviewResponseDTOCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<EventResponseObjectResource>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

@@ -27,6 +27,9 @@ export class FlowEmail {
     'customTrackingParams'?: Array<UtmParam> | null;
     'additionalFilters'?: FlowEmailAdditionalFilters | null;
     'name'?: string | null;
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
 
 

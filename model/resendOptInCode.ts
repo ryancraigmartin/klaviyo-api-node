@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { ResendOptInCodeEnum } from './resendOptInCodeEnum';
 export class ResendOptInCode {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit'?: boolean = false;
     'type': ResendOptInCodeEnum | 'resend_opt_in_code';

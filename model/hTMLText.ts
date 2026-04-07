@@ -14,6 +14,9 @@ import { HTMLTextProperties } from './hTMLTextProperties';
 import { HTMLTextStyles } from './hTMLTextStyles';
 import { HtmlTextEnum } from './htmlTextEnum';
 export class HTMLText {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': HtmlTextEnum | 'html_text';
     'styles'?: HTMLTextStyles;

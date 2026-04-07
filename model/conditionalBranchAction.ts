@@ -15,7 +15,7 @@ import { ConditionalBranchActionData } from './conditionalBranchActionData';
 import { ConditionalSplitEnum } from './conditionalSplitEnum';
 export class ConditionalBranchAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

@@ -15,7 +15,7 @@ import { SendWebhookActionData } from './sendWebhookActionData';
 import { SendWebhookEnum } from './sendWebhookEnum';
 export class SendWebhookAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

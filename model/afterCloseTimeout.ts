@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { AfterCloseOrSubmitTimeoutEnum } from './afterCloseOrSubmitTimeoutEnum';
 import { AfterCloseTimeoutProperties } from './afterCloseTimeoutProperties';
 export class AfterCloseTimeout {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': AfterCloseOrSubmitTimeoutEnum | 'after_close_or_submit_timeout';
     'properties'?: AfterCloseTimeoutProperties;

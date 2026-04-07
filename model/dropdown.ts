@@ -14,6 +14,9 @@ import { DropdownEnum } from './dropdownEnum';
 import { DropdownProperties } from './dropdownProperties';
 import { DropdownStyles } from './dropdownStyles';
 export class Dropdown {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': DropdownEnum | 'dropdown';
     'styles'?: DropdownStyles;

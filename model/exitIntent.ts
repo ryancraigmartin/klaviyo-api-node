@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { ExitIntentEnum } from './exitIntentEnum';
 export class ExitIntent {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'properties'?: object;
     'type': ExitIntentEnum | 'exit_intent';

@@ -10,16 +10,16 @@
  */
 
 import { RequestFile } from './models';
-import { MetricPropertyConditionGroup } from './metricPropertyConditionGroup';
+import { MetricPropertyConditionConditionGroup } from './metricPropertyConditionConditionGroup';
 export class MetricPropertyConditionFilter {
-    'conditionGroups': Array<MetricPropertyConditionGroup>;
+    'conditionGroups': Array<MetricPropertyConditionConditionGroup>;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "conditionGroups",
             "baseName": "condition_groups",
-            "type": "Array<MetricPropertyConditionGroup>"
+            "type": "Array<MetricPropertyConditionConditionGroup>"
         }    ];
 
     static getAttributeTypeMap() {

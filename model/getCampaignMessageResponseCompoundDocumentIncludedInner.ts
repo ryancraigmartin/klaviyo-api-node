@@ -11,11 +11,11 @@
 
 import { RequestFile } from './models';
 import { CampaignResponseObjectResource } from './campaignResponseObjectResource';
+import { ImageEnum } from './imageEnum';
 import { ImageResponseObjectResource } from './imageResponseObjectResource';
+import { ImageResponseObjectResourceAttributes } from './imageResponseObjectResourceAttributes';
 import { ObjectLinks } from './objectLinks';
-import { TemplateEnum } from './templateEnum';
 import { TemplateResponseObjectResource } from './templateResponseObjectResource';
-import { TemplateResponseObjectResourceAttributes } from './templateResponseObjectResourceAttributes';
 
 
 

@@ -15,7 +15,7 @@ import { SendWhatsAppActionData } from './sendWhatsAppActionData';
 import { SendWhatsappEnum } from './sendWhatsappEnum';
 export class SendWhatsAppAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

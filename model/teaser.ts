@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { TeaserStyles } from './teaserStyles';
 export class Teaser {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'content': string;
     /**

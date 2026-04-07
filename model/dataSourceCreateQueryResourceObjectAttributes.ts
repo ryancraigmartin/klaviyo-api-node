@@ -11,12 +11,19 @@
 
 import { RequestFile } from './models';
 export class DataSourceCreateQueryResourceObjectAttributes {
+    /**
+    * The title of the data source. Must be between 1 and 255 characters and unique within the namespace.
+    */
     'title': string;
     /**
     * Visibility of data source.
     */
-    'visibility': DataSourceCreateQueryResourceObjectAttributes.VisibilityEnum | 'private' | 'shared';
+    'visibility'?: DataSourceCreateQueryResourceObjectAttributes.VisibilityEnum | 'private' | 'shared' | null = DataSourceCreateQueryResourceObjectAttributes.VisibilityEnum.Private;
     'description'?: string | null = '';
+    /**
+    * The namespace of the data source.
+    */
+    'namespace'?: string | null = 'custom-objects';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -33,6 +40,11 @@ export class DataSourceCreateQueryResourceObjectAttributes {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string"
+        },
+        {
+            "name": "namespace",
+            "baseName": "namespace",
             "type": "string"
         }    ];
 

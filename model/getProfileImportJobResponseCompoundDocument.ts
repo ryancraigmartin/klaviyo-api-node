@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { GetProfileImportJobResponseCollectionCompoundDocumentDataInner } from './getProfileImportJobResponseCollectionCompoundDocumentDataInner';
 import { ListResponseObjectResource } from './listResponseObjectResource';
+import { ObjectLinks } from './objectLinks';
 export class GetProfileImportJobResponseCompoundDocument {
     'data': GetProfileImportJobResponseCollectionCompoundDocumentDataInner;
     'included'?: Array<ListResponseObjectResource>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetProfileImportJobResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<ListResponseObjectResource>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

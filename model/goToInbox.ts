@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { GoToInboxEnum } from './goToInboxEnum';
 export class GoToInbox {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit'?: boolean = true;
     'type': GoToInboxEnum | 'go_to_inbox';

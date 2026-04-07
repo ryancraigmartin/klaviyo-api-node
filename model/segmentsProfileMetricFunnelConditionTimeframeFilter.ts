@@ -11,7 +11,7 @@
 
 import { RequestFile } from './models';
 import { DateEnum } from './dateEnum';
-import { RelativeDateOperatorBaseFilter } from './relativeDateOperatorBaseFilter';
+import { RelativeDateOperatorBaseRelativeDateFilter } from './relativeDateOperatorBaseRelativeDateFilter';
 import { RelativeDateRangeFilter } from './relativeDateRangeFilter';
 import { StaticDateRangeFilter } from './staticDateRangeFilter';
-export type SegmentsProfileMetricFunnelConditionTimeframeFilter = StaticDateRangeFilter | RelativeDateRangeFilter | RelativeDateOperatorBaseFilter;
+export type SegmentsProfileMetricFunnelConditionTimeframeFilter = StaticDateRangeFilter | RelativeDateRangeFilter | RelativeDateOperatorBaseRelativeDateFilter;

@@ -14,6 +14,9 @@ import { TextEnum } from './textEnum';
 import { TextProperties } from './textProperties';
 import { TextStyles } from './textStyles';
 export class Text {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': TextEnum | 'text';
     'styles'?: TextStyles;

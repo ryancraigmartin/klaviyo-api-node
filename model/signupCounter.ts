@@ -14,6 +14,9 @@ import { SignupCounterEnum } from './signupCounterEnum';
 import { SignupCounterProperties } from './signupCounterProperties';
 import { SignupCounterStyles } from './signupCounterStyles';
 export class SignupCounter {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': SignupCounterEnum | 'signup_counter';
     'styles'?: SignupCounterStyles;

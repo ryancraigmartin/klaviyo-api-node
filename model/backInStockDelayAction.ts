@@ -14,7 +14,7 @@ import { BackInStockDelayEnum } from './backInStockDelayEnum';
 import { Link } from './link';
 export class BackInStockDelayAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

@@ -10,9 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { MetricPropertyConditionFilter } from './metricPropertyConditionFilter';
+import { TriggerBranchActionDataTriggerFilter } from './triggerBranchActionDataTriggerFilter';
 export class TriggerBranchActionData {
-    'triggerFilter': MetricPropertyConditionFilter;
+    'triggerFilter': TriggerBranchActionDataTriggerFilter | null;
     'triggerId': string;
     /**
     * Trigger type.
@@ -28,7 +28,7 @@ export class TriggerBranchActionData {
         {
             "name": "triggerFilter",
             "baseName": "trigger_filter",
-            "type": "MetricPropertyConditionFilter"
+            "type": "TriggerBranchActionDataTriggerFilter"
         },
         {
             "name": "triggerId",

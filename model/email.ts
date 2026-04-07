@@ -14,6 +14,9 @@ import { EmailEnum } from './emailEnum';
 import { EmailProperties } from './emailProperties';
 import { EmailStyles } from './emailStyles';
 export class Email {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': EmailEnum | 'email';
     'styles'?: EmailStyles;

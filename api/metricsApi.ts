@@ -197,7 +197,7 @@ export class MetricsApi {
      * @param id The ID of the custom metric
      * @param fieldsCustomMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getCustomMetric (id: string, options: { fieldsCustomMetric?: Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>, fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>, include?: Array<'metrics'>,  } = {}): Promise<{ response: AxiosResponse; body: GetCustomMetricResponseCompoundDocument;  }> {
+    public async getCustomMetric (id: string, options: { fieldsCustomMetric?: Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>, fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>, include?: Array<'metrics'>,  } = {}): Promise<{ response: AxiosResponse; body: GetCustomMetricResponseCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/custom-metrics/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -217,11 +217,11 @@ export class MetricsApi {
         }
 
         if (options.fieldsCustomMetric !== undefined) {
-            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>");
+            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>");
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         if (options.include !== undefined) {
@@ -262,7 +262,7 @@ export class MetricsApi {
      * @param id The type of mapping.
      * @param fieldsCustomMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getCustomMetricForMappedMetric (id: 'added_to_cart' | 'cancelled_sales' | 'ordered_product' | 'refunded_sales' | 'revenue' | 'started_checkout' | 'viewed_product', options: { fieldsCustomMetric?: Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>,  } = {}): Promise<{ response: AxiosResponse; body: GetCustomMetricResponse;  }> {
+    public async getCustomMetricForMappedMetric (id: 'added_to_cart' | 'cancelled_sales' | 'ordered_product' | 'refunded_sales' | 'revenue' | 'started_checkout' | 'viewed_product', options: { fieldsCustomMetric?: Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>,  } = {}): Promise<{ response: AxiosResponse; body: GetCustomMetricResponse;  }> {
 
         const localVarPath = this.basePath + '/api/mapped-metrics/{id}/custom-metric'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -282,7 +282,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsCustomMetric !== undefined) {
-            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>");
+            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -372,7 +372,7 @@ export class MetricsApi {
      
      * @param fieldsCustomMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getCustomMetrics (options: { fieldsCustomMetric?: Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>, fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>, include?: Array<'metrics'>,  } = {}): Promise<{ response: AxiosResponse; body: GetCustomMetricResponseCollectionCompoundDocument;  }> {
+    public async getCustomMetrics (options: { fieldsCustomMetric?: Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>, fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>, include?: Array<'metrics'>,  } = {}): Promise<{ response: AxiosResponse; body: GetCustomMetricResponseCollectionCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/custom-metrics';
         let localVarQueryParameters: any = {};
@@ -386,11 +386,11 @@ export class MetricsApi {
         }
 
         if (options.fieldsCustomMetric !== undefined) {
-            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>");
+            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>");
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         if (options.include !== undefined) {
@@ -431,7 +431,7 @@ export class MetricsApi {
      * @param id 
      * @param fieldsFlow For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getFlowsTriggeredByMetric (id: string, options: { fieldsFlow?: Array<'name' | 'status' | 'archived' | 'created' | 'updated' | 'trigger_type'>,  } = {}): Promise<{ response: AxiosResponse; body: GetFlowResponseCollection;  }> {
+    public async getFlowsTriggeredByMetric (id: string, options: { fieldsFlow?: Array<'archived' | 'created' | 'name' | 'status' | 'trigger_type' | 'updated'>,  } = {}): Promise<{ response: AxiosResponse; body: GetFlowResponseCollection;  }> {
 
         const localVarPath = this.basePath + '/api/metrics/{id}/flow-triggers'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -451,7 +451,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsFlow !== undefined) {
-            localVarQueryParameters['fields[flow]'] = ObjectSerializer.serialize(options.fieldsFlow, "Array<'name' | 'status' | 'archived' | 'created' | 'updated' | 'trigger_type'>");
+            localVarQueryParameters['fields[flow]'] = ObjectSerializer.serialize(options.fieldsFlow, "Array<'archived' | 'created' | 'name' | 'status' | 'trigger_type' | 'updated'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -541,7 +541,7 @@ export class MetricsApi {
      * @param id The type of mapping.
      * @param fieldsCustomMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMappedMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getMappedMetric (id: 'added_to_cart' | 'cancelled_sales' | 'ordered_product' | 'refunded_sales' | 'revenue' | 'started_checkout' | 'viewed_product', options: { fieldsCustomMetric?: Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>, fieldsMappedMetric?: Array<'updated'>, fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>, include?: Array<'custom-metric' | 'metric'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMappedMetricResponseCompoundDocument;  }> {
+    public async getMappedMetric (id: 'added_to_cart' | 'cancelled_sales' | 'ordered_product' | 'refunded_sales' | 'revenue' | 'started_checkout' | 'viewed_product', options: { fieldsCustomMetric?: Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>, fieldsMappedMetric?: Array<'updated'>, fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>, include?: Array<'custom-metric' | 'metric'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMappedMetricResponseCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/mapped-metrics/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -561,7 +561,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsCustomMetric !== undefined) {
-            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>");
+            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>");
         }
 
         if (options.fieldsMappedMetric !== undefined) {
@@ -569,7 +569,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         if (options.include !== undefined) {
@@ -610,7 +610,7 @@ export class MetricsApi {
      
      * @param fieldsCustomMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMappedMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getMappedMetrics (options: { fieldsCustomMetric?: Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>, fieldsMappedMetric?: Array<'updated'>, fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>, include?: Array<'custom-metric' | 'metric'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMappedMetricResponseCollectionCompoundDocument;  }> {
+    public async getMappedMetrics (options: { fieldsCustomMetric?: Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>, fieldsMappedMetric?: Array<'updated'>, fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>, include?: Array<'custom-metric' | 'metric'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMappedMetricResponseCollectionCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/mapped-metrics';
         let localVarQueryParameters: any = {};
@@ -624,7 +624,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsCustomMetric !== undefined) {
-            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'name' | 'created' | 'updated' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups'>");
+            localVarQueryParameters['fields[custom-metric]'] = ObjectSerializer.serialize(options.fieldsCustomMetric, "Array<'created' | 'definition' | 'definition.aggregation_method' | 'definition.metric_groups' | 'name' | 'updated'>");
         }
 
         if (options.fieldsMappedMetric !== undefined) {
@@ -632,7 +632,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         if (options.include !== undefined) {
@@ -673,7 +673,7 @@ export class MetricsApi {
      * @param id Metric ID
      * @param fieldsFlow For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getMetric (id: string, options: { fieldsFlow?: Array<'name' | 'status' | 'archived' | 'created' | 'updated' | 'trigger_type'>, fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>, include?: Array<'flow-triggers'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponseCompoundDocument;  }> {
+    public async getMetric (id: string, options: { fieldsFlow?: Array<'archived' | 'created' | 'name' | 'status' | 'trigger_type' | 'updated'>, fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>, include?: Array<'flow-triggers'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponseCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/metrics/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -693,11 +693,11 @@ export class MetricsApi {
         }
 
         if (options.fieldsFlow !== undefined) {
-            localVarQueryParameters['fields[flow]'] = ObjectSerializer.serialize(options.fieldsFlow, "Array<'name' | 'status' | 'archived' | 'created' | 'updated' | 'trigger_type'>");
+            localVarQueryParameters['fields[flow]'] = ObjectSerializer.serialize(options.fieldsFlow, "Array<'archived' | 'created' | 'name' | 'status' | 'trigger_type' | 'updated'>");
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         if (options.include !== undefined) {
@@ -738,7 +738,7 @@ export class MetricsApi {
      * @param id The type of mapping.
      * @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getMetricForMappedMetric (id: 'added_to_cart' | 'cancelled_sales' | 'ordered_product' | 'refunded_sales' | 'revenue' | 'started_checkout' | 'viewed_product', options: { fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponse;  }> {
+    public async getMetricForMappedMetric (id: 'added_to_cart' | 'cancelled_sales' | 'ordered_product' | 'refunded_sales' | 'revenue' | 'started_checkout' | 'viewed_product', options: { fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponse;  }> {
 
         const localVarPath = this.basePath + '/api/mapped-metrics/{id}/metric'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -758,7 +758,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -795,7 +795,7 @@ export class MetricsApi {
      * @param id The ID of the metric property
      * @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getMetricForMetricProperty (id: string, options: { fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponse;  }> {
+    public async getMetricForMetricProperty (id: string, options: { fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponse;  }> {
 
         const localVarPath = this.basePath + '/api/metric-properties/{id}/metric'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -815,7 +815,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -1011,7 +1011,7 @@ export class MetricsApi {
      * @param id The ID of the metric property
      * @param additionalFieldsMetricProperty Request additional fields not included by default in the response. Supported values: \&#39;sample_values\&#39;* @param fieldsMetricProperty For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getMetricProperty (id: string, options: { additionalFieldsMetricProperty?: Array<'sample_values'>, fieldsMetricProperty?: Array<'label' | 'property' | 'inferred_type' | 'sample_values'>, fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>, include?: Array<'metric'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricPropertyResponseCompoundDocument;  }> {
+    public async getMetricProperty (id: string, options: { additionalFieldsMetricProperty?: Array<'sample_values'>, fieldsMetricProperty?: Array<'inferred_type' | 'label' | 'property' | 'sample_values'>, fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>, include?: Array<'metric'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricPropertyResponseCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/metric-properties/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -1035,11 +1035,11 @@ export class MetricsApi {
         }
 
         if (options.fieldsMetricProperty !== undefined) {
-            localVarQueryParameters['fields[metric-property]'] = ObjectSerializer.serialize(options.fieldsMetricProperty, "Array<'label' | 'property' | 'inferred_type' | 'sample_values'>");
+            localVarQueryParameters['fields[metric-property]'] = ObjectSerializer.serialize(options.fieldsMetricProperty, "Array<'inferred_type' | 'label' | 'property' | 'sample_values'>");
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         if (options.include !== undefined) {
@@ -1080,7 +1080,7 @@ export class MetricsApi {
      
      * @param fieldsFlow For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;integration.name&#x60;: &#x60;equals&#x60;&lt;br&gt;&#x60;integration.category&#x60;: &#x60;equals&#x60;* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#pagination
      */
-    public async getMetrics (options: { fieldsFlow?: Array<'name' | 'status' | 'archived' | 'created' | 'updated' | 'trigger_type'>, fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>, filter?: string, include?: Array<'flow-triggers'>, pageCursor?: string,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponseCollectionCompoundDocument;  }> {
+    public async getMetrics (options: { fieldsFlow?: Array<'archived' | 'created' | 'name' | 'status' | 'trigger_type' | 'updated'>, fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>, filter?: string, include?: Array<'flow-triggers'>, pageCursor?: string,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponseCollectionCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/metrics';
         let localVarQueryParameters: any = {};
@@ -1094,11 +1094,11 @@ export class MetricsApi {
         }
 
         if (options.fieldsFlow !== undefined) {
-            localVarQueryParameters['fields[flow]'] = ObjectSerializer.serialize(options.fieldsFlow, "Array<'name' | 'status' | 'archived' | 'created' | 'updated' | 'trigger_type'>");
+            localVarQueryParameters['fields[flow]'] = ObjectSerializer.serialize(options.fieldsFlow, "Array<'archived' | 'created' | 'name' | 'status' | 'trigger_type' | 'updated'>");
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         if (options.filter !== undefined) {
@@ -1147,7 +1147,7 @@ export class MetricsApi {
      * @param id The ID of the custom metric
      * @param fieldsMetric For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getMetricsForCustomMetric (id: string, options: { fieldsMetric?: Array<'name' | 'created' | 'updated' | 'integration'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponseCollection;  }> {
+    public async getMetricsForCustomMetric (id: string, options: { fieldsMetric?: Array<'created' | 'integration' | 'name' | 'updated'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricResponseCollection;  }> {
 
         const localVarPath = this.basePath + '/api/custom-metrics/{id}/metrics'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -1167,7 +1167,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsMetric !== undefined) {
-            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'name' | 'created' | 'updated' | 'integration'>");
+            localVarQueryParameters['fields[metric]'] = ObjectSerializer.serialize(options.fieldsMetric, "Array<'created' | 'integration' | 'name' | 'updated'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -1204,7 +1204,7 @@ export class MetricsApi {
      * @param id The ID of the metric
      * @param additionalFieldsMetricProperty Request additional fields not included by default in the response. Supported values: \&#39;sample_values\&#39;* @param fieldsMetricProperty For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getPropertiesForMetric (id: string, options: { additionalFieldsMetricProperty?: Array<'sample_values'>, fieldsMetricProperty?: Array<'label' | 'property' | 'inferred_type' | 'sample_values'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricPropertyResponseCollection;  }> {
+    public async getPropertiesForMetric (id: string, options: { additionalFieldsMetricProperty?: Array<'sample_values'>, fieldsMetricProperty?: Array<'inferred_type' | 'label' | 'property' | 'sample_values'>,  } = {}): Promise<{ response: AxiosResponse; body: GetMetricPropertyResponseCollection;  }> {
 
         const localVarPath = this.basePath + '/api/metrics/{id}/metric-properties'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -1228,7 +1228,7 @@ export class MetricsApi {
         }
 
         if (options.fieldsMetricProperty !== undefined) {
-            localVarQueryParameters['fields[metric-property]'] = ObjectSerializer.serialize(options.fieldsMetricProperty, "Array<'label' | 'property' | 'inferred_type' | 'sample_values'>");
+            localVarQueryParameters['fields[metric-property]'] = ObjectSerializer.serialize(options.fieldsMetricProperty, "Array<'inferred_type' | 'label' | 'property' | 'sample_values'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)

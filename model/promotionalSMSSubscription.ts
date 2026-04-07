@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { PromotionalSmsSubscriptionEnum } from './promotionalSmsSubscriptionEnum';
 export class PromotionalSMSSubscription {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit'?: boolean = true;
     'type': PromotionalSmsSubscriptionEnum | 'promotional_sms_subscription';

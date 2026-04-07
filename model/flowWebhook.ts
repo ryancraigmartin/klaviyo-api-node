@@ -15,6 +15,9 @@ export class FlowWebhook {
     'headers'?: object;
     'body'?: string | null;
     'name'?: string | null;
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
 
 

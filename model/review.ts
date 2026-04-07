@@ -14,6 +14,9 @@ import { ReviewEnum } from './reviewEnum';
 import { ReviewProperties } from './reviewProperties';
 import { ReviewStyles } from './reviewStyles';
 export class Review {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': ReviewEnum | 'review';
     'styles'?: ReviewStyles;

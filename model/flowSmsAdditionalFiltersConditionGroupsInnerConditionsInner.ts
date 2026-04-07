@@ -11,9 +11,12 @@
 
 import { RequestFile } from './models';
 import { FlowsProfileMetricCondition } from './flowsProfileMetricCondition';
-import { NumericOperatorFilter } from './numericOperatorFilter';
+import { IntegerFilter } from './integerFilter';
+import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
+import { ProfileHasCustomObjectCondition } from './profileHasCustomObjectCondition';
+import { ProfileHasCustomObjectFilter } from './profileHasCustomObjectFilter';
 import { ProfileHasGroupMembershipCondition } from './profileHasGroupMembershipCondition';
-import { ProfileHasNotReceivedEmailMessageConditionTimeframeFilter } from './profileHasNotReceivedEmailMessageConditionTimeframeFilter';
+import { ProfileHasNotReceivedPushMessageConditionTimeframeFilter } from './profileHasNotReceivedPushMessageConditionTimeframeFilter';
 import { ProfileHasNotReceivedSmsMessageCondition } from './profileHasNotReceivedSmsMessageCondition';
 import { ProfileMarketingConsentCondition } from './profileMarketingConsentCondition';
 import { ProfileMarketingConsentConditionConsent } from './profileMarketingConsentConditionConsent';
@@ -29,4 +32,4 @@ import { ProfilePredictiveAnalyticsStringCondition } from './profilePredictiveAn
 import { ProfilePropertyCondition } from './profilePropertyCondition';
 import { ProfileRandomSampleCondition } from './profileRandomSampleCondition';
 import { ProfileRegionCondition } from './profileRegionCondition';
-export type FlowSmsAdditionalFiltersConditionGroupsInnerConditionsInner = ProfilePropertyCondition | ProfileHasGroupMembershipCondition | ProfileNoGroupMembershipCondition | ProfileRegionCondition | ProfilePostalCodeDistanceCondition | ProfilePredictiveAnalyticsDateCondition | ProfilePredictiveAnalyticsStringCondition | ProfilePredictiveAnalyticsNumericCondition | ProfileMarketingConsentCondition | FlowsProfileMetricCondition | ProfileRandomSampleCondition | ProfilePermissionsCondition | ProfileHasNotReceivedSmsMessageCondition;
+export type FlowSmsAdditionalFiltersConditionGroupsInnerConditionsInner = ProfilePropertyCondition | ProfileHasGroupMembershipCondition | ProfileNoGroupMembershipCondition | ProfileRegionCondition | ProfilePostalCodeDistanceCondition | ProfilePredictiveAnalyticsDateCondition | ProfilePredictiveAnalyticsStringCondition | ProfilePredictiveAnalyticsNumericCondition | ProfileMarketingConsentCondition | FlowsProfileMetricCondition | ProfileRandomSampleCondition | ProfileHasCustomObjectCondition | ProfilePermissionsCondition | ProfileHasNotReceivedSmsMessageCondition;
