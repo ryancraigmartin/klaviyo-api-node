@@ -15,6 +15,9 @@ import { ImageEnum } from './imageEnum';
 import { ImageProperties } from './imageProperties';
 import { ImageStyles } from './imageStyles';
 export class Image {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': ImageEnum | 'image';
     'styles'?: ImageStyles;

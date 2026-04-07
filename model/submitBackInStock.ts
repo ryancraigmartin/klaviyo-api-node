@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { SubmitBackInStockEnum } from './submitBackInStockEnum';
 import { SubmitBackInStockProperties } from './submitBackInStockProperties';
 export class SubmitBackInStock {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': SubmitBackInStockEnum | 'submit_back_in_stock';
     'properties'?: SubmitBackInStockProperties;

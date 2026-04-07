@@ -15,7 +15,7 @@ import { SendInternalAlertActionData } from './sendInternalAlertActionData';
 import { SendInternalAlertEnum } from './sendInternalAlertEnum';
 export class SendInternalAlertAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

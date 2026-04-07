@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { ColumnStyles } from './columnStyles';
 import { Row } from './row';
 export class Column {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'rows'?: Array<Row>;
     'styles'?: ColumnStyles;

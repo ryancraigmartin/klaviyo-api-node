@@ -10,11 +10,11 @@
  */
 
 import { RequestFile } from './models';
+import { CampaignMessageEnum } from './campaignMessageEnum';
 import { CampaignMessageResponseObjectResource } from './campaignMessageResponseObjectResource';
+import { CampaignMessageResponseObjectResourceAttributes } from './campaignMessageResponseObjectResourceAttributes';
 import { ObjectLinks } from './objectLinks';
-import { TagEnum } from './tagEnum';
 import { TagResponseObjectResource } from './tagResponseObjectResource';
-import { TagResponseObjectResourceAttributes } from './tagResponseObjectResourceAttributes';
 
 
 

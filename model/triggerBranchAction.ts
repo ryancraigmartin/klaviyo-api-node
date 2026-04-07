@@ -15,7 +15,7 @@ import { TriggerBranchActionData } from './triggerBranchActionData';
 import { TriggerSplitEnum } from './triggerSplitEnum';
 export class TriggerBranchAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

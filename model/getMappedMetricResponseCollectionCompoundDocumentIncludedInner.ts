@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
+import { CustomMetricEnum } from './customMetricEnum';
 import { CustomMetricResponseObjectResource } from './customMetricResponseObjectResource';
-import { MetricEnum } from './metricEnum';
+import { CustomMetricResponseObjectResourceAttributes } from './customMetricResponseObjectResourceAttributes';
 import { MetricResponseObjectResource } from './metricResponseObjectResource';
-import { MetricResponseObjectResourceAttributes } from './metricResponseObjectResourceAttributes';
 import { ObjectLinks } from './objectLinks';
 
 

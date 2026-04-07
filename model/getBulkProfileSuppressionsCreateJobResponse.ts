@@ -11,8 +11,10 @@
 
 import { RequestFile } from './models';
 import { GetBulkProfileSuppressionsCreateJobResponseCollectionDataInner } from './getBulkProfileSuppressionsCreateJobResponseCollectionDataInner';
+import { ObjectLinks } from './objectLinks';
 export class GetBulkProfileSuppressionsCreateJobResponse {
     'data': GetBulkProfileSuppressionsCreateJobResponseCollectionDataInner;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -20,6 +22,11 @@ export class GetBulkProfileSuppressionsCreateJobResponse {
             "name": "data",
             "baseName": "data",
             "type": "GetBulkProfileSuppressionsCreateJobResponseCollectionDataInner"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

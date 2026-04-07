@@ -17,6 +17,9 @@ import { VersionProperties } from './versionProperties';
 import { VersionStyles } from './versionStyles';
 import { VersionTriggersInner } from './versionTriggersInner';
 export class Version {
+    /**
+    * Not allowed on create.
+    */
     'id'?: number | null;
     'steps': Array<Step>;
     'triggers'?: Array<VersionTriggersInner>;

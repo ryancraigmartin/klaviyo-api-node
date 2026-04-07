@@ -12,9 +12,9 @@
 import { RequestFile } from './models';
 import { ListResponseObjectResource } from './listResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
+import { PushTokenEnum } from './pushTokenEnum';
 import { PushTokenResponseObjectResource } from './pushTokenResponseObjectResource';
-import { SegmentEnum } from './segmentEnum';
-import { SegmentListResponseObjectResourceAttributes } from './segmentListResponseObjectResourceAttributes';
+import { PushTokenResponseObjectResourceAttributes } from './pushTokenResponseObjectResourceAttributes';
 import { SegmentResponseObjectResource } from './segmentResponseObjectResource';
 
 

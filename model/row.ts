@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { RowBlocksInner } from './rowBlocksInner';
 export class Row {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'blocks': Array<RowBlocksInner>;
 

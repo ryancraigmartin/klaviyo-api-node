@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { LocationEnum } from './locationEnum';
 import { LocationProperties } from './locationProperties';
 export class Location {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': LocationEnum | 'location';
     'properties': LocationProperties;

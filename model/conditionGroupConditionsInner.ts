@@ -10,7 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { NumericOperatorFilter } from './numericOperatorFilter';
+import { IntegerFilter } from './integerFilter';
+import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
+import { ProfileHasCustomObjectCondition } from './profileHasCustomObjectCondition';
+import { ProfileHasCustomObjectFilter } from './profileHasCustomObjectFilter';
 import { ProfileHasGroupMembershipCondition } from './profileHasGroupMembershipCondition';
 import { ProfileMarketingConsentCondition } from './profileMarketingConsentCondition';
 import { ProfileMarketingConsentConditionConsent } from './profileMarketingConsentConditionConsent';
@@ -23,7 +26,6 @@ import { ProfilePermissionsConditionPermission } from './profilePermissionsCondi
 import { ProfilePostalCodeDistanceCondition } from './profilePostalCodeDistanceCondition';
 import { ProfilePredictiveAnalyticsChannelAffinityPriorityCondition } from './profilePredictiveAnalyticsChannelAffinityPriorityCondition';
 import { ProfilePredictiveAnalyticsChannelAffinityRankCondition } from './profilePredictiveAnalyticsChannelAffinityRankCondition';
-import { ProfilePredictiveAnalyticsChannelAffinityRankFilter } from './profilePredictiveAnalyticsChannelAffinityRankFilter';
 import { ProfilePredictiveAnalyticsDateCondition } from './profilePredictiveAnalyticsDateCondition';
 import { ProfilePredictiveAnalyticsNumericCondition } from './profilePredictiveAnalyticsNumericCondition';
 import { ProfilePredictiveAnalyticsStringCondition } from './profilePredictiveAnalyticsStringCondition';
@@ -33,4 +35,4 @@ import { RankEnum } from './rankEnum';
 import { SegmentsProfileMetricCondition } from './segmentsProfileMetricCondition';
 import { SegmentsProfileMetricFunnelCondition } from './segmentsProfileMetricFunnelCondition';
 import { SegmentsProfileMetricFunnelConditionTimeframeFilter } from './segmentsProfileMetricFunnelConditionTimeframeFilter';
-export type ConditionGroupConditionsInner = ProfileHasGroupMembershipCondition | ProfileNoGroupMembershipCondition | SegmentsProfileMetricCondition | ProfileMarketingConsentCondition | ProfilePostalCodeDistanceCondition | ProfilePropertyCondition | ProfileRegionCondition | ProfilePredictiveAnalyticsDateCondition | ProfilePredictiveAnalyticsNumericCondition | ProfilePredictiveAnalyticsStringCondition | ProfilePredictiveAnalyticsChannelAffinityPriorityCondition | ProfilePredictiveAnalyticsChannelAffinityRankCondition | ProfilePermissionsCondition | SegmentsProfileMetricFunnelCondition;
+export type ConditionGroupConditionsInner = ProfileHasGroupMembershipCondition | ProfileNoGroupMembershipCondition | SegmentsProfileMetricCondition | ProfileMarketingConsentCondition | ProfilePostalCodeDistanceCondition | ProfilePropertyCondition | ProfileRegionCondition | ProfilePredictiveAnalyticsDateCondition | ProfilePredictiveAnalyticsNumericCondition | ProfilePredictiveAnalyticsStringCondition | ProfilePredictiveAnalyticsChannelAffinityPriorityCondition | ProfilePredictiveAnalyticsChannelAffinityRankCondition | ProfileHasCustomObjectCondition | ProfilePermissionsCondition | SegmentsProfileMetricFunnelCondition;

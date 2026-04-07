@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { GetListListResponseCollectionCompoundDocumentIncludedInner } from './getListListResponseCollectionCompoundDocumentIncludedInner';
 import { GetSegmentRetrieveResponseCompoundDocumentData } from './getSegmentRetrieveResponseCompoundDocumentData';
+import { ObjectLinks } from './objectLinks';
 export class GetSegmentRetrieveResponseCompoundDocument {
     'data': GetSegmentRetrieveResponseCompoundDocumentData;
     'included'?: Array<GetListListResponseCollectionCompoundDocumentIncludedInner>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetSegmentRetrieveResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<GetListListResponseCollectionCompoundDocumentIncludedInner>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

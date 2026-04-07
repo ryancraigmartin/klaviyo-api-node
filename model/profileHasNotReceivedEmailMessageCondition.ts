@@ -10,11 +10,11 @@
  */
 
 import { RequestFile } from './models';
-import { ProfileHasNotReceivedEmailMessageConditionTimeframeFilter } from './profileHasNotReceivedEmailMessageConditionTimeframeFilter';
+import { ProfileHasNotReceivedPushMessageConditionTimeframeFilter } from './profileHasNotReceivedPushMessageConditionTimeframeFilter';
 import { ProfileNotSentEmailEnum } from './profileNotSentEmailEnum';
 export class ProfileHasNotReceivedEmailMessageCondition {
     'type': ProfileNotSentEmailEnum | 'profile-not-sent-email';
-    'timeframeFilter': ProfileHasNotReceivedEmailMessageConditionTimeframeFilter;
+    'timeframeFilter': ProfileHasNotReceivedPushMessageConditionTimeframeFilter;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -26,7 +26,7 @@ export class ProfileHasNotReceivedEmailMessageCondition {
         {
             "name": "timeframeFilter",
             "baseName": "timeframe_filter",
-            "type": "ProfileHasNotReceivedEmailMessageConditionTimeframeFilter"
+            "type": "ProfileHasNotReceivedPushMessageConditionTimeframeFilter"
         }    ];
 
     static getAttributeTypeMap() {

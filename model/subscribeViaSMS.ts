@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { SubscribeViaSMSProperties } from './subscribeViaSMSProperties';
 import { SubscribeViaSmsEnum } from './subscribeViaSmsEnum';
 export class SubscribeViaSMS {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit'?: boolean = true;
     'type': SubscribeViaSmsEnum | 'subscribe_via_sms';

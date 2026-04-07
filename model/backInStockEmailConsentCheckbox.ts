@@ -14,6 +14,9 @@ import { BackInStockEmailConsentCheckboxProperties } from './backInStockEmailCon
 import { BackInStockEmailConsentCheckboxStyles } from './backInStockEmailConsentCheckboxStyles';
 import { BisPromotionalEmailCheckboxEnum } from './bisPromotionalEmailCheckboxEnum';
 export class BackInStockEmailConsentCheckbox {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': BisPromotionalEmailCheckboxEnum | 'bis_promotional_email_checkbox';
     'styles'?: BackInStockEmailConsentCheckboxStyles;

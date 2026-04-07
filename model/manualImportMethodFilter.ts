@@ -10,13 +10,11 @@
  */
 
 import { RequestFile } from './models';
-import { InStringArrayFilter } from './inStringArrayFilter';
 import { ManualImportEnum } from './manualImportEnum';
 import { MethodEnum } from './methodEnum';
 export class ManualImportMethodFilter {
     'field': MethodEnum | 'method';
     'method': ManualImportEnum | 'manual_import';
-    'filter'?: InStringArrayFilter;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -29,11 +27,6 @@ export class ManualImportMethodFilter {
             "name": "method",
             "baseName": "method",
             "type": "ManualImportEnum"
-        },
-        {
-            "name": "filter",
-            "baseName": "filter",
-            "type": "InStringArrayFilter"
         }    ];
 
     static getAttributeTypeMap() {

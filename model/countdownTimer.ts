@@ -14,6 +14,9 @@ import { CountdownTimerEnum } from './countdownTimerEnum';
 import { CountdownTimerProperties } from './countdownTimerProperties';
 import { CountdownTimerStyles } from './countdownTimerStyles';
 export class CountdownTimer {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': CountdownTimerEnum | 'countdown_timer';
     'styles'?: CountdownTimerStyles;

@@ -11,6 +11,7 @@
 
 import { RequestFile } from './models';
 import { BorderStyle } from './borderStyle';
+import { ButtonDropShadowStyles } from './buttonDropShadowStyles';
 import { Padding } from './padding';
 import { TextStyle } from './textStyle';
 export class ButtonStyles {
@@ -26,6 +27,7 @@ export class ButtonStyles {
     'borderStyles'?: BorderStyle;
     'textStyles'?: TextStyle;
     'color'?: string | null;
+    'dropShadow'?: ButtonDropShadowStyles;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -73,6 +75,11 @@ export class ButtonStyles {
             "name": "color",
             "baseName": "color",
             "type": "string"
+        },
+        {
+            "name": "dropShadow",
+            "baseName": "drop_shadow",
+            "type": "ButtonDropShadowStyles"
         }    ];
 
     static getAttributeTypeMap() {

@@ -72,7 +72,7 @@ export class ImagesApi {
      * @param id The ID of the image
      * @param fieldsImage For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getImage (id: string, options: { fieldsImage?: Array<'name' | 'image_url' | 'format' | 'size' | 'hidden' | 'updated_at'>,  } = {}): Promise<{ response: AxiosResponse; body: GetImageResponse;  }> {
+    public async getImage (id: string, options: { fieldsImage?: Array<'format' | 'hidden' | 'image_url' | 'name' | 'size' | 'updated_at'>,  } = {}): Promise<{ response: AxiosResponse; body: GetImageResponse;  }> {
 
         const localVarPath = this.basePath + '/api/images/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -92,7 +92,7 @@ export class ImagesApi {
         }
 
         if (options.fieldsImage !== undefined) {
-            localVarQueryParameters['fields[image]'] = ObjectSerializer.serialize(options.fieldsImage, "Array<'name' | 'image_url' | 'format' | 'size' | 'hidden' | 'updated_at'>");
+            localVarQueryParameters['fields[image]'] = ObjectSerializer.serialize(options.fieldsImage, "Array<'format' | 'hidden' | 'image_url' | 'name' | 'size' | 'updated_at'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -129,7 +129,7 @@ export class ImagesApi {
      
      * @param fieldsImage For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;id&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;updated_at&#x60;: &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;&lt;br&gt;&#x60;format&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;name&#x60;: &#x60;any&#x60;, &#x60;contains&#x60;, &#x60;ends-with&#x60;, &#x60;equals&#x60;, &#x60;starts-with&#x60;&lt;br&gt;&#x60;size&#x60;: &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;&lt;br&gt;&#x60;hidden&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#pagination* @param pageSize Default: 20. Min: 1. Max: 100.* @param sort For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sorting
      */
-    public async getImages (options: { fieldsImage?: Array<'name' | 'image_url' | 'format' | 'size' | 'hidden' | 'updated_at'>, filter?: string, pageCursor?: string, pageSize?: number, sort?: 'format' | '-format' | 'id' | '-id' | 'name' | '-name' | 'size' | '-size' | 'updated_at' | '-updated_at',  } = {}): Promise<{ response: AxiosResponse; body: GetImageResponseCollection;  }> {
+    public async getImages (options: { fieldsImage?: Array<'format' | 'hidden' | 'image_url' | 'name' | 'size' | 'updated_at'>, filter?: string, pageCursor?: string, pageSize?: number, sort?: 'format' | '-format' | 'id' | '-id' | 'name' | '-name' | 'size' | '-size' | 'updated_at' | '-updated_at',  } = {}): Promise<{ response: AxiosResponse; body: GetImageResponseCollection;  }> {
 
         const localVarPath = this.basePath + '/api/images';
         let localVarQueryParameters: any = {};
@@ -143,7 +143,7 @@ export class ImagesApi {
         }
 
         if (options.fieldsImage !== undefined) {
-            localVarQueryParameters['fields[image]'] = ObjectSerializer.serialize(options.fieldsImage, "Array<'name' | 'image_url' | 'format' | 'size' | 'hidden' | 'updated_at'>");
+            localVarQueryParameters['fields[image]'] = ObjectSerializer.serialize(options.fieldsImage, "Array<'format' | 'hidden' | 'image_url' | 'name' | 'size' | 'updated_at'>");
         }
 
         if (options.filter !== undefined) {

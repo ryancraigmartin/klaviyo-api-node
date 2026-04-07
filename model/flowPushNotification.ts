@@ -27,15 +27,27 @@ export class FlowPushNotification {
     */
     'dynamicImage'?: string | null;
     /**
+    * The ULID of a video asset. If provided, videos and images are mutually exclusive.
+    */
+    'videoAssetId'?: string | null;
+    /**
     * See PushLinkAction in app.  This is not a flow action, but the literal action that should be     taken when the push notification is tapped.
     */
     'onOpen'?: FlowPushNotification.OnOpenEnum | 'home' | 'link' = FlowPushNotification.OnOpenEnum.Home;
     'iosLink'?: string | null;
     'androidLink'?: string | null;
+    /**
+    * The type of push notification to send.
+    */
+    'pushType'?: FlowPushNotification.PushTypeEnum | 'silent' | 'standard' | null;
+    'kvPairs'?: object | null;
     'conversionMetricId'?: string | null;
     'smartSendingEnabled'?: boolean = true;
     'additionalFilters'?: FlowPushNotificationAdditionalFilters | null;
     'name'?: string | null;
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
 
 
@@ -76,6 +88,11 @@ export class FlowPushNotification {
             "type": "string"
         },
         {
+            "name": "videoAssetId",
+            "baseName": "video_asset_id",
+            "type": "string"
+        },
+        {
             "name": "onOpen",
             "baseName": "on_open",
             "type": "FlowPushNotification.OnOpenEnum"
@@ -89,6 +106,16 @@ export class FlowPushNotification {
             "name": "androidLink",
             "baseName": "android_link",
             "type": "string"
+        },
+        {
+            "name": "pushType",
+            "baseName": "push_type",
+            "type": "FlowPushNotification.PushTypeEnum"
+        },
+        {
+            "name": "kvPairs",
+            "baseName": "kv_pairs",
+            "type": "object"
         },
         {
             "name": "conversionMetricId",
@@ -125,5 +152,9 @@ export namespace FlowPushNotification {
     export enum OnOpenEnum {
         Home = <any> 'home',
         Link = <any> 'link'
+    }
+    export enum PushTypeEnum {
+        Silent = <any> 'silent',
+        Standard = <any> 'standard'
     }
 }

@@ -11,8 +11,10 @@
 
 import { RequestFile } from './models';
 import { GetCatalogVariantResponseCollectionDataInner } from './getCatalogVariantResponseCollectionDataInner';
+import { ObjectLinks } from './objectLinks';
 export class GetCatalogVariantResponse {
     'data': GetCatalogVariantResponseCollectionDataInner;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -20,6 +22,11 @@ export class GetCatalogVariantResponse {
             "name": "data",
             "baseName": "data",
             "type": "GetCatalogVariantResponseCollectionDataInner"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

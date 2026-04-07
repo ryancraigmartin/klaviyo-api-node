@@ -11,7 +11,7 @@
 
 import { RequestFile } from './models';
 import { FlowsProfileMetricConditionTimeframeFilter } from './flowsProfileMetricConditionTimeframeFilter';
-import { NumericOperatorFilter } from './numericOperatorFilter';
+import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
 import { ProfileMetricEnum } from './profileMetricEnum';
 import { ProfileMetricPropertyFilter } from './profileMetricPropertyFilter';
 export class FlowsProfileMetricCondition {
@@ -21,7 +21,7 @@ export class FlowsProfileMetricCondition {
     * Measurements for profile metrics.
     */
     'measurement': FlowsProfileMetricCondition.MeasurementEnum | 'count' | 'sum';
-    'measurementFilter': NumericOperatorFilter;
+    'measurementFilter': NumericOperatorNumericFilter;
     'timeframeFilter': FlowsProfileMetricConditionTimeframeFilter;
     'metricFilters'?: Array<ProfileMetricPropertyFilter> | null;
 
@@ -45,7 +45,7 @@ export class FlowsProfileMetricCondition {
         {
             "name": "measurementFilter",
             "baseName": "measurement_filter",
-            "type": "NumericOperatorFilter"
+            "type": "NumericOperatorNumericFilter"
         },
         {
             "name": "timeframeFilter",

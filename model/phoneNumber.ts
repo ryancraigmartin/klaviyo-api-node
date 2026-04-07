@@ -14,6 +14,9 @@ import { PhoneNumberEnum } from './phoneNumberEnum';
 import { PhoneNumberProperties } from './phoneNumberProperties';
 import { PhoneNumberStyles } from './phoneNumberStyles';
 export class PhoneNumber {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': PhoneNumberEnum | 'phone_number';
     'styles'?: PhoneNumberStyles;

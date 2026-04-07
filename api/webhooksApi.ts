@@ -179,7 +179,7 @@ export class WebhooksApi {
      * @param id The ID of the webhook.
      * @param fieldsWebhook For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getWebhook (id: string, options: { fieldsWebhook?: Array<'name' | 'description' | 'endpoint_url' | 'enabled' | 'created_at' | 'updated_at'>, include?: Array<'webhook-topics'>,  } = {}): Promise<{ response: AxiosResponse; body: GetWebhookResponseCompoundDocument;  }> {
+    public async getWebhook (id: string, options: { fieldsWebhook?: Array<'created_at' | 'description' | 'enabled' | 'endpoint_url' | 'name' | 'updated_at'>, include?: Array<'webhook-topics'>,  } = {}): Promise<{ response: AxiosResponse; body: GetWebhookResponseCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/webhooks/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -199,7 +199,7 @@ export class WebhooksApi {
         }
 
         if (options.fieldsWebhook !== undefined) {
-            localVarQueryParameters['fields[webhook]'] = ObjectSerializer.serialize(options.fieldsWebhook, "Array<'name' | 'description' | 'endpoint_url' | 'enabled' | 'created_at' | 'updated_at'>");
+            localVarQueryParameters['fields[webhook]'] = ObjectSerializer.serialize(options.fieldsWebhook, "Array<'created_at' | 'description' | 'enabled' | 'endpoint_url' | 'name' | 'updated_at'>");
         }
 
         if (options.include !== undefined) {
@@ -340,7 +340,7 @@ export class WebhooksApi {
      
      * @param fieldsWebhook For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getWebhooks (options: { fieldsWebhook?: Array<'name' | 'description' | 'endpoint_url' | 'enabled' | 'created_at' | 'updated_at'>, include?: Array<'webhook-topics'>,  } = {}): Promise<{ response: AxiosResponse; body: GetWebhookResponseCollectionCompoundDocument;  }> {
+    public async getWebhooks (options: { fieldsWebhook?: Array<'created_at' | 'description' | 'enabled' | 'endpoint_url' | 'name' | 'updated_at'>, include?: Array<'webhook-topics'>,  } = {}): Promise<{ response: AxiosResponse; body: GetWebhookResponseCollectionCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/webhooks';
         let localVarQueryParameters: any = {};
@@ -354,7 +354,7 @@ export class WebhooksApi {
         }
 
         if (options.fieldsWebhook !== undefined) {
-            localVarQueryParameters['fields[webhook]'] = ObjectSerializer.serialize(options.fieldsWebhook, "Array<'name' | 'description' | 'endpoint_url' | 'enabled' | 'created_at' | 'updated_at'>");
+            localVarQueryParameters['fields[webhook]'] = ObjectSerializer.serialize(options.fieldsWebhook, "Array<'created_at' | 'description' | 'enabled' | 'endpoint_url' | 'name' | 'updated_at'>");
         }
 
         if (options.include !== undefined) {

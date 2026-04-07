@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { GetProfileResponseCompoundDocumentData } from './getProfileResponseCompoundDocumentData';
 import { GetProfileResponseCompoundDocumentIncludedInner } from './getProfileResponseCompoundDocumentIncludedInner';
+import { ObjectLinks } from './objectLinks';
 export class GetProfileResponseCompoundDocument {
     'data': GetProfileResponseCompoundDocumentData;
     'included'?: Array<GetProfileResponseCompoundDocumentIncludedInner>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetProfileResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<GetProfileResponseCompoundDocumentIncludedInner>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

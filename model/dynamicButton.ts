@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { BackInStockDynamicButtonData } from './backInStockDynamicButtonData';
 export class DynamicButton {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     /**
     * Dynamic Button type enumeration.

@@ -12,9 +12,11 @@
 import { RequestFile } from './models';
 import { CatalogVariantResponseObjectResource } from './catalogVariantResponseObjectResource';
 import { GetCatalogVariantCreateJobResponseCollectionCompoundDocumentDataInner } from './getCatalogVariantCreateJobResponseCollectionCompoundDocumentDataInner';
+import { ObjectLinks } from './objectLinks';
 export class GetCatalogVariantCreateJobResponseCompoundDocument {
     'data': GetCatalogVariantCreateJobResponseCollectionCompoundDocumentDataInner;
     'included'?: Array<CatalogVariantResponseObjectResource>;
+    'links'?: ObjectLinks;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,6 +29,11 @@ export class GetCatalogVariantCreateJobResponseCompoundDocument {
             "name": "included",
             "baseName": "included",
             "type": "Array<CatalogVariantResponseObjectResource>"
+        },
+        {
+            "name": "links",
+            "baseName": "links",
+            "type": "ObjectLinks"
         }    ];
 
     static getAttributeTypeMap() {

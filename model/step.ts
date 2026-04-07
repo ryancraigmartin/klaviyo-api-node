@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { Column } from './column';
 export class Step {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'columns': Array<Column>;
     'name'?: string | null;

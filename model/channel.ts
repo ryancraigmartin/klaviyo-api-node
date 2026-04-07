@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { ChannelEnum } from './channelEnum';
 import { ChannelProperties } from './channelProperties';
 export class Channel {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': ChannelEnum | 'channel';
     'properties': ChannelProperties;

@@ -14,6 +14,9 @@ import { DateEnum } from './dateEnum';
 import { DateProperties } from './dateProperties';
 import { DateStyles } from './dateStyles';
 export class ModelDate {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': DateEnum | 'date';
     'styles'?: DateStyles;

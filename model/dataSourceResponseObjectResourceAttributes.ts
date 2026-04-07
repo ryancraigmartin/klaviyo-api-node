@@ -16,13 +16,17 @@ export class DataSourceResponseObjectResourceAttributes {
     */
     'title': string;
     /**
-    * The status of this data source
+    * The status of the data source
     */
     'visibility': DataSourceResponseObjectResourceAttributes.VisibilityEnum | 'private' | 'shared';
     /**
     * The description of the data source
     */
     'description': string;
+    /**
+    * The namespace of the data source
+    */
+    'namespace': string;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -39,6 +43,11 @@ export class DataSourceResponseObjectResourceAttributes {
         {
             "name": "description",
             "baseName": "description",
+            "type": "string"
+        },
+        {
+            "name": "namespace",
+            "baseName": "namespace",
             "type": "string"
         }    ];
 

@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { PageVisitsEnum } from './pageVisitsEnum';
 import { PageVisitsProperties } from './pageVisitsProperties';
 export class PageVisits {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': PageVisitsEnum | 'page_visits';
     'properties'?: PageVisitsProperties;

@@ -15,7 +15,7 @@ import { SendEmailActionData } from './sendEmailActionData';
 import { SendEmailEnum } from './sendEmailEnum';
 export class SendEmailAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

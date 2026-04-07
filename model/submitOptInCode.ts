@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { SubmitOptInCodeEnum } from './submitOptInCodeEnum';
 export class SubmitOptInCode {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit'?: boolean = true;
     'type': SubmitOptInCodeEnum | 'submit_opt_in_code';

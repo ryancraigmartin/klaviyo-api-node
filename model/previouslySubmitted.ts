@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { PreviouslySubmittedEnum } from './previouslySubmittedEnum';
 export class PreviouslySubmitted {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'properties'?: object;
     'type': PreviouslySubmittedEnum | 'previously_submitted';

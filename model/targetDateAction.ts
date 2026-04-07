@@ -15,7 +15,7 @@ import { TargetDateActionData } from './targetDateActionData';
 import { TargetDateEnum } from './targetDateEnum';
 export class TargetDateAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

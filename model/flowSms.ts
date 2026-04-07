@@ -32,8 +32,12 @@ export class FlowSms {
     'transactional'?: boolean = false;
     'addTrackingParams'?: boolean = false;
     'customTrackingParams'?: Array<UtmParam> | null;
+    'templateId'?: string | null;
     'additionalFilters'?: FlowSmsAdditionalFilters | null;
     'name'?: string | null;
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
 
 
@@ -102,6 +106,11 @@ export class FlowSms {
             "name": "customTrackingParams",
             "baseName": "custom_tracking_params",
             "type": "Array<UtmParam>"
+        },
+        {
+            "name": "templateId",
+            "baseName": "template_id",
+            "type": "string"
         },
         {
             "name": "additionalFilters",

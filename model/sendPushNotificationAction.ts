@@ -15,7 +15,7 @@ import { SendMobilePushEnum } from './sendMobilePushEnum';
 import { SendPushNotificationActionData } from './sendPushNotificationActionData';
 export class SendPushNotificationAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

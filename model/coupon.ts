@@ -14,6 +14,9 @@ import { CouponEnum } from './couponEnum';
 import { CouponProperties } from './couponProperties';
 import { CouponStyles } from './couponStyles';
 export class Coupon {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': CouponEnum | 'coupon';
     'styles'?: CouponStyles;

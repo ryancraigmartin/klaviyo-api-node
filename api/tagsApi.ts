@@ -512,7 +512,7 @@ export class TagsApi {
      * @param id The Tag ID
      * @param fieldsTagGroup For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsTag For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships
      */
-    public async getTag (id: string, options: { fieldsTagGroup?: Array<'name' | 'exclusive' | 'default'>, fieldsTag?: Array<'name'>, include?: Array<'tag-group'>,  } = {}): Promise<{ response: AxiosResponse; body: GetTagResponseCompoundDocument;  }> {
+    public async getTag (id: string, options: { fieldsTagGroup?: Array<'default' | 'exclusive' | 'name'>, fieldsTag?: Array<'name'>, include?: Array<'tag-group'>,  } = {}): Promise<{ response: AxiosResponse; body: GetTagResponseCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/tags/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -532,7 +532,7 @@ export class TagsApi {
         }
 
         if (options.fieldsTagGroup !== undefined) {
-            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'name' | 'exclusive' | 'default'>");
+            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'default' | 'exclusive' | 'name'>");
         }
 
         if (options.fieldsTag !== undefined) {
@@ -577,7 +577,7 @@ export class TagsApi {
      * @param id The Tag Group ID
      * @param fieldsTagGroup For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getTagGroup (id: string, options: { fieldsTagGroup?: Array<'name' | 'exclusive' | 'default'>,  } = {}): Promise<{ response: AxiosResponse; body: GetTagGroupResponse;  }> {
+    public async getTagGroup (id: string, options: { fieldsTagGroup?: Array<'default' | 'exclusive' | 'name'>,  } = {}): Promise<{ response: AxiosResponse; body: GetTagGroupResponse;  }> {
 
         const localVarPath = this.basePath + '/api/tag-groups/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -597,7 +597,7 @@ export class TagsApi {
         }
 
         if (options.fieldsTagGroup !== undefined) {
-            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'name' | 'exclusive' | 'default'>");
+            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'default' | 'exclusive' | 'name'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -634,7 +634,7 @@ export class TagsApi {
      * @param id The Tag ID
      * @param fieldsTagGroup For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
      */
-    public async getTagGroupForTag (id: string, options: { fieldsTagGroup?: Array<'name' | 'exclusive' | 'default'>,  } = {}): Promise<{ response: AxiosResponse; body: GetTagGroupResponse;  }> {
+    public async getTagGroupForTag (id: string, options: { fieldsTagGroup?: Array<'default' | 'exclusive' | 'name'>,  } = {}): Promise<{ response: AxiosResponse; body: GetTagGroupResponse;  }> {
 
         const localVarPath = this.basePath + '/api/tags/{id}/tag-group'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -654,7 +654,7 @@ export class TagsApi {
         }
 
         if (options.fieldsTagGroup !== undefined) {
-            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'name' | 'exclusive' | 'default'>");
+            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'default' | 'exclusive' | 'name'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -744,7 +744,7 @@ export class TagsApi {
      
      * @param fieldsTagGroup For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;name&#x60;: &#x60;contains&#x60;, &#x60;ends-with&#x60;, &#x60;equals&#x60;, &#x60;starts-with&#x60;&lt;br&gt;&#x60;exclusive&#x60;: &#x60;equals&#x60;&lt;br&gt;&#x60;default&#x60;: &#x60;equals&#x60;* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#pagination* @param sort For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sorting
      */
-    public async getTagGroups (options: { fieldsTagGroup?: Array<'name' | 'exclusive' | 'default'>, filter?: string, pageCursor?: string, sort?: 'id' | '-id' | 'name' | '-name',  } = {}): Promise<{ response: AxiosResponse; body: GetTagGroupResponseCollection;  }> {
+    public async getTagGroups (options: { fieldsTagGroup?: Array<'default' | 'exclusive' | 'name'>, filter?: string, pageCursor?: string, sort?: 'id' | '-id' | 'name' | '-name',  } = {}): Promise<{ response: AxiosResponse; body: GetTagGroupResponseCollection;  }> {
 
         const localVarPath = this.basePath + '/api/tag-groups';
         let localVarQueryParameters: any = {};
@@ -758,7 +758,7 @@ export class TagsApi {
         }
 
         if (options.fieldsTagGroup !== undefined) {
-            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'name' | 'exclusive' | 'default'>");
+            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'default' | 'exclusive' | 'name'>");
         }
 
         if (options.filter !== undefined) {
@@ -860,7 +860,7 @@ export class TagsApi {
      
      * @param fieldsTagGroup For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param fieldsTag For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;name&#x60;: &#x60;contains&#x60;, &#x60;ends-with&#x60;, &#x60;equals&#x60;, &#x60;starts-with&#x60;* @param include For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#relationships* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#pagination* @param sort For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sorting
      */
-    public async getTags (options: { fieldsTagGroup?: Array<'name' | 'exclusive' | 'default'>, fieldsTag?: Array<'name'>, filter?: string, include?: Array<'tag-group'>, pageCursor?: string, sort?: 'id' | '-id' | 'name' | '-name',  } = {}): Promise<{ response: AxiosResponse; body: GetTagResponseCollectionCompoundDocument;  }> {
+    public async getTags (options: { fieldsTagGroup?: Array<'default' | 'exclusive' | 'name'>, fieldsTag?: Array<'name'>, filter?: string, include?: Array<'tag-group'>, pageCursor?: string, sort?: 'id' | '-id' | 'name' | '-name',  } = {}): Promise<{ response: AxiosResponse; body: GetTagResponseCollectionCompoundDocument;  }> {
 
         const localVarPath = this.basePath + '/api/tags';
         let localVarQueryParameters: any = {};
@@ -874,7 +874,7 @@ export class TagsApi {
         }
 
         if (options.fieldsTagGroup !== undefined) {
-            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'name' | 'exclusive' | 'default'>");
+            localVarQueryParameters['fields[tag-group]'] = ObjectSerializer.serialize(options.fieldsTagGroup, "Array<'default' | 'exclusive' | 'name'>");
         }
 
         if (options.fieldsTag !== undefined) {

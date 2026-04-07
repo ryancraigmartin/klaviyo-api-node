@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { ScrollPercentageEnum } from './scrollPercentageEnum';
 import { ScrollProperties } from './scrollProperties';
 export class Scroll {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': ScrollPercentageEnum | 'scroll_percentage';
     'properties'?: ScrollProperties;

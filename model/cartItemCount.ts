@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { CartItemCountEnum } from './cartItemCountEnum';
 import { CartItemCountProperties } from './cartItemCountProperties';
 export class CartItemCount {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': CartItemCountEnum | 'cart_item_count';
     'properties'?: CartItemCountProperties;

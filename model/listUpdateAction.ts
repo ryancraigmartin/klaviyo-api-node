@@ -15,7 +15,7 @@ import { ListUpdateActionData } from './listUpdateActionData';
 import { ListUpdateEnum } from './listUpdateEnum';
 export class ListUpdateAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

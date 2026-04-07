@@ -15,7 +15,7 @@ import { TimeDelayActionData } from './timeDelayActionData';
 import { TimeDelayEnum } from './timeDelayEnum';
 export class TimeDelayAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

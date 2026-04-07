@@ -22,6 +22,8 @@ export class RichTextStyle {
     */
     'fontWeight'?: RichTextStyle.FontWeightEnum | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | null = RichTextStyle.FontWeightEnum.NUMBER_400;
     'textColor'?: string = '#000000';
+    'fontStyle'?: string | null;
+    'textDecoration'?: string | null;
     'lineSpacing'?: number = 1;
     'characterSpacing'?: number | null = 0;
     /**
@@ -50,6 +52,16 @@ export class RichTextStyle {
         {
             "name": "textColor",
             "baseName": "text_color",
+            "type": "string"
+        },
+        {
+            "name": "fontStyle",
+            "baseName": "font_style",
+            "type": "string"
+        },
+        {
+            "name": "textDecoration",
+            "baseName": "text_decoration",
             "type": "string"
         },
         {

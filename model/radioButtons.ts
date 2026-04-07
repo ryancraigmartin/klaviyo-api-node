@@ -14,6 +14,9 @@ import { RadioButtonsEnum } from './radioButtonsEnum';
 import { RadioButtonsProperties } from './radioButtonsProperties';
 import { RadioButtonsStyles } from './radioButtonsStyles';
 export class RadioButtons {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': RadioButtonsEnum | 'radio_buttons';
     'styles'?: RadioButtonsStyles;

@@ -15,7 +15,7 @@ import { UpdateProfileActionData } from './updateProfileActionData';
 import { UpdateProfileEnum } from './updateProfileEnum';
 export class UpdateProfileAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

@@ -15,7 +15,7 @@ import { ActionOutputSplitEnum } from './actionOutputSplitEnum';
 import { BooleanBranchLinks } from './booleanBranchLinks';
 export class ActionOutputSplitAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**

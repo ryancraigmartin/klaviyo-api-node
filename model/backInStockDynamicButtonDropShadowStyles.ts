@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 export class BackInStockDynamicButtonDropShadowStyles {
     'enabled'?: boolean = false;
     'color'?: string = '#000000';
+    'blur'?: number = 15;
+    'xOffset'?: number = 0;
+    'yOffset'?: number = 0;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -25,6 +28,21 @@ export class BackInStockDynamicButtonDropShadowStyles {
             "name": "color",
             "baseName": "color",
             "type": "string"
+        },
+        {
+            "name": "blur",
+            "baseName": "blur",
+            "type": "number"
+        },
+        {
+            "name": "xOffset",
+            "baseName": "x_offset",
+            "type": "number"
+        },
+        {
+            "name": "yOffset",
+            "baseName": "y_offset",
+            "type": "number"
         }    ];
 
     static getAttributeTypeMap() {

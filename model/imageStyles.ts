@@ -10,6 +10,7 @@
  */
 
 import { RequestFile } from './models';
+import { ImageDropShadowStyles } from './imageDropShadowStyles';
 import { Padding } from './padding';
 export class ImageStyles {
     /**
@@ -19,6 +20,7 @@ export class ImageStyles {
     'width'?: number | null;
     'padding'?: Padding;
     'backgroundColor'?: string | null;
+    'dropShadow'?: ImageDropShadowStyles;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -41,6 +43,11 @@ export class ImageStyles {
             "name": "backgroundColor",
             "baseName": "background_color",
             "type": "string"
+        },
+        {
+            "name": "dropShadow",
+            "baseName": "drop_shadow",
+            "type": "ImageDropShadowStyles"
         }    ];
 
     static getAttributeTypeMap() {

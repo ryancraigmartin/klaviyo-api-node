@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { UnidentifiedProfilesEnum } from './unidentifiedProfilesEnum';
 export class UnidentifiedProfiles {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'properties'?: object;
     'type': UnidentifiedProfilesEnum | 'unidentified_profiles';

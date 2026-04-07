@@ -12,6 +12,9 @@
 import { RequestFile } from './models';
 import { CustomJavascriptEnum } from './customJavascriptEnum';
 export class CustomJavascript {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'properties'?: object;
     'type': CustomJavascriptEnum | 'custom_javascript';

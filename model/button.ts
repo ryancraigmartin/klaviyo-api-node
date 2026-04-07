@@ -15,6 +15,9 @@ import { ButtonEnum } from './buttonEnum';
 import { ButtonProperties } from './buttonProperties';
 import { ButtonStyles } from './buttonStyles';
 export class Button {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': ButtonEnum | 'button';
     'styles'?: ButtonStyles;

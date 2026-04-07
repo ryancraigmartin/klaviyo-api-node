@@ -10,11 +10,12 @@
  */
 
 import { RequestFile } from './models';
+import { InternalServiceActionData } from './internalServiceActionData';
 import { InternalServiceEnum } from './internalServiceEnum';
 import { Link } from './link';
 export class InternalServiceAction {
     /**
-    * The real ID of an action.
+    * The real ID of an action. Not allowed on create.
     */
     'id'?: string | null;
     /**
@@ -23,7 +24,7 @@ export class InternalServiceAction {
     'temporaryId'?: string | null;
     'type': InternalServiceEnum | 'internal-service';
     'links'?: Link;
-    'data'?: any | null;
+    'data'?: InternalServiceActionData;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -50,7 +51,7 @@ export class InternalServiceAction {
         {
             "name": "data",
             "baseName": "data",
-            "type": "any"
+            "type": "InternalServiceActionData"
         }    ];
 
     static getAttributeTypeMap() {

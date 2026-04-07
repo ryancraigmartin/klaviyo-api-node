@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { CartProductEnum } from './cartProductEnum';
 import { CartProductProperties } from './cartProductProperties';
 export class CartProduct {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'type': CartProductEnum | 'cart_product';
     'properties'?: CartProductProperties;

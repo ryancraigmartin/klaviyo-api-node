@@ -13,6 +13,9 @@ import { RequestFile } from './models';
 import { RedirectEnum } from './redirectEnum';
 import { RedirectProperties } from './redirectProperties';
 export class Redirect {
+    /**
+    * Not allowed on create.
+    */
     'id'?: string | null;
     'submit': boolean;
     'type': RedirectEnum | 'redirect';

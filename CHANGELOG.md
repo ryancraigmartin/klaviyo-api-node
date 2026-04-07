@@ -1,6 +1,14 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [21.0.1] - revision 2026-01-15
+### Added
+- Events Api
+  - Added `pageSize` parameter to the `get_events` endpoint: `EventsApi.getEvents()`.
+    - Default: 200. Min: 1. Max: 1000.
+### Fixed
+- Fixed TypeScript compile error when indexing serializer data object.
+
 ## [21.0.0] - revision 2026-01-15
 ### Added
 - Added a new [single data source record create endpoint](https://github.com/klaviyo/klaviyo-api-node?tab=readme-ov-file#customobjectsapi) for one-at-a-time ingestion workloads

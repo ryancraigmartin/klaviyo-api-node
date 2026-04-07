@@ -12,12 +12,18 @@
 import { RequestFile } from './models';
 import { FlowMessageEncodedResponseObjectResourceAttributesDefinition } from './flowMessageEncodedResponseObjectResourceAttributesDefinition';
 export class FlowMessageEncodedResponseObjectResourceAttributes {
+    'channel'?: string | null;
     'created'?: Date | null;
     'updated'?: Date | null;
     'definition'?: FlowMessageEncodedResponseObjectResourceAttributesDefinition | null;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "channel",
+            "baseName": "channel",
+            "type": "string"
+        },
         {
             "name": "created",
             "baseName": "created",
