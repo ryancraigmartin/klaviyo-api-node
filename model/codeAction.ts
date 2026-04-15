@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { CodeEnum } from './codeEnum';
 import { Link } from './link';
 export class CodeAction {
     /**
@@ -21,7 +20,7 @@ export class CodeAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': CodeEnum | 'code';
+    'type': CodeAction.TypeEnum | 'code';
     'links'?: Link;
     'data'?: any | null;
 
@@ -40,7 +39,7 @@ export class CodeAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CodeEnum"
+            "type": "CodeAction.TypeEnum"
         },
         {
             "name": "links",
@@ -59,4 +58,7 @@ export class CodeAction {
 }
 
 export namespace CodeAction {
+    export enum TypeEnum {
+        Code = <any> 'code'
+    }
 }

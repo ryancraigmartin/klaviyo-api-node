@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { PageVisitsEnum } from './pageVisitsEnum';
 import { PageVisitsProperties } from './pageVisitsProperties';
 export class PageVisits {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': PageVisitsEnum | 'page_visits';
+    'type': PageVisits.TypeEnum | 'page_visits';
     'properties'?: PageVisitsProperties;
 
 
@@ -30,7 +29,7 @@ export class PageVisits {
         {
             "name": "type",
             "baseName": "type",
-            "type": "PageVisitsEnum"
+            "type": "PageVisits.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class PageVisits {
 }
 
 export namespace PageVisits {
+    export enum TypeEnum {
+        PageVisits = <any> 'page_visits'
+    }
 }

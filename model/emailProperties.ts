@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { DollarSignEmailEnum } from './dollarSignEmailEnum';
 import { ErrorMessages } from './errorMessages';
 export class EmailProperties {
     'displayDevice'?: Array<EmailProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
@@ -19,7 +18,7 @@ export class EmailProperties {
     'placeholder'?: string | null;
     'required'?: boolean | null = false;
     'errorMessages'?: ErrorMessages;
-    'propertyName'?: DollarSignEmailEnum | '$email';
+    'propertyName'?: EmailProperties.PropertyNameEnum | '$email' = EmailProperties.PropertyNameEnum.Email;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -56,7 +55,7 @@ export class EmailProperties {
         {
             "name": "propertyName",
             "baseName": "property_name",
-            "type": "DollarSignEmailEnum"
+            "type": "EmailProperties.PropertyNameEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -69,5 +68,8 @@ export namespace EmailProperties {
         Both = <any> 'both',
         Desktop = <any> 'desktop',
         Mobile = <any> 'mobile'
+    }
+    export enum PropertyNameEnum {
+        Email = <any> '$email'
     }
 }

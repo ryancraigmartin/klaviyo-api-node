@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { NumericEnum } from './numericEnum';
 export class NumericRangeFilter {
-    'type': NumericEnum | 'numeric';
+    'type': NumericRangeFilter.TypeEnum | 'numeric';
     /**
     * Operators for numeric range filters.
     */
@@ -25,7 +24,7 @@ export class NumericRangeFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "NumericEnum"
+            "type": "NumericRangeFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -49,6 +48,9 @@ export class NumericRangeFilter {
 }
 
 export namespace NumericRangeFilter {
+    export enum TypeEnum {
+        Numeric = <any> 'numeric'
+    }
     export enum OperatorEnum {
         Between = <any> 'between'
     }

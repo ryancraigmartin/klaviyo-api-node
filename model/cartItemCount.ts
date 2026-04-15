@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { CartItemCountEnum } from './cartItemCountEnum';
 import { CartItemCountProperties } from './cartItemCountProperties';
 export class CartItemCount {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': CartItemCountEnum | 'cart_item_count';
+    'type': CartItemCount.TypeEnum | 'cart_item_count';
     'properties'?: CartItemCountProperties;
 
 
@@ -30,7 +29,7 @@ export class CartItemCount {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CartItemCountEnum"
+            "type": "CartItemCount.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class CartItemCount {
 }
 
 export namespace CartItemCount {
+    export enum TypeEnum {
+        CartItemCount = <any> 'cart_item_count'
+    }
 }

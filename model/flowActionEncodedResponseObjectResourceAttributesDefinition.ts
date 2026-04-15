@@ -21,7 +21,6 @@ import { InternalServiceAction } from './internalServiceAction';
 import { Link } from './link';
 import { ListUpdateAction } from './listUpdateAction';
 import { ListUpdateActionData } from './listUpdateActionData';
-import { ListUpdateEnum } from './listUpdateEnum';
 import { MultiBranchSplitAction } from './multiBranchSplitAction';
 import { SendEmailAction } from './sendEmailAction';
 import { SendInternalAlertAction } from './sendInternalAlertAction';

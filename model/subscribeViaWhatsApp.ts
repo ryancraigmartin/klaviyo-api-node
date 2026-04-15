@@ -11,14 +11,13 @@
 
 import { RequestFile } from './models';
 import { SubscribeViaWhatsAppProperties } from './subscribeViaWhatsAppProperties';
-import { SubscribeViaWhatsappEnum } from './subscribeViaWhatsappEnum';
 export class SubscribeViaWhatsApp {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'submit'?: boolean = true;
-    'type': SubscribeViaWhatsappEnum | 'subscribe_via_whatsapp';
+    'type': SubscribeViaWhatsApp.TypeEnum | 'subscribe_via_whatsapp';
     'properties': SubscribeViaWhatsAppProperties;
 
 
@@ -36,7 +35,7 @@ export class SubscribeViaWhatsApp {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SubscribeViaWhatsappEnum"
+            "type": "SubscribeViaWhatsApp.TypeEnum"
         },
         {
             "name": "properties",
@@ -50,4 +49,7 @@ export class SubscribeViaWhatsApp {
 }
 
 export namespace SubscribeViaWhatsApp {
+    export enum TypeEnum {
+        SubscribeViaWhatsapp = <any> 'subscribe_via_whatsapp'
+    }
 }

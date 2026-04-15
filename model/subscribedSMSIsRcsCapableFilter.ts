@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { BooleanFilter } from './booleanFilter';
-import { IsRcsCapableEnum } from './isRcsCapableEnum';
 export class SubscribedSMSIsRcsCapableFilter {
-    'field': IsRcsCapableEnum | 'is_rcs_capable';
+    'field': SubscribedSMSIsRcsCapableFilter.FieldEnum | 'is_rcs_capable';
     'filter': BooleanFilter;
 
 
@@ -21,7 +20,7 @@ export class SubscribedSMSIsRcsCapableFilter {
         {
             "name": "field",
             "baseName": "field",
-            "type": "IsRcsCapableEnum"
+            "type": "SubscribedSMSIsRcsCapableFilter.FieldEnum"
         },
         {
             "name": "filter",
@@ -35,4 +34,7 @@ export class SubscribedSMSIsRcsCapableFilter {
 }
 
 export namespace SubscribedSMSIsRcsCapableFilter {
+    export enum FieldEnum {
+        IsRcsCapable = <any> 'is_rcs_capable'
+    }
 }

@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { TextEnum } from './textEnum';
 import { TextProperties } from './textProperties';
 import { TextStyles } from './textStyles';
 export class Text {
@@ -18,7 +17,7 @@ export class Text {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': TextEnum | 'text';
+    'type': Text.TypeEnum | 'text';
     'styles'?: TextStyles;
     'properties': TextProperties;
 
@@ -32,7 +31,7 @@ export class Text {
         {
             "name": "type",
             "baseName": "type",
-            "type": "TextEnum"
+            "type": "Text.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class Text {
 }
 
 export namespace Text {
+    export enum TypeEnum {
+        Text = <any> 'text'
+    }
 }

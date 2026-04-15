@@ -12,7 +12,6 @@
 import { RequestFile } from './models';
 import { AfterCloseTimeout } from './afterCloseTimeout';
 import { BackInStock } from './backInStock';
-import { BackInStockEnum } from './backInStockEnum';
 import { BackInStockProperties } from './backInStockProperties';
 import { CartItemCount } from './cartItemCount';
 import { CartProduct } from './cartProduct';

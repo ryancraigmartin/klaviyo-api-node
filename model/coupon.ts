@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { CouponEnum } from './couponEnum';
 import { CouponProperties } from './couponProperties';
 import { CouponStyles } from './couponStyles';
 export class Coupon {
@@ -18,7 +17,7 @@ export class Coupon {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': CouponEnum | 'coupon';
+    'type': Coupon.TypeEnum | 'coupon';
     'styles'?: CouponStyles;
     'properties': CouponProperties;
 
@@ -32,7 +31,7 @@ export class Coupon {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CouponEnum"
+            "type": "Coupon.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class Coupon {
 }
 
 export namespace Coupon {
+    export enum TypeEnum {
+        Coupon = <any> 'coupon'
+    }
 }

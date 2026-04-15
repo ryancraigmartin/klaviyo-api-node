@@ -12,10 +12,9 @@
 import { RequestFile } from './models';
 import { FlowsProfileMetricConditionTimeframeFilter } from './flowsProfileMetricConditionTimeframeFilter';
 import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
-import { ProfileMetricEnum } from './profileMetricEnum';
 import { ProfileMetricPropertyFilter } from './profileMetricPropertyFilter';
 export class FlowsProfileMetricCondition {
-    'type': ProfileMetricEnum | 'profile-metric';
+    'type': FlowsProfileMetricCondition.TypeEnum | 'profile-metric';
     'metricId': string;
     /**
     * Measurements for profile metrics.
@@ -30,7 +29,7 @@ export class FlowsProfileMetricCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileMetricEnum"
+            "type": "FlowsProfileMetricCondition.TypeEnum"
         },
         {
             "name": "metricId",
@@ -64,6 +63,9 @@ export class FlowsProfileMetricCondition {
 }
 
 export namespace FlowsProfileMetricCondition {
+    export enum TypeEnum {
+        ProfileMetric = <any> 'profile-metric'
+    }
     export enum MeasurementEnum {
         Count = <any> 'count',
         Sum = <any> 'sum'

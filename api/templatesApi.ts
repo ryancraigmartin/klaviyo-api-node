@@ -16,18 +16,19 @@ import FormData from 'form-data'
 
 /* tslint:disable:no-unused-locals */
 import { GetAccounts4XXResponse } from '../model/getAccounts4XXResponse';
-import { GetTemplateResponse } from '../model/getTemplateResponse';
-import { GetTemplateResponseCollection } from '../model/getTemplateResponseCollection';
+import { GetTemplateDndResponse } from '../model/getTemplateDndResponse';
+import { GetTemplateDndResponseCollection } from '../model/getTemplateDndResponseCollection';
 import { GetUniversalContentResponse } from '../model/getUniversalContentResponse';
 import { GetUniversalContentResponseCollection } from '../model/getUniversalContentResponseCollection';
-import { PatchTemplateResponse } from '../model/patchTemplateResponse';
+import { PatchTemplateDndResponse } from '../model/patchTemplateDndResponse';
 import { PatchUniversalContentResponse } from '../model/patchUniversalContentResponse';
+import { PostTemplateDndResponse } from '../model/postTemplateDndResponse';
 import { PostTemplateResponse } from '../model/postTemplateResponse';
 import { PostUniversalContentResponse } from '../model/postUniversalContentResponse';
 import { TemplateCloneQuery } from '../model/templateCloneQuery';
-import { TemplateCreateQuery } from '../model/templateCreateQuery';
+import { TemplateCreateHtmlOrDndQuery } from '../model/templateCreateHtmlOrDndQuery';
 import { TemplateRenderQuery } from '../model/templateRenderQuery';
-import { TemplateUpdateQuery } from '../model/templateUpdateQuery';
+import { TemplateUpdateHtmlOrDndQuery } from '../model/templateUpdateHtmlOrDndQuery';
 import { UniversalContentCreateQuery } from '../model/universalContentCreateQuery';
 import { UniversalContentPartialUpdateQuery } from '../model/universalContentPartialUpdateQuery';
 
@@ -128,12 +129,12 @@ export class TemplatesApi {
         return request(config)
     }
     /**
-     * Create a new custom HTML template.  If there are 1,000 or more templates in an account, creation will fail as there is a limit of 1,000 templates that can be created via the API.  Request specific fields using [sparse fieldsets](https://developers.klaviyo.com/en/reference/api_overview#sparse-fieldsets).<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:write`
+     * Create a new HTML or drag-and-drop template.  If there are 1,000 or more templates in an account, creation will fail as there is a limit of 1,000 templates that can be created via the API.  Request specific fields using [sparse fieldsets](https://developers.klaviyo.com/en/reference/api_overview#sparse-fieldsets).<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:write`
      * @summary Create Template
-     * @param templateCreateQuery 
-     
+     * @param templateCreateHtmlOrDndQuery 
+     * @param additionalFieldsTemplate Request additional fields not included by default in the response. Supported values: \&#39;definition\&#39;
      */
-    public async createTemplate (templateCreateQuery: TemplateCreateQuery, ): Promise<{ response: AxiosResponse; body: PostTemplateResponse;  }> {
+    public async createTemplate (templateCreateHtmlOrDndQuery: TemplateCreateHtmlOrDndQuery, options: { additionalFieldsTemplate?: Array<'definition'>,  } = {}): Promise<{ response: AxiosResponse; body: PostTemplateDndResponse;  }> {
 
         const localVarPath = this.basePath + '/api/templates';
         let localVarQueryParameters: any = {};
@@ -146,9 +147,13 @@ export class TemplatesApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
 
-        // verify required parameter 'templateCreateQuery' is not null or undefined
-        if (templateCreateQuery === null || templateCreateQuery === undefined) {
-            throw new Error('Required parameter templateCreateQuery was null or undefined when calling createTemplate.');
+        // verify required parameter 'templateCreateHtmlOrDndQuery' is not null or undefined
+        if (templateCreateHtmlOrDndQuery === null || templateCreateHtmlOrDndQuery === undefined) {
+            throw new Error('Required parameter templateCreateHtmlOrDndQuery was null or undefined when calling createTemplate.');
+        }
+
+        if (options.additionalFieldsTemplate !== undefined) {
+            localVarQueryParameters['additional-fields[template]'] = ObjectSerializer.serialize(options.additionalFieldsTemplate, "Array<'definition'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -158,16 +163,16 @@ export class TemplatesApi {
             url: localVarPath,
             headers: localVarHeaderParams,
             params: localVarQueryParameters,
-            data: ObjectSerializer.serialize(templateCreateQuery, "TemplateCreateQuery")
+            data: ObjectSerializer.serialize(templateCreateHtmlOrDndQuery, "TemplateCreateHtmlOrDndQuery")
         }
 
         await this.session.applyToRequest(config)
 
-        const request = async (config: AxiosRequestConfig, retried = false): Promise<{ response: AxiosResponse; body: PostTemplateResponse;  }> => {
+        const request = async (config: AxiosRequestConfig, retried = false): Promise<{ response: AxiosResponse; body: PostTemplateDndResponse;  }> => {
             try {
                 const axiosResponse = await this.session.requestWithRetry(config)
                 let body;
-                body = ObjectSerializer.deserialize(axiosResponse.data, "PostTemplateResponse");
+                body = ObjectSerializer.deserialize(axiosResponse.data, "PostTemplateDndResponse");
                 return ({response: axiosResponse, body: body});
             } catch (error) {
                 if (await this.session.refreshAndRetry(error, retried)) {
@@ -341,7 +346,7 @@ export class TemplatesApi {
      * Get all universal content in an account.<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:read`
      * @summary Get All Universal Content
      
-     * @param fieldsTemplateUniversalContent For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;id&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;name&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;created&#x60;: &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;&lt;br&gt;&#x60;updated&#x60;: &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;&lt;br&gt;&#x60;definition.content_type&#x60;: &#x60;equals&#x60;&lt;br&gt;&#x60;definition.type&#x60;: &#x60;equals&#x60;* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#pagination* @param pageSize Default: 20. Min: 1. Max: 100.* @param sort For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sorting
+     * @param fieldsTemplateUniversalContent For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;id&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;name&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;created&#x60;: &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;&lt;br&gt;&#x60;updated&#x60;: &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;&lt;br&gt;&#x60;definition.content_type&#x60;: &#x60;equals&#x60;&lt;br&gt;&#x60;definition.type&#x60;: &#x60;equals&#x60;* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#pagination* @param pageSize Default: 20. Min: 1. Max: 100.* @param sort For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#sorting
      */
     public async getAllUniversalContent (options: { fieldsTemplateUniversalContent?: Array<'created' | 'definition' | 'definition.content_type' | 'definition.data' | 'definition.data.content' | 'definition.data.display_options' | 'definition.data.display_options.content_repeat' | 'definition.data.display_options.content_repeat.item_alias' | 'definition.data.display_options.content_repeat.repeat_for' | 'definition.data.display_options.show_on' | 'definition.data.display_options.visible_check' | 'definition.data.styles' | 'definition.data.styles.background_color' | 'definition.data.styles.block_background_color' | 'definition.data.styles.block_border_color' | 'definition.data.styles.block_border_style' | 'definition.data.styles.block_border_width' | 'definition.data.styles.block_padding_bottom' | 'definition.data.styles.block_padding_left' | 'definition.data.styles.block_padding_right' | 'definition.data.styles.block_padding_top' | 'definition.data.styles.color' | 'definition.data.styles.extra_css_class' | 'definition.data.styles.font_family' | 'definition.data.styles.font_size' | 'definition.data.styles.font_style' | 'definition.data.styles.font_weight' | 'definition.data.styles.inner_padding_bottom' | 'definition.data.styles.inner_padding_left' | 'definition.data.styles.inner_padding_right' | 'definition.data.styles.inner_padding_top' | 'definition.data.styles.letter_spacing' | 'definition.data.styles.line_height' | 'definition.data.styles.mobile_stretch_content' | 'definition.data.styles.text_align' | 'definition.data.styles.text_decoration' | 'definition.data.styles.text_table_layout' | 'definition.type' | 'name' | 'screenshot_status' | 'screenshot_url' | 'updated'>, filter?: string, pageCursor?: string, pageSize?: number, sort?: 'created' | '-created' | 'id' | '-id' | 'name' | '-name' | 'updated' | '-updated',  } = {}): Promise<{ response: AxiosResponse; body: GetUniversalContentResponseCollection;  }> {
 
@@ -408,9 +413,9 @@ export class TemplatesApi {
      * Get a template with the given template ID.<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:read`
      * @summary Get Template
      * @param id The ID of template
-     * @param fieldsTemplate For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
+     * @param additionalFieldsTemplate Request additional fields not included by default in the response. Supported values: \&#39;definition\&#39;* @param fieldsTemplate For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#sparse-fieldsets
      */
-    public async getTemplate (id: string, options: { fieldsTemplate?: Array<'amp' | 'created' | 'editor_type' | 'html' | 'name' | 'text' | 'updated'>,  } = {}): Promise<{ response: AxiosResponse; body: GetTemplateResponse;  }> {
+    public async getTemplate (id: string, options: { additionalFieldsTemplate?: Array<'definition'>, fieldsTemplate?: Array<'amp' | 'created' | 'definition' | 'definition.body' | 'definition.body.id' | 'definition.body.properties' | 'definition.body.properties.css_class' | 'definition.body.properties.id' | 'definition.body.sections' | 'definition.body.styles' | 'definition.body.styles.background_color' | 'definition.body.styles.width' | 'definition.id' | 'definition.styles' | 'definition.template_id' | 'editor_type' | 'html' | 'name' | 'text' | 'updated'>,  } = {}): Promise<{ response: AxiosResponse; body: GetTemplateDndResponse;  }> {
 
         const localVarPath = this.basePath + '/api/templates/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -429,8 +434,12 @@ export class TemplatesApi {
             throw new Error('Required parameter id was null or undefined when calling getTemplate.');
         }
 
+        if (options.additionalFieldsTemplate !== undefined) {
+            localVarQueryParameters['additional-fields[template]'] = ObjectSerializer.serialize(options.additionalFieldsTemplate, "Array<'definition'>");
+        }
+
         if (options.fieldsTemplate !== undefined) {
-            localVarQueryParameters['fields[template]'] = ObjectSerializer.serialize(options.fieldsTemplate, "Array<'amp' | 'created' | 'editor_type' | 'html' | 'name' | 'text' | 'updated'>");
+            localVarQueryParameters['fields[template]'] = ObjectSerializer.serialize(options.fieldsTemplate, "Array<'amp' | 'created' | 'definition' | 'definition.body' | 'definition.body.id' | 'definition.body.properties' | 'definition.body.properties.css_class' | 'definition.body.properties.id' | 'definition.body.sections' | 'definition.body.styles' | 'definition.body.styles.background_color' | 'definition.body.styles.width' | 'definition.id' | 'definition.styles' | 'definition.template_id' | 'editor_type' | 'html' | 'name' | 'text' | 'updated'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -444,11 +453,11 @@ export class TemplatesApi {
 
         await this.session.applyToRequest(config)
 
-        const request = async (config: AxiosRequestConfig, retried = false): Promise<{ response: AxiosResponse; body: GetTemplateResponse;  }> => {
+        const request = async (config: AxiosRequestConfig, retried = false): Promise<{ response: AxiosResponse; body: GetTemplateDndResponse;  }> => {
             try {
                 const axiosResponse = await this.session.requestWithRetry(config)
                 let body;
-                body = ObjectSerializer.deserialize(axiosResponse.data, "GetTemplateResponse");
+                body = ObjectSerializer.deserialize(axiosResponse.data, "GetTemplateDndResponse");
                 return ({response: axiosResponse, body: body});
             } catch (error) {
                 if (await this.session.refreshAndRetry(error, retried)) {
@@ -462,12 +471,12 @@ export class TemplatesApi {
         return request(config)
     }
     /**
-     * Get all templates in an account.  Filter to request a subset of all templates. Templates can be sorted by the following fields, in ascending and descending order: `id`, `name`, `created`, `updated`  Returns a maximum of 10 results per page.<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:read`
+     * Get all templates in an account.  Use `additional-fields[template]=definition` to include the full template definition for SYSTEM_DRAGGABLE templates.<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:read`
      * @summary Get Templates
      
-     * @param fieldsTemplate For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;id&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;name&#x60;: &#x60;any&#x60;, &#x60;contains&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;created&#x60;: &#x60;equals&#x60;, &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;&lt;br&gt;&#x60;updated&#x60;: &#x60;equals&#x60;, &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#pagination* @param sort For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sorting
+     * @param additionalFieldsTemplate Request additional fields not included by default in the response. Supported values: \&#39;definition\&#39;* @param fieldsTemplate For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#sparse-fieldsets* @param filter For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#filtering&lt;br&gt;Allowed field(s)/operator(s):&lt;br&gt;&#x60;id&#x60;: &#x60;any&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;name&#x60;: &#x60;any&#x60;, &#x60;contains&#x60;, &#x60;equals&#x60;&lt;br&gt;&#x60;created&#x60;: &#x60;equals&#x60;, &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;&lt;br&gt;&#x60;updated&#x60;: &#x60;equals&#x60;, &#x60;greater-or-equal&#x60;, &#x60;greater-than&#x60;, &#x60;less-or-equal&#x60;, &#x60;less-than&#x60;* @param pageCursor For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#pagination* @param sort For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#sorting
      */
-    public async getTemplates (options: { fieldsTemplate?: Array<'amp' | 'created' | 'editor_type' | 'html' | 'name' | 'text' | 'updated'>, filter?: string, pageCursor?: string, sort?: 'created' | '-created' | 'id' | '-id' | 'name' | '-name' | 'updated' | '-updated',  } = {}): Promise<{ response: AxiosResponse; body: GetTemplateResponseCollection;  }> {
+    public async getTemplates (options: { additionalFieldsTemplate?: Array<'definition'>, fieldsTemplate?: Array<'amp' | 'created' | 'definition' | 'definition.body' | 'definition.body.id' | 'definition.body.properties' | 'definition.body.properties.css_class' | 'definition.body.properties.id' | 'definition.body.sections' | 'definition.body.styles' | 'definition.body.styles.background_color' | 'definition.body.styles.width' | 'definition.id' | 'definition.styles' | 'definition.template_id' | 'editor_type' | 'html' | 'name' | 'text' | 'updated'>, filter?: string, pageCursor?: string, sort?: 'created' | '-created' | 'id' | '-id' | 'name' | '-name' | 'updated' | '-updated',  } = {}): Promise<{ response: AxiosResponse; body: GetTemplateDndResponseCollection;  }> {
 
         const localVarPath = this.basePath + '/api/templates';
         let localVarQueryParameters: any = {};
@@ -480,8 +489,12 @@ export class TemplatesApi {
             localVarHeaderParams.Accept = produces.join(',');
         }
 
+        if (options.additionalFieldsTemplate !== undefined) {
+            localVarQueryParameters['additional-fields[template]'] = ObjectSerializer.serialize(options.additionalFieldsTemplate, "Array<'definition'>");
+        }
+
         if (options.fieldsTemplate !== undefined) {
-            localVarQueryParameters['fields[template]'] = ObjectSerializer.serialize(options.fieldsTemplate, "Array<'amp' | 'created' | 'editor_type' | 'html' | 'name' | 'text' | 'updated'>");
+            localVarQueryParameters['fields[template]'] = ObjectSerializer.serialize(options.fieldsTemplate, "Array<'amp' | 'created' | 'definition' | 'definition.body' | 'definition.body.id' | 'definition.body.properties' | 'definition.body.properties.css_class' | 'definition.body.properties.id' | 'definition.body.sections' | 'definition.body.styles' | 'definition.body.styles.background_color' | 'definition.body.styles.width' | 'definition.id' | 'definition.styles' | 'definition.template_id' | 'editor_type' | 'html' | 'name' | 'text' | 'updated'>");
         }
 
         if (options.filter !== undefined) {
@@ -507,11 +520,11 @@ export class TemplatesApi {
 
         await this.session.applyToRequest(config)
 
-        const request = async (config: AxiosRequestConfig, retried = false): Promise<{ response: AxiosResponse; body: GetTemplateResponseCollection;  }> => {
+        const request = async (config: AxiosRequestConfig, retried = false): Promise<{ response: AxiosResponse; body: GetTemplateDndResponseCollection;  }> => {
             try {
                 const axiosResponse = await this.session.requestWithRetry(config)
                 let body;
-                body = ObjectSerializer.deserialize(axiosResponse.data, "GetTemplateResponseCollection");
+                body = ObjectSerializer.deserialize(axiosResponse.data, "GetTemplateDndResponseCollection");
                 return ({response: axiosResponse, body: body});
             } catch (error) {
                 if (await this.session.refreshAndRetry(error, retried)) {
@@ -528,7 +541,7 @@ export class TemplatesApi {
      * Get the universal content with the given ID.<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:read`
      * @summary Get Universal Content
      * @param id The ID of the universal content
-     * @param fieldsTemplateUniversalContent For more information please visit https://developers.klaviyo.com/en/v2026-01-15/reference/api-overview#sparse-fieldsets
+     * @param fieldsTemplateUniversalContent For more information please visit https://developers.klaviyo.com/en/v2026-04-15/reference/api-overview#sparse-fieldsets
      */
     public async getUniversalContent (id: string, options: { fieldsTemplateUniversalContent?: Array<'created' | 'definition' | 'definition.content_type' | 'definition.data' | 'definition.data.content' | 'definition.data.display_options' | 'definition.data.display_options.content_repeat' | 'definition.data.display_options.content_repeat.item_alias' | 'definition.data.display_options.content_repeat.repeat_for' | 'definition.data.display_options.show_on' | 'definition.data.display_options.visible_check' | 'definition.data.styles' | 'definition.data.styles.background_color' | 'definition.data.styles.block_background_color' | 'definition.data.styles.block_border_color' | 'definition.data.styles.block_border_style' | 'definition.data.styles.block_border_width' | 'definition.data.styles.block_padding_bottom' | 'definition.data.styles.block_padding_left' | 'definition.data.styles.block_padding_right' | 'definition.data.styles.block_padding_top' | 'definition.data.styles.color' | 'definition.data.styles.extra_css_class' | 'definition.data.styles.font_family' | 'definition.data.styles.font_size' | 'definition.data.styles.font_style' | 'definition.data.styles.font_weight' | 'definition.data.styles.inner_padding_bottom' | 'definition.data.styles.inner_padding_left' | 'definition.data.styles.inner_padding_right' | 'definition.data.styles.inner_padding_top' | 'definition.data.styles.letter_spacing' | 'definition.data.styles.line_height' | 'definition.data.styles.mobile_stretch_content' | 'definition.data.styles.text_align' | 'definition.data.styles.text_decoration' | 'definition.data.styles.text_table_layout' | 'definition.type' | 'name' | 'screenshot_status' | 'screenshot_url' | 'updated'>,  } = {}): Promise<{ response: AxiosResponse; body: GetUniversalContentResponse;  }> {
 
@@ -635,12 +648,12 @@ export class TemplatesApi {
         return request(config)
     }
     /**
-     * Update a template with the given template ID. Does not currently update drag & drop templates.<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:write`
+     * Update a template with the given template ID.<br><br>*Rate limits*:<br>Burst: `75/s`<br>Steady: `750/m`  **Scopes:** `templates:write`
      * @summary Update Template
-     * @param id The ID of template* @param templateUpdateQuery 
-     
+     * @param id The ID of template* @param templateUpdateHtmlOrDndQuery 
+     * @param additionalFieldsTemplate Request additional fields not included by default in the response. Supported values: \&#39;definition\&#39;
      */
-    public async updateTemplate (id: string, templateUpdateQuery: TemplateUpdateQuery, ): Promise<{ response: AxiosResponse; body: PatchTemplateResponse;  }> {
+    public async updateTemplate (id: string, templateUpdateHtmlOrDndQuery: TemplateUpdateHtmlOrDndQuery, options: { additionalFieldsTemplate?: Array<'definition'>,  } = {}): Promise<{ response: AxiosResponse; body: PatchTemplateDndResponse;  }> {
 
         const localVarPath = this.basePath + '/api/templates/{id}'
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
@@ -659,9 +672,13 @@ export class TemplatesApi {
             throw new Error('Required parameter id was null or undefined when calling updateTemplate.');
         }
 
-        // verify required parameter 'templateUpdateQuery' is not null or undefined
-        if (templateUpdateQuery === null || templateUpdateQuery === undefined) {
-            throw new Error('Required parameter templateUpdateQuery was null or undefined when calling updateTemplate.');
+        // verify required parameter 'templateUpdateHtmlOrDndQuery' is not null or undefined
+        if (templateUpdateHtmlOrDndQuery === null || templateUpdateHtmlOrDndQuery === undefined) {
+            throw new Error('Required parameter templateUpdateHtmlOrDndQuery was null or undefined when calling updateTemplate.');
+        }
+
+        if (options.additionalFieldsTemplate !== undefined) {
+            localVarQueryParameters['additional-fields[template]'] = ObjectSerializer.serialize(options.additionalFieldsTemplate, "Array<'definition'>");
         }
 
         queryParamPreProcessor(localVarQueryParameters)
@@ -671,16 +688,16 @@ export class TemplatesApi {
             url: localVarPath,
             headers: localVarHeaderParams,
             params: localVarQueryParameters,
-            data: ObjectSerializer.serialize(templateUpdateQuery, "TemplateUpdateQuery")
+            data: ObjectSerializer.serialize(templateUpdateHtmlOrDndQuery, "TemplateUpdateHtmlOrDndQuery")
         }
 
         await this.session.applyToRequest(config)
 
-        const request = async (config: AxiosRequestConfig, retried = false): Promise<{ response: AxiosResponse; body: PatchTemplateResponse;  }> => {
+        const request = async (config: AxiosRequestConfig, retried = false): Promise<{ response: AxiosResponse; body: PatchTemplateDndResponse;  }> => {
             try {
                 const axiosResponse = await this.session.requestWithRetry(config)
                 let body;
-                body = ObjectSerializer.deserialize(axiosResponse.data, "PatchTemplateResponse");
+                body = ObjectSerializer.deserialize(axiosResponse.data, "PatchTemplateDndResponse");
                 return ({response: axiosResponse, body: body});
             } catch (error) {
                 if (await this.session.refreshAndRetry(error, retried)) {

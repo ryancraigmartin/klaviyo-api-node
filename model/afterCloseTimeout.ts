@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { AfterCloseOrSubmitTimeoutEnum } from './afterCloseOrSubmitTimeoutEnum';
 import { AfterCloseTimeoutProperties } from './afterCloseTimeoutProperties';
 export class AfterCloseTimeout {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': AfterCloseOrSubmitTimeoutEnum | 'after_close_or_submit_timeout';
+    'type': AfterCloseTimeout.TypeEnum | 'after_close_or_submit_timeout';
     'properties'?: AfterCloseTimeoutProperties;
 
 
@@ -30,7 +29,7 @@ export class AfterCloseTimeout {
         {
             "name": "type",
             "baseName": "type",
-            "type": "AfterCloseOrSubmitTimeoutEnum"
+            "type": "AfterCloseTimeout.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class AfterCloseTimeout {
 }
 
 export namespace AfterCloseTimeout {
+    export enum TypeEnum {
+        AfterCloseOrSubmitTimeout = <any> 'after_close_or_submit_timeout'
+    }
 }

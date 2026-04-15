@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { ExistenceEnum } from './existenceEnum';
 export class ExistenceOperatorExistenceFilter {
-    'type': ExistenceEnum | 'existence';
+    'type': ExistenceOperatorExistenceFilter.TypeEnum | 'existence';
     /**
     * Operators for existence filters.
     */
@@ -23,7 +22,7 @@ export class ExistenceOperatorExistenceFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ExistenceEnum"
+            "type": "ExistenceOperatorExistenceFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -37,6 +36,9 @@ export class ExistenceOperatorExistenceFilter {
 }
 
 export namespace ExistenceOperatorExistenceFilter {
+    export enum TypeEnum {
+        Existence = <any> 'existence'
+    }
     export enum OperatorEnum {
         IsSet = <any> 'is-set',
         NotSet = <any> 'not-set'

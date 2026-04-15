@@ -10,16 +10,15 @@
  */
 
 import { RequestFile } from './models';
-import { UnknownEnum } from './unknownEnum';
 export class InternalUnknownServiceData {
-    'serviceMethodType': UnknownEnum | 'unknown';
+    'serviceMethodType': InternalUnknownServiceData.ServiceMethodTypeEnum | 'unknown';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "serviceMethodType",
             "baseName": "service_method_type",
-            "type": "UnknownEnum"
+            "type": "InternalUnknownServiceData.ServiceMethodTypeEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -28,4 +27,7 @@ export class InternalUnknownServiceData {
 }
 
 export namespace InternalUnknownServiceData {
+    export enum ServiceMethodTypeEnum {
+        Unknown = <any> 'unknown'
+    }
 }

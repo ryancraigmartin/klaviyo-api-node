@@ -10,9 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { TextStyle } from './textStyle';
+import { TextStyleV0 } from './textStyleV0';
 export class InputStyles {
-    'textStyles'?: TextStyle;
+    'textStyles'?: TextStyleV0;
     'labelColor'?: string = '#303B43';
     'textColor'?: string = '#000000';
     'placeholderColor'?: string = '#949596';
@@ -28,7 +28,7 @@ export class InputStyles {
         {
             "name": "textStyles",
             "baseName": "text_styles",
-            "type": "TextStyle"
+            "type": "TextStyleV0"
         },
         {
             "name": "labelColor",

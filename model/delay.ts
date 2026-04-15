@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { DelayEnum } from './delayEnum';
 import { DelayProperties } from './delayProperties';
 export class Delay {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': DelayEnum | 'delay';
+    'type': Delay.TypeEnum | 'delay';
     'properties'?: DelayProperties;
 
 
@@ -30,7 +29,7 @@ export class Delay {
         {
             "name": "type",
             "baseName": "type",
-            "type": "DelayEnum"
+            "type": "Delay.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class Delay {
 }
 
 export namespace Delay {
+    export enum TypeEnum {
+        Delay = <any> 'delay'
+    }
 }

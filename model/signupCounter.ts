@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { SignupCounterEnum } from './signupCounterEnum';
 import { SignupCounterProperties } from './signupCounterProperties';
 import { SignupCounterStyles } from './signupCounterStyles';
 export class SignupCounter {
@@ -18,7 +17,7 @@ export class SignupCounter {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': SignupCounterEnum | 'signup_counter';
+    'type': SignupCounter.TypeEnum | 'signup_counter';
     'styles'?: SignupCounterStyles;
     'properties': SignupCounterProperties;
 
@@ -32,7 +31,7 @@ export class SignupCounter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SignupCounterEnum"
+            "type": "SignupCounter.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class SignupCounter {
 }
 
 export namespace SignupCounter {
+    export enum TypeEnum {
+        SignupCounter = <any> 'signup_counter'
+    }
 }

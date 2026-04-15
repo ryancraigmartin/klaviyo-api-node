@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { DropdownEnum } from './dropdownEnum';
 import { DropdownProperties } from './dropdownProperties';
 import { DropdownStyles } from './dropdownStyles';
 export class Dropdown {
@@ -18,7 +17,7 @@ export class Dropdown {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': DropdownEnum | 'dropdown';
+    'type': Dropdown.TypeEnum | 'dropdown';
     'styles'?: DropdownStyles;
     'properties': DropdownProperties;
 
@@ -32,7 +31,7 @@ export class Dropdown {
         {
             "name": "type",
             "baseName": "type",
-            "type": "DropdownEnum"
+            "type": "Dropdown.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class Dropdown {
 }
 
 export namespace Dropdown {
+    export enum TypeEnum {
+        Dropdown = <any> 'dropdown'
+    }
 }

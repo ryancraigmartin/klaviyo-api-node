@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { ProfileHasNotReceivedPushMessageConditionTimeframeFilter } from './profileHasNotReceivedPushMessageConditionTimeframeFilter';
-import { ProfileNotSentPushEnum } from './profileNotSentPushEnum';
 export class ProfileHasNotReceivedPushMessageCondition {
-    'type': ProfileNotSentPushEnum | 'profile-not-sent-push';
+    'type': ProfileHasNotReceivedPushMessageCondition.TypeEnum | 'profile-not-sent-push';
     'timeframeFilter': ProfileHasNotReceivedPushMessageConditionTimeframeFilter;
 
 
@@ -21,7 +20,7 @@ export class ProfileHasNotReceivedPushMessageCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileNotSentPushEnum"
+            "type": "ProfileHasNotReceivedPushMessageCondition.TypeEnum"
         },
         {
             "name": "timeframeFilter",
@@ -35,4 +34,7 @@ export class ProfileHasNotReceivedPushMessageCondition {
 }
 
 export namespace ProfileHasNotReceivedPushMessageCondition {
+    export enum TypeEnum {
+        ProfileNotSentPush = <any> 'profile-not-sent-push'
+    }
 }

@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { StringEnum } from './stringEnum';
 export class StringPhoneOperatorStringArrayFilter {
-    'type': StringEnum | 'string';
+    'type': StringPhoneOperatorStringArrayFilter.TypeEnum | 'string';
     /**
     * Operators for phone string array filters.  Example condition using this filter:         {
     */
@@ -24,7 +23,7 @@ export class StringPhoneOperatorStringArrayFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "StringEnum"
+            "type": "StringPhoneOperatorStringArrayFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -43,6 +42,9 @@ export class StringPhoneOperatorStringArrayFilter {
 }
 
 export namespace StringPhoneOperatorStringArrayFilter {
+    export enum TypeEnum {
+        String = <any> 'string'
+    }
     export enum OperatorEnum {
         In = <any> 'phone-country-code-in',
         NotIn = <any> 'phone-country-code-not-in'

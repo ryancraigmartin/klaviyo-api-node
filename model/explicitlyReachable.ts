@@ -10,10 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { ExplicitlyReachableEnum } from './explicitlyReachableEnum';
 import { ExplicitlyReachableFiltersInner } from './explicitlyReachableFiltersInner';
 export class ExplicitlyReachable {
-    'reachableStatus': ExplicitlyReachableEnum | 'explicitly_reachable';
+    'reachableStatus': ExplicitlyReachable.ReachableStatusEnum | 'explicitly_reachable';
     'filters': Array<ExplicitlyReachableFiltersInner>;
 
 
@@ -21,7 +20,7 @@ export class ExplicitlyReachable {
         {
             "name": "reachableStatus",
             "baseName": "reachable_status",
-            "type": "ExplicitlyReachableEnum"
+            "type": "ExplicitlyReachable.ReachableStatusEnum"
         },
         {
             "name": "filters",
@@ -35,4 +34,7 @@ export class ExplicitlyReachable {
 }
 
 export namespace ExplicitlyReachable {
+    export enum ReachableStatusEnum {
+        ExplicitlyReachable = <any> 'explicitly_reachable'
+    }
 }

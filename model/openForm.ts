@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { OpenFormEnum } from './openFormEnum';
 import { OpenFormProperties } from './openFormProperties';
 export class OpenForm {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': OpenFormEnum | 'open_form';
+    'type': OpenForm.TypeEnum | 'open_form';
     'submit'?: boolean = true;
     'properties': OpenFormProperties;
 
@@ -31,7 +30,7 @@ export class OpenForm {
         {
             "name": "type",
             "baseName": "type",
-            "type": "OpenFormEnum"
+            "type": "OpenForm.TypeEnum"
         },
         {
             "name": "submit",
@@ -50,4 +49,7 @@ export class OpenForm {
 }
 
 export namespace OpenForm {
+    export enum TypeEnum {
+        OpenForm = <any> 'open_form'
+    }
 }

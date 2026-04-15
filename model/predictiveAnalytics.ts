@@ -50,7 +50,7 @@ export class PredictiveAnalytics {
     /**
     * List of channels ranked by their predicted effectiveness for this profile, with the best channel being listed first at index 0
     */
-    'rankedChannelAffinity'?: Array<PredictiveAnalytics.RankedChannelAffinityEnum> | Array<'email' | 'push' | 'sms'> | null;
+    'rankedChannelAffinity'?: Array<PredictiveAnalytics.RankedChannelAffinityEnum> | Array<'email' | 'push' | 'sms' | 'whatsapp'> | null;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -114,6 +114,7 @@ export namespace PredictiveAnalytics {
     export enum RankedChannelAffinityEnum {
         Email = <any> 'email',
         Push = <any> 'push',
-        Sms = <any> 'sms'
+        Sms = <any> 'sms',
+        Whatsapp = <any> 'whatsapp'
     }
 }

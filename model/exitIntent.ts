@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { ExitIntentEnum } from './exitIntentEnum';
 export class ExitIntent {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'properties'?: object;
-    'type': ExitIntentEnum | 'exit_intent';
+    'type': ExitIntent.TypeEnum | 'exit_intent';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -34,7 +33,7 @@ export class ExitIntent {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ExitIntentEnum"
+            "type": "ExitIntent.TypeEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -43,4 +42,7 @@ export class ExitIntent {
 }
 
 export namespace ExitIntent {
+    export enum TypeEnum {
+        ExitIntent = <any> 'exit_intent'
+    }
 }

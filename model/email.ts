@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { EmailEnum } from './emailEnum';
 import { EmailProperties } from './emailProperties';
 import { EmailStyles } from './emailStyles';
 export class Email {
@@ -18,7 +17,7 @@ export class Email {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': EmailEnum | 'email';
+    'type': Email.TypeEnum | 'email';
     'styles'?: EmailStyles;
     'properties': EmailProperties;
 
@@ -32,7 +31,7 @@ export class Email {
         {
             "name": "type",
             "baseName": "type",
-            "type": "EmailEnum"
+            "type": "Email.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class Email {
 }
 
 export namespace Email {
+    export enum TypeEnum {
+        Email = <any> 'email'
+    }
 }

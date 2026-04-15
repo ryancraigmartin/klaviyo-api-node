@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { StringEnum } from './stringEnum';
 export class StringArrayOperatorStringArrayFilter {
-    'type': StringEnum | 'string';
+    'type': StringArrayOperatorStringArrayFilter.TypeEnum | 'string';
     /**
     * Operators for string-in-array filters.
     */
@@ -24,7 +23,7 @@ export class StringArrayOperatorStringArrayFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "StringEnum"
+            "type": "StringArrayOperatorStringArrayFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -43,6 +42,9 @@ export class StringArrayOperatorStringArrayFilter {
 }
 
 export namespace StringArrayOperatorStringArrayFilter {
+    export enum TypeEnum {
+        String = <any> 'string'
+    }
     export enum OperatorEnum {
         In = <any> 'in',
         NotIn = <any> 'not-in'

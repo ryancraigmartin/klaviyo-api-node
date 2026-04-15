@@ -11,15 +11,13 @@
 
 import { RequestFile } from './models';
 import { ProfilePredictiveAnalyticsChannelAffinityRankFilter } from './profilePredictiveAnalyticsChannelAffinityRankFilter';
-import { ProfilePredictiveAnalyticsEnum } from './profilePredictiveAnalyticsEnum';
-import { RankEnum } from './rankEnum';
 export class ProfilePredictiveAnalyticsChannelAffinityRankCondition {
-    'type': ProfilePredictiveAnalyticsEnum | 'profile-predictive-analytics';
+    'type': ProfilePredictiveAnalyticsChannelAffinityRankCondition.TypeEnum | 'profile-predictive-analytics';
     /**
     * Possible dimension for channel affinity criterion.
     */
     'dimension': ProfilePredictiveAnalyticsChannelAffinityRankCondition.DimensionEnum | 'channel_affinity';
-    'measurement': RankEnum | 'rank';
+    'measurement': ProfilePredictiveAnalyticsChannelAffinityRankCondition.MeasurementEnum | 'rank';
     /**
     * Possible channels in a channel affinity definition.
     */
@@ -31,7 +29,7 @@ export class ProfilePredictiveAnalyticsChannelAffinityRankCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfilePredictiveAnalyticsEnum"
+            "type": "ProfilePredictiveAnalyticsChannelAffinityRankCondition.TypeEnum"
         },
         {
             "name": "dimension",
@@ -41,7 +39,7 @@ export class ProfilePredictiveAnalyticsChannelAffinityRankCondition {
         {
             "name": "measurement",
             "baseName": "measurement",
-            "type": "RankEnum"
+            "type": "ProfilePredictiveAnalyticsChannelAffinityRankCondition.MeasurementEnum"
         },
         {
             "name": "predictedChannel",
@@ -60,8 +58,14 @@ export class ProfilePredictiveAnalyticsChannelAffinityRankCondition {
 }
 
 export namespace ProfilePredictiveAnalyticsChannelAffinityRankCondition {
+    export enum TypeEnum {
+        ProfilePredictiveAnalytics = <any> 'profile-predictive-analytics'
+    }
     export enum DimensionEnum {
         ChannelAffinity = <any> 'channel_affinity'
+    }
+    export enum MeasurementEnum {
+        Rank = <any> 'rank'
     }
     export enum PredictedChannelEnum {
         Email = <any> 'email',

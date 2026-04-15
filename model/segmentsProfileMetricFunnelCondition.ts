@@ -10,11 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { ProfileMetricFunnelEnum } from './profileMetricFunnelEnum';
 import { ProfileMetricFunnelSteps } from './profileMetricFunnelSteps';
 import { SegmentsProfileMetricFunnelConditionTimeframeFilter } from './segmentsProfileMetricFunnelConditionTimeframeFilter';
 export class SegmentsProfileMetricFunnelCondition {
-    'type': ProfileMetricFunnelEnum | 'profile-metric-funnel';
+    'type': SegmentsProfileMetricFunnelCondition.TypeEnum | 'profile-metric-funnel';
     'timeframeFilter': SegmentsProfileMetricFunnelConditionTimeframeFilter;
     /**
     * Allowed completion window durations for funnel conditions (in     seconds).
@@ -27,7 +26,7 @@ export class SegmentsProfileMetricFunnelCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileMetricFunnelEnum"
+            "type": "SegmentsProfileMetricFunnelCondition.TypeEnum"
         },
         {
             "name": "timeframeFilter",
@@ -51,6 +50,9 @@ export class SegmentsProfileMetricFunnelCondition {
 }
 
 export namespace SegmentsProfileMetricFunnelCondition {
+    export enum TypeEnum {
+        ProfileMetricFunnel = <any> 'profile-metric-funnel'
+    }
     export enum CompletionWindowSecondsEnum {
         Days1 = <any> 'DAYS_1',
         Days180 = <any> 'DAYS_180',

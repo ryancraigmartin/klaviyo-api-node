@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { CheckboxesEnum } from './checkboxesEnum';
 import { CheckboxesProperties } from './checkboxesProperties';
 import { CheckboxesStyles } from './checkboxesStyles';
 export class Checkboxes {
@@ -18,7 +17,7 @@ export class Checkboxes {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': CheckboxesEnum | 'checkboxes';
+    'type': Checkboxes.TypeEnum | 'checkboxes';
     'styles'?: CheckboxesStyles;
     'properties': CheckboxesProperties;
 
@@ -32,7 +31,7 @@ export class Checkboxes {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CheckboxesEnum"
+            "type": "Checkboxes.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class Checkboxes {
 }
 
 export namespace Checkboxes {
+    export enum TypeEnum {
+        Checkboxes = <any> 'checkboxes'
+    }
 }

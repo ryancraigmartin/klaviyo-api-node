@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { BackInStockEnum } from './backInStockEnum';
 import { BackInStockProperties } from './backInStockProperties';
 export class BackInStock {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': BackInStockEnum | 'back_in_stock';
+    'type': BackInStock.TypeEnum | 'back_in_stock';
     'properties'?: BackInStockProperties;
 
 
@@ -30,7 +29,7 @@ export class BackInStock {
         {
             "name": "type",
             "baseName": "type",
-            "type": "BackInStockEnum"
+            "type": "BackInStock.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class BackInStock {
 }
 
 export namespace BackInStock {
+    export enum TypeEnum {
+        BackInStock = <any> 'back_in_stock'
+    }
 }

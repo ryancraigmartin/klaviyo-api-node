@@ -11,14 +11,13 @@
 
 import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
-import { OptInPromotionalEmailEnum } from './optInPromotionalEmailEnum';
 export class BackInStockEmailConsentCheckboxProperties {
     'displayDevice'?: Array<BackInStockEmailConsentCheckboxProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
     'label'?: string | null;
     'showLabel'?: boolean = false;
     'errorMessages'?: ErrorMessages;
     'required'?: boolean = false;
-    'propertyName'?: OptInPromotionalEmailEnum | 'opt_in_promotional_email';
+    'propertyName'?: BackInStockEmailConsentCheckboxProperties.PropertyNameEnum | 'opt_in_promotional_email' = BackInStockEmailConsentCheckboxProperties.PropertyNameEnum.OptInPromotionalEmail;
     'checkboxText': string;
     'placeholder'?: BackInStockEmailConsentCheckboxProperties.PlaceholderEnum | 'null';
 
@@ -52,7 +51,7 @@ export class BackInStockEmailConsentCheckboxProperties {
         {
             "name": "propertyName",
             "baseName": "property_name",
-            "type": "OptInPromotionalEmailEnum"
+            "type": "BackInStockEmailConsentCheckboxProperties.PropertyNameEnum"
         },
         {
             "name": "checkboxText",
@@ -75,6 +74,9 @@ export namespace BackInStockEmailConsentCheckboxProperties {
         Both = <any> 'both',
         Desktop = <any> 'desktop',
         Mobile = <any> 'mobile'
+    }
+    export enum PropertyNameEnum {
+        OptInPromotionalEmail = <any> 'opt_in_promotional_email'
     }
     export enum PlaceholderEnum {
         Null = <any> 'null'

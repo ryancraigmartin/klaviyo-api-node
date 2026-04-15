@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { NumericEnum } from './numericEnum';
 export class NumericOperatorNumericFilter {
-    'type': NumericEnum | 'numeric';
+    'type': NumericOperatorNumericFilter.TypeEnum | 'numeric';
     /**
     * Operators for numeric filters.
     */
@@ -24,7 +23,7 @@ export class NumericOperatorNumericFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "NumericEnum"
+            "type": "NumericOperatorNumericFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -43,6 +42,9 @@ export class NumericOperatorNumericFilter {
 }
 
 export namespace NumericOperatorNumericFilter {
+    export enum TypeEnum {
+        Numeric = <any> 'numeric'
+    }
     export enum OperatorEnum {
         Equals = <any> 'equals',
         GreaterThan = <any> 'greater-than',

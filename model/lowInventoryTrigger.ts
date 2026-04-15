@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { LowInventoryConditionFilter } from './lowInventoryConditionFilter';
-import { LowInventoryEnum } from './lowInventoryEnum';
 export class LowInventoryTrigger {
-    'type': LowInventoryEnum | 'low-inventory';
+    'type': LowInventoryTrigger.TypeEnum | 'low-inventory';
     /**
     * Low inventory product level.
     */
@@ -28,7 +27,7 @@ export class LowInventoryTrigger {
         {
             "name": "type",
             "baseName": "type",
-            "type": "LowInventoryEnum"
+            "type": "LowInventoryTrigger.TypeEnum"
         },
         {
             "name": "productLevel",
@@ -62,6 +61,9 @@ export class LowInventoryTrigger {
 }
 
 export namespace LowInventoryTrigger {
+    export enum TypeEnum {
+        LowInventory = <any> 'low-inventory'
+    }
     export enum ProductLevelEnum {
         Product = <any> 'product',
         Variant = <any> 'variant'

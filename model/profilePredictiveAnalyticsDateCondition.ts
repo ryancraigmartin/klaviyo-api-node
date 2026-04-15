@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { ProfilePredictiveAnalyticsEnum } from './profilePredictiveAnalyticsEnum';
 import { StatusDateFilterFilter } from './statusDateFilterFilter';
 export class ProfilePredictiveAnalyticsDateCondition {
     /**
@@ -18,7 +17,7 @@ export class ProfilePredictiveAnalyticsDateCondition {
     */
     'dimension': ProfilePredictiveAnalyticsDateCondition.DimensionEnum | 'expected_date_of_next_purchase';
     'filter': StatusDateFilterFilter;
-    'type': ProfilePredictiveAnalyticsEnum | 'profile-predictive-analytics';
+    'type': ProfilePredictiveAnalyticsDateCondition.TypeEnum | 'profile-predictive-analytics';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -35,7 +34,7 @@ export class ProfilePredictiveAnalyticsDateCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfilePredictiveAnalyticsEnum"
+            "type": "ProfilePredictiveAnalyticsDateCondition.TypeEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -46,5 +45,8 @@ export class ProfilePredictiveAnalyticsDateCondition {
 export namespace ProfilePredictiveAnalyticsDateCondition {
     export enum DimensionEnum {
         ExpectedDateOfNextPurchase = <any> 'expected_date_of_next_purchase'
+    }
+    export enum TypeEnum {
+        ProfilePredictiveAnalytics = <any> 'profile-predictive-analytics'
     }
 }

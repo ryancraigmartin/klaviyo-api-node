@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { ActionOutputSplitActionData } from './actionOutputSplitActionData';
-import { ActionOutputSplitEnum } from './actionOutputSplitEnum';
 import { BooleanBranchLinks } from './booleanBranchLinks';
 export class ActionOutputSplitAction {
     /**
@@ -22,7 +21,7 @@ export class ActionOutputSplitAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': ActionOutputSplitEnum | 'action-output-split';
+    'type': ActionOutputSplitAction.TypeEnum | 'action-output-split';
     'links'?: BooleanBranchLinks;
     'data'?: ActionOutputSplitActionData;
 
@@ -41,7 +40,7 @@ export class ActionOutputSplitAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ActionOutputSplitEnum"
+            "type": "ActionOutputSplitAction.TypeEnum"
         },
         {
             "name": "links",
@@ -60,4 +59,7 @@ export class ActionOutputSplitAction {
 }
 
 export namespace ActionOutputSplitAction {
+    export enum TypeEnum {
+        ActionOutputSplit = <any> 'action-output-split'
+    }
 }

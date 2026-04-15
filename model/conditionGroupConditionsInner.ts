@@ -17,7 +17,6 @@ import { ProfileHasCustomObjectFilter } from './profileHasCustomObjectFilter';
 import { ProfileHasGroupMembershipCondition } from './profileHasGroupMembershipCondition';
 import { ProfileMarketingConsentCondition } from './profileMarketingConsentCondition';
 import { ProfileMarketingConsentConditionConsent } from './profileMarketingConsentConditionConsent';
-import { ProfileMetricFunnelEnum } from './profileMetricFunnelEnum';
 import { ProfileMetricFunnelSteps } from './profileMetricFunnelSteps';
 import { ProfileMetricPropertyFilter } from './profileMetricPropertyFilter';
 import { ProfileNoGroupMembershipCondition } from './profileNoGroupMembershipCondition';
@@ -31,7 +30,6 @@ import { ProfilePredictiveAnalyticsNumericCondition } from './profilePredictiveA
 import { ProfilePredictiveAnalyticsStringCondition } from './profilePredictiveAnalyticsStringCondition';
 import { ProfilePropertyCondition } from './profilePropertyCondition';
 import { ProfileRegionCondition } from './profileRegionCondition';
-import { RankEnum } from './rankEnum';
 import { SegmentsProfileMetricCondition } from './segmentsProfileMetricCondition';
 import { SegmentsProfileMetricFunnelCondition } from './segmentsProfileMetricFunnelCondition';
 import { SegmentsProfileMetricFunnelConditionTimeframeFilter } from './segmentsProfileMetricFunnelConditionTimeframeFilter';

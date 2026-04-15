@@ -1,6 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [22.0.0] - revision 2026-04-15
+### Added
+- Conversations API
+  - Send an outbound message to a profile with Create Conversation Message. Supports SMS and WhatsApp — the channel is determined automatically from the conversation. Conversation message endpoints use the SMALL rate limit tier (3 requests/second burst, 60 requests/minute steady).
+  - Retrieve the conversation thread for a given profile with Get Conversation for Profile, or include it inline on profile retrievals using `?include=conversation`.
+### Changed
+- Drag-and-drop templates
+  - Create drag-and-drop email templates programmaatically by setting `editor_type: SYSTEM_DRAGGABLE` and providing a `definition` body (mutually exclusive with `html`) via Create Template. DnD template endpoints use the SMALL rate limit tier (3 requests/second burst, 60 requests/minute steady).
+  - List and retrieve drag-and-drog templates with Get Templates and Get Template. Use `additional-fields[template]=definition` to include the full template definition in the response.
+  - Update an existing drag-and-drop template’s `definition`, `name`, or `text` independently via Update Template.
+
 ## [21.0.1] - revision 2026-01-15
 ### Added
 - Events Api

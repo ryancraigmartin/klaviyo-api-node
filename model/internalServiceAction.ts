@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { InternalServiceActionData } from './internalServiceActionData';
-import { InternalServiceEnum } from './internalServiceEnum';
 import { Link } from './link';
 export class InternalServiceAction {
     /**
@@ -22,7 +21,7 @@ export class InternalServiceAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': InternalServiceEnum | 'internal-service';
+    'type': InternalServiceAction.TypeEnum | 'internal-service';
     'links'?: Link;
     'data'?: InternalServiceActionData;
 
@@ -41,7 +40,7 @@ export class InternalServiceAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "InternalServiceEnum"
+            "type": "InternalServiceAction.TypeEnum"
         },
         {
             "name": "links",
@@ -60,4 +59,7 @@ export class InternalServiceAction {
 }
 
 export namespace InternalServiceAction {
+    export enum TypeEnum {
+        InternalService = <any> 'internal-service'
+    }
 }

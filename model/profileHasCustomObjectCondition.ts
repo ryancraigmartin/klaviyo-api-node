@@ -11,10 +11,9 @@
 
 import { RequestFile } from './models';
 import { IntegerFilter } from './integerFilter';
-import { ProfileHasCustomObjectEnum } from './profileHasCustomObjectEnum';
 import { ProfileHasCustomObjectFilter } from './profileHasCustomObjectFilter';
 export class ProfileHasCustomObjectCondition {
-    'type': ProfileHasCustomObjectEnum | 'profile-has-custom-object';
+    'type': ProfileHasCustomObjectCondition.TypeEnum | 'profile-has-custom-object';
     'objectTypeId': string;
     'objectTypeRelationshipId': string;
     'filter': IntegerFilter;
@@ -25,7 +24,7 @@ export class ProfileHasCustomObjectCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileHasCustomObjectEnum"
+            "type": "ProfileHasCustomObjectCondition.TypeEnum"
         },
         {
             "name": "objectTypeId",
@@ -54,4 +53,7 @@ export class ProfileHasCustomObjectCondition {
 }
 
 export namespace ProfileHasCustomObjectCondition {
+    export enum TypeEnum {
+        ProfileHasCustomObject = <any> 'profile-has-custom-object'
+    }
 }

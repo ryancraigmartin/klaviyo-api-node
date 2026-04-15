@@ -11,11 +11,11 @@
 
 import { RequestFile } from './models';
 import { Padding } from './padding';
-import { TextStyle } from './textStyle';
+import { TextStyleV0 } from './textStyleV0';
 export class CountdownTimerStyles {
     'padding'?: Padding;
     'backgroundColor'?: string | null;
-    'textStyles'?: TextStyle;
+    'textStyles'?: TextStyleV0;
     'cardColor'?: string = 'rgba(100,100,100, 1.0)';
     'labelFontSize'?: number = 12;
     /**
@@ -38,7 +38,7 @@ export class CountdownTimerStyles {
         {
             "name": "textStyles",
             "baseName": "text_styles",
-            "type": "TextStyle"
+            "type": "TextStyleV0"
         },
         {
             "name": "cardColor",

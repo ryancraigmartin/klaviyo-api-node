@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { ScrollPercentageEnum } from './scrollPercentageEnum';
 import { ScrollProperties } from './scrollProperties';
 export class Scroll {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': ScrollPercentageEnum | 'scroll_percentage';
+    'type': Scroll.TypeEnum | 'scroll_percentage';
     'properties'?: ScrollProperties;
 
 
@@ -30,7 +29,7 @@ export class Scroll {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ScrollPercentageEnum"
+            "type": "Scroll.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class Scroll {
 }
 
 export namespace Scroll {
+    export enum TypeEnum {
+        ScrollPercentage = <any> 'scroll_percentage'
+    }
 }

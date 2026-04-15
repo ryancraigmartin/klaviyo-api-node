@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { ContentExperimentEnum } from './contentExperimentEnum';
 import { Link } from './link';
 import { SendPushNotificationActionContentExperimentActionData } from './sendPushNotificationActionContentExperimentActionData';
 export class ContentExperimentAction {
@@ -22,7 +21,7 @@ export class ContentExperimentAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': ContentExperimentEnum | 'content-experiment';
+    'type': ContentExperimentAction.TypeEnum | 'content-experiment';
     'links'?: Link;
     'data': SendPushNotificationActionContentExperimentActionData;
 
@@ -41,7 +40,7 @@ export class ContentExperimentAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ContentExperimentEnum"
+            "type": "ContentExperimentAction.TypeEnum"
         },
         {
             "name": "links",
@@ -60,4 +59,7 @@ export class ContentExperimentAction {
 }
 
 export namespace ContentExperimentAction {
+    export enum TypeEnum {
+        ContentExperiment = <any> 'content-experiment'
+    }
 }

@@ -11,14 +11,13 @@
 
 import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
-import { OptInPromotionalSmsEnum } from './optInPromotionalSmsEnum';
 export class SMSConsentCheckboxProperties {
     'displayDevice'?: Array<SMSConsentCheckboxProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
     'label'?: string | null;
     'showLabel'?: boolean = false;
     'errorMessages'?: ErrorMessages;
     'required'?: boolean = false;
-    'propertyName'?: OptInPromotionalSmsEnum | 'opt_in_promotional_sms';
+    'propertyName'?: SMSConsentCheckboxProperties.PropertyNameEnum | 'opt_in_promotional_sms' = SMSConsentCheckboxProperties.PropertyNameEnum.OptInPromotionalSms;
     'checkboxText': string;
     'placeholder'?: SMSConsentCheckboxProperties.PlaceholderEnum | 'null';
     'channels'?: Array<SMSConsentCheckboxProperties.ChannelsEnum> | Array<'sms' | 'whatsapp'>;
@@ -53,7 +52,7 @@ export class SMSConsentCheckboxProperties {
         {
             "name": "propertyName",
             "baseName": "property_name",
-            "type": "OptInPromotionalSmsEnum"
+            "type": "SMSConsentCheckboxProperties.PropertyNameEnum"
         },
         {
             "name": "checkboxText",
@@ -81,6 +80,9 @@ export namespace SMSConsentCheckboxProperties {
         Both = <any> 'both',
         Desktop = <any> 'desktop',
         Mobile = <any> 'mobile'
+    }
+    export enum PropertyNameEnum {
+        OptInPromotionalSms = <any> 'opt_in_promotional_sms'
     }
     export enum PlaceholderEnum {
         Null = <any> 'null'

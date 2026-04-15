@@ -10,13 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { Column } from './column';
+import { ColumnV0 } from './columnV0';
 export class Step {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'columns': Array<Column>;
+    'columns': Array<ColumnV0>;
     'name'?: string | null;
     'steps'?: Array<Step> | null;
 
@@ -30,7 +30,7 @@ export class Step {
         {
             "name": "columns",
             "baseName": "columns",
-            "type": "Array<Column>"
+            "type": "Array<ColumnV0>"
         },
         {
             "name": "name",

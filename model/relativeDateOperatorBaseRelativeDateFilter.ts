@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { DateEnum } from './dateEnum';
 export class RelativeDateOperatorBaseRelativeDateFilter {
-    'type': DateEnum | 'date';
+    'type': RelativeDateOperatorBaseRelativeDateFilter.TypeEnum | 'date';
     /**
     * Operators for relative date filters.  e.g. \"in the last 10 days\"
     */
@@ -28,7 +27,7 @@ export class RelativeDateOperatorBaseRelativeDateFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "DateEnum"
+            "type": "RelativeDateOperatorBaseRelativeDateFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -52,6 +51,9 @@ export class RelativeDateOperatorBaseRelativeDateFilter {
 }
 
 export namespace RelativeDateOperatorBaseRelativeDateFilter {
+    export enum TypeEnum {
+        Date = <any> 'date'
+    }
     export enum OperatorEnum {
         AtLeast = <any> 'at-least',
         InTheLast = <any> 'in-the-last',

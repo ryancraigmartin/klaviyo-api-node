@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { ActionOutputConditionFilter2 } from './actionOutputConditionFilter2';
-import { ActionOutputEnum } from './actionOutputEnum';
 export class ActionOutputCondition {
-    'type': ActionOutputEnum | 'action-output';
+    'type': ActionOutputCondition.TypeEnum | 'action-output';
     'outputConfigId': number;
     'field': string;
     'filter': ActionOutputConditionFilter2;
@@ -23,7 +22,7 @@ export class ActionOutputCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ActionOutputEnum"
+            "type": "ActionOutputCondition.TypeEnum"
         },
         {
             "name": "outputConfigId",
@@ -47,4 +46,7 @@ export class ActionOutputCondition {
 }
 
 export namespace ActionOutputCondition {
+    export enum TypeEnum {
+        ActionOutput = <any> 'action-output'
+    }
 }

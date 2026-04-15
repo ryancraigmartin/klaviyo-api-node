@@ -15,11 +15,9 @@ import { ConstantContactIntegrationFilter } from './constantContactIntegrationFi
 import { ConstantContactIntegrationMethodFilter } from './constantContactIntegrationMethodFilter';
 import { DataWarehouseImportMethodFilter } from './dataWarehouseImportMethodFilter';
 import { InboundMessageMethodFilter } from './inboundMessageMethodFilter';
-import { IntegrationEnum } from './integrationEnum';
 import { MailboxProviderMethodFilter } from './mailboxProviderMethodFilter';
 import { ManualImportMethodFilter } from './manualImportMethodFilter';
 import { ManualRemoveMethodFilter } from './manualRemoveMethodFilter';
-import { MethodEnum } from './methodEnum';
 import { OneClickUnsubscribeMethodFilter } from './oneClickUnsubscribeMethodFilter';
 import { PreferencePageMethodFilter } from './preferencePageMethodFilter';
 import { ProfileModificationMethodFilter } from './profileModificationMethodFilter';

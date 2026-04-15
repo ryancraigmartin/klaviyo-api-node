@@ -10,11 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { BlockEnum } from './blockEnum';
-import { UnsupportedEnum } from './unsupportedEnum';
 export class UnsupportedBlock {
-    'contentType': BlockEnum | 'block';
-    'type': UnsupportedEnum | 'unsupported';
+    'contentType': UnsupportedBlock.ContentTypeEnum | 'block';
+    'type': UnsupportedBlock.TypeEnum | 'unsupported';
     'data': string | null;
 
 
@@ -22,12 +20,12 @@ export class UnsupportedBlock {
         {
             "name": "contentType",
             "baseName": "content_type",
-            "type": "BlockEnum"
+            "type": "UnsupportedBlock.ContentTypeEnum"
         },
         {
             "name": "type",
             "baseName": "type",
-            "type": "UnsupportedEnum"
+            "type": "UnsupportedBlock.TypeEnum"
         },
         {
             "name": "data",
@@ -41,4 +39,10 @@ export class UnsupportedBlock {
 }
 
 export namespace UnsupportedBlock {
+    export enum ContentTypeEnum {
+        Block = <any> 'block'
+    }
+    export enum TypeEnum {
+        Unsupported = <any> 'unsupported'
+    }
 }

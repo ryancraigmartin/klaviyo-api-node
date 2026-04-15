@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { SpinToWinEnum } from './spinToWinEnum';
 import { SpinToWinProperties } from './spinToWinProperties';
 import { SpinToWinStyles } from './spinToWinStyles';
 export class SpinToWin {
@@ -19,7 +18,7 @@ export class SpinToWin {
     */
     'id'?: string | null;
     'properties': SpinToWinProperties;
-    'type': SpinToWinEnum | 'spin_to_win';
+    'type': SpinToWin.TypeEnum | 'spin_to_win';
     'styles'?: SpinToWinStyles;
 
 
@@ -37,7 +36,7 @@ export class SpinToWin {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SpinToWinEnum"
+            "type": "SpinToWin.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class SpinToWin {
 }
 
 export namespace SpinToWin {
+    export enum TypeEnum {
+        SpinToWin = <any> 'spin_to_win'
+    }
 }

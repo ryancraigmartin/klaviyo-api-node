@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { CustomEnum } from './customEnum';
 export class SMSDisclosureCustom {
-    'type': CustomEnum | 'custom';
+    'type': SMSDisclosureCustom.TypeEnum | 'custom';
     'complianceCompanyName'?: string = '[company name]';
     'privacyPolicyUrl'?: string = '[link]';
     'termsOfServiceUrl'?: string = '[link]';
@@ -23,7 +22,7 @@ export class SMSDisclosureCustom {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CustomEnum"
+            "type": "SMSDisclosureCustom.TypeEnum"
         },
         {
             "name": "complianceCompanyName",
@@ -52,4 +51,7 @@ export class SMSDisclosureCustom {
 }
 
 export namespace SMSDisclosureCustom {
+    export enum TypeEnum {
+        Custom = <any> 'custom'
+    }
 }

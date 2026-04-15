@@ -11,11 +11,10 @@
 
 import { RequestFile } from './models';
 import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
-import { ProfileMetricEnum } from './profileMetricEnum';
 import { ProfileMetricPropertyFilter } from './profileMetricPropertyFilter';
 import { SegmentsProfileMetricConditionTimeframeFilter } from './segmentsProfileMetricConditionTimeframeFilter';
 export class SegmentsProfileMetricCondition {
-    'type': ProfileMetricEnum | 'profile-metric';
+    'type': SegmentsProfileMetricCondition.TypeEnum | 'profile-metric';
     'metricId': string;
     /**
     * Measurements for profile metrics.
@@ -30,7 +29,7 @@ export class SegmentsProfileMetricCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileMetricEnum"
+            "type": "SegmentsProfileMetricCondition.TypeEnum"
         },
         {
             "name": "metricId",
@@ -64,6 +63,9 @@ export class SegmentsProfileMetricCondition {
 }
 
 export namespace SegmentsProfileMetricCondition {
+    export enum TypeEnum {
+        ProfileMetric = <any> 'profile-metric'
+    }
     export enum MeasurementEnum {
         Count = <any> 'count',
         Sum = <any> 'sum'

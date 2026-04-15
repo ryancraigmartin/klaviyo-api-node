@@ -10,11 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { GreaterThanEnum } from './greaterThanEnum';
-import { NumericEnum } from './numericEnum';
 export class GreaterThanPositiveNumericFilter {
-    'type': NumericEnum | 'numeric';
-    'operator': GreaterThanEnum | 'greater-than';
+    'type': GreaterThanPositiveNumericFilter.TypeEnum | 'numeric';
+    'operator': GreaterThanPositiveNumericFilter.OperatorEnum | 'greater-than';
     'value': number;
 
 
@@ -22,12 +20,12 @@ export class GreaterThanPositiveNumericFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "NumericEnum"
+            "type": "GreaterThanPositiveNumericFilter.TypeEnum"
         },
         {
             "name": "operator",
             "baseName": "operator",
-            "type": "GreaterThanEnum"
+            "type": "GreaterThanPositiveNumericFilter.OperatorEnum"
         },
         {
             "name": "value",
@@ -41,4 +39,10 @@ export class GreaterThanPositiveNumericFilter {
 }
 
 export namespace GreaterThanPositiveNumericFilter {
+    export enum TypeEnum {
+        Numeric = <any> 'numeric'
+    }
+    export enum OperatorEnum {
+        GreaterThan = <any> 'greater-than'
+    }
 }

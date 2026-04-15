@@ -11,13 +11,12 @@
 
 import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
-import { OptInCodeEnum } from './optInCodeEnum';
 export class OptInCodeProperties {
     'label'?: string | null;
     'showLabel'?: boolean = false;
     'placeholder'?: string | null;
     'errorMessages'?: ErrorMessages;
-    'propertyName'?: OptInCodeEnum | 'opt_in_code';
+    'propertyName'?: OptInCodeProperties.PropertyNameEnum | 'opt_in_code' = OptInCodeProperties.PropertyNameEnum.OptInCode;
     'required'?: boolean = true;
     'displayDevice'?: Array<OptInCodeProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
 
@@ -46,7 +45,7 @@ export class OptInCodeProperties {
         {
             "name": "propertyName",
             "baseName": "property_name",
-            "type": "OptInCodeEnum"
+            "type": "OptInCodeProperties.PropertyNameEnum"
         },
         {
             "name": "required",
@@ -65,6 +64,9 @@ export class OptInCodeProperties {
 }
 
 export namespace OptInCodeProperties {
+    export enum PropertyNameEnum {
+        OptInCode = <any> 'opt_in_code'
+    }
     export enum DisplayDeviceEnum {
         Both = <any> 'both',
         Desktop = <any> 'desktop',

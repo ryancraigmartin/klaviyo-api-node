@@ -12,7 +12,6 @@
 import { RequestFile } from './models';
 import { Link } from './link';
 import { TargetDateActionData } from './targetDateActionData';
-import { TargetDateEnum } from './targetDateEnum';
 export class TargetDateAction {
     /**
     * The real ID of an action. Not allowed on create.
@@ -22,7 +21,7 @@ export class TargetDateAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': TargetDateEnum | 'target-date';
+    'type': TargetDateAction.TypeEnum | 'target-date';
     'links'?: Link;
     'data': TargetDateActionData;
 
@@ -41,7 +40,7 @@ export class TargetDateAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "TargetDateEnum"
+            "type": "TargetDateAction.TypeEnum"
         },
         {
             "name": "links",
@@ -60,4 +59,7 @@ export class TargetDateAction {
 }
 
 export namespace TargetDateAction {
+    export enum TypeEnum {
+        TargetDate = <any> 'target-date'
+    }
 }

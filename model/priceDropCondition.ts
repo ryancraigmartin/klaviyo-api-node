@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { PriceDropConditionFilter2 } from './priceDropConditionFilter2';
-import { PriceDropPropertyEnum } from './priceDropPropertyEnum';
 export class PriceDropCondition {
-    'type': PriceDropPropertyEnum | 'price-drop-property';
+    'type': PriceDropCondition.TypeEnum | 'price-drop-property';
     'metricId': string | null;
     'field': string;
     'filter': PriceDropConditionFilter2;
@@ -23,7 +22,7 @@ export class PriceDropCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "PriceDropPropertyEnum"
+            "type": "PriceDropCondition.TypeEnum"
         },
         {
             "name": "metricId",
@@ -47,4 +46,7 @@ export class PriceDropCondition {
 }
 
 export namespace PriceDropCondition {
+    export enum TypeEnum {
+        PriceDropProperty = <any> 'price-drop-property'
+    }
 }

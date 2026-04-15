@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { ProfilePermissionsConditionPermission } from './profilePermissionsConditionPermission';
-import { ProfilePermissionsEnum } from './profilePermissionsEnum';
 export class ProfilePermissionsCondition {
-    'type': ProfilePermissionsEnum | 'profile-permissions';
+    'type': ProfilePermissionsCondition.TypeEnum | 'profile-permissions';
     'permission': ProfilePermissionsConditionPermission;
     /**
     * Possible channels for profile permissions criterion.
@@ -25,7 +24,7 @@ export class ProfilePermissionsCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfilePermissionsEnum"
+            "type": "ProfilePermissionsCondition.TypeEnum"
         },
         {
             "name": "permission",
@@ -44,6 +43,9 @@ export class ProfilePermissionsCondition {
 }
 
 export namespace ProfilePermissionsCondition {
+    export enum TypeEnum {
+        ProfilePermissions = <any> 'profile-permissions'
+    }
     export enum ChannelEnum {
         Marketing = <any> 'whatsapp_marketing',
         Transactional = <any> 'whatsapp_transactional'

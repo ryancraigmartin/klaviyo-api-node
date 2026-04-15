@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { MultiBranchSplitActionData } from './multiBranchSplitActionData';
-import { MultiBranchSplitEnum } from './multiBranchSplitEnum';
 export class MultiBranchSplitAction {
     /**
     * The real ID of an action. Not allowed on create.
@@ -21,7 +20,7 @@ export class MultiBranchSplitAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': MultiBranchSplitEnum | 'multi-branch-split';
+    'type': MultiBranchSplitAction.TypeEnum | 'multi-branch-split';
     'links'?: any | null;
     'data'?: MultiBranchSplitActionData;
 
@@ -40,7 +39,7 @@ export class MultiBranchSplitAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "MultiBranchSplitEnum"
+            "type": "MultiBranchSplitAction.TypeEnum"
         },
         {
             "name": "links",
@@ -59,4 +58,7 @@ export class MultiBranchSplitAction {
 }
 
 export namespace MultiBranchSplitAction {
+    export enum TypeEnum {
+        MultiBranchSplit = <any> 'multi-branch-split'
+    }
 }

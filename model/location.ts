@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { LocationEnum } from './locationEnum';
 import { LocationProperties } from './locationProperties';
 export class Location {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': LocationEnum | 'location';
+    'type': Location.TypeEnum | 'location';
     'properties': LocationProperties;
 
 
@@ -30,7 +29,7 @@ export class Location {
         {
             "name": "type",
             "baseName": "type",
-            "type": "LocationEnum"
+            "type": "Location.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class Location {
 }
 
 export namespace Location {
+    export enum TypeEnum {
+        Location = <any> 'location'
+    }
 }

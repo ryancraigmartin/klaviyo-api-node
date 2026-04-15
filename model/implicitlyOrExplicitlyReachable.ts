@@ -10,16 +10,15 @@
  */
 
 import { RequestFile } from './models';
-import { ImplicitlyOrExplicitlyReachableEnum } from './implicitlyOrExplicitlyReachableEnum';
 export class ImplicitlyOrExplicitlyReachable {
-    'reachableStatus': ImplicitlyOrExplicitlyReachableEnum | 'implicitly_or_explicitly_reachable';
+    'reachableStatus': ImplicitlyOrExplicitlyReachable.ReachableStatusEnum | 'implicitly_or_explicitly_reachable';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "reachableStatus",
             "baseName": "reachable_status",
-            "type": "ImplicitlyOrExplicitlyReachableEnum"
+            "type": "ImplicitlyOrExplicitlyReachable.ReachableStatusEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -28,4 +27,7 @@ export class ImplicitlyOrExplicitlyReachable {
 }
 
 export namespace ImplicitlyOrExplicitlyReachable {
+    export enum ReachableStatusEnum {
+        ImplicitlyOrExplicitlyReachable = <any> 'implicitly_or_explicitly_reachable'
+    }
 }

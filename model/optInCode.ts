@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { OptInCodeEnum } from './optInCodeEnum';
 import { OptInCodeProperties } from './optInCodeProperties';
 import { OptInCodeStyles } from './optInCodeStyles';
 export class OptInCode {
@@ -18,7 +17,7 @@ export class OptInCode {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': OptInCodeEnum | 'opt_in_code';
+    'type': OptInCode.TypeEnum | 'opt_in_code';
     'styles'?: OptInCodeStyles;
     'properties': OptInCodeProperties;
 
@@ -32,7 +31,7 @@ export class OptInCode {
         {
             "name": "type",
             "baseName": "type",
-            "type": "OptInCodeEnum"
+            "type": "OptInCode.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class OptInCode {
 }
 
 export namespace OptInCode {
+    export enum TypeEnum {
+        OptInCode = <any> 'opt_in_code'
+    }
 }

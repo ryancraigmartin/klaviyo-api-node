@@ -14,8 +14,6 @@ import { BooleanFilter } from './booleanFilter';
 import { CheckoutMethodFilter } from './checkoutMethodFilter';
 import { FormMethodFilter } from './formMethodFilter';
 import { InboundMessageMethodFilter } from './inboundMessageMethodFilter';
-import { IntegrationEnum } from './integrationEnum';
-import { IsRcsCapableEnum } from './isRcsCapableEnum';
 import { ManualAddManualMethodFilter } from './manualAddManualMethodFilter';
 import { ManualImportManualMethodFilter } from './manualImportManualMethodFilter';
 import { PreferencePageMethodFilter } from './preferencePageMethodFilter';

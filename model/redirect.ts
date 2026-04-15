@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { RedirectEnum } from './redirectEnum';
 import { RedirectProperties } from './redirectProperties';
 export class Redirect {
     /**
@@ -18,7 +17,7 @@ export class Redirect {
     */
     'id'?: string | null;
     'submit': boolean;
-    'type': RedirectEnum | 'redirect';
+    'type': Redirect.TypeEnum | 'redirect';
     'properties': RedirectProperties;
 
 
@@ -36,7 +35,7 @@ export class Redirect {
         {
             "name": "type",
             "baseName": "type",
-            "type": "RedirectEnum"
+            "type": "Redirect.TypeEnum"
         },
         {
             "name": "properties",
@@ -50,4 +49,7 @@ export class Redirect {
 }
 
 export namespace Redirect {
+    export enum TypeEnum {
+        Redirect = <any> 'redirect'
+    }
 }

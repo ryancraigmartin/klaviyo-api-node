@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { SubmitBackInStockEnum } from './submitBackInStockEnum';
 import { SubmitBackInStockProperties } from './submitBackInStockProperties';
 export class SubmitBackInStock {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': SubmitBackInStockEnum | 'submit_back_in_stock';
+    'type': SubmitBackInStock.TypeEnum | 'submit_back_in_stock';
     'properties'?: SubmitBackInStockProperties;
     'submit'?: boolean = true;
 
@@ -31,7 +30,7 @@ export class SubmitBackInStock {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SubmitBackInStockEnum"
+            "type": "SubmitBackInStock.TypeEnum"
         },
         {
             "name": "properties",
@@ -50,4 +49,7 @@ export class SubmitBackInStock {
 }
 
 export namespace SubmitBackInStock {
+    export enum TypeEnum {
+        SubmitBackInStock = <any> 'submit_back_in_stock'
+    }
 }

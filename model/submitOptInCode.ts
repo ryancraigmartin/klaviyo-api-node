@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { SubmitOptInCodeEnum } from './submitOptInCodeEnum';
 export class SubmitOptInCode {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'submit'?: boolean = true;
-    'type': SubmitOptInCodeEnum | 'submit_opt_in_code';
+    'type': SubmitOptInCode.TypeEnum | 'submit_opt_in_code';
     'properties'?: SubmitOptInCode.PropertiesEnum | 'null';
 
 
@@ -35,7 +34,7 @@ export class SubmitOptInCode {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SubmitOptInCodeEnum"
+            "type": "SubmitOptInCode.TypeEnum"
         },
         {
             "name": "properties",
@@ -49,6 +48,9 @@ export class SubmitOptInCode {
 }
 
 export namespace SubmitOptInCode {
+    export enum TypeEnum {
+        SubmitOptInCode = <any> 'submit_opt_in_code'
+    }
     export enum PropertiesEnum {
         Null = <any> 'null'
     }

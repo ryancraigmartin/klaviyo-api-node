@@ -10,13 +10,12 @@
  */
 
 import { RequestFile } from './models';
-import { DateEnum } from './dateEnum';
 export class ProfileOperationUpdateOrCreateDate {
     /**
     * The type of operation to perform on a profile property.
     */
     'operator': ProfileOperationUpdateOrCreateDate.OperatorEnum | 'create' | 'update';
-    'propertyType': DateEnum | 'date';
+    'propertyType': ProfileOperationUpdateOrCreateDate.PropertyTypeEnum | 'date';
     'propertyKey': string;
     'propertyValue': string;
 
@@ -30,7 +29,7 @@ export class ProfileOperationUpdateOrCreateDate {
         {
             "name": "propertyType",
             "baseName": "property_type",
-            "type": "DateEnum"
+            "type": "ProfileOperationUpdateOrCreateDate.PropertyTypeEnum"
         },
         {
             "name": "propertyKey",
@@ -52,5 +51,8 @@ export namespace ProfileOperationUpdateOrCreateDate {
     export enum OperatorEnum {
         Create = <any> 'create',
         Update = <any> 'update'
+    }
+    export enum PropertyTypeEnum {
+        Date = <any> 'date'
     }
 }

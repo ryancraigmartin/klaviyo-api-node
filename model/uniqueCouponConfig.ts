@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { UniqueEnum } from './uniqueEnum';
 export class UniqueCouponConfig {
-    'type': UniqueEnum | 'unique';
+    'type': UniqueCouponConfig.TypeEnum | 'unique';
     'id'?: number | null;
     'code'?: string | null;
     'fallbackCouponCode'?: string | null;
@@ -26,7 +25,7 @@ export class UniqueCouponConfig {
         {
             "name": "type",
             "baseName": "type",
-            "type": "UniqueEnum"
+            "type": "UniqueCouponConfig.TypeEnum"
         },
         {
             "name": "id",
@@ -55,6 +54,9 @@ export class UniqueCouponConfig {
 }
 
 export namespace UniqueCouponConfig {
+    export enum TypeEnum {
+        Unique = <any> 'unique'
+    }
     export enum IntegrationEnum {
         Api = <any> 'api',
         MagentoTwo = <any> 'magento_two',

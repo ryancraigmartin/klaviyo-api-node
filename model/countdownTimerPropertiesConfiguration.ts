@@ -11,6 +11,5 @@
 
 import { RequestFile } from './models';
 import { FixedTimerConfiguration } from './fixedTimerConfiguration';
-import { VariableEnum } from './variableEnum';
 import { VariableTimerConfiguration } from './variableTimerConfiguration';
 export type CountdownTimerPropertiesConfiguration = FixedTimerConfiguration | VariableTimerConfiguration;

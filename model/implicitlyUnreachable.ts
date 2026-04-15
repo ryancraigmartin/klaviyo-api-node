@@ -10,16 +10,15 @@
  */
 
 import { RequestFile } from './models';
-import { ImplicitlyUnreachableEnum } from './implicitlyUnreachableEnum';
 export class ImplicitlyUnreachable {
-    'reachableStatus': ImplicitlyUnreachableEnum | 'implicitly_unreachable';
+    'reachableStatus': ImplicitlyUnreachable.ReachableStatusEnum | 'implicitly_unreachable';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "reachableStatus",
             "baseName": "reachable_status",
-            "type": "ImplicitlyUnreachableEnum"
+            "type": "ImplicitlyUnreachable.ReachableStatusEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -28,4 +27,7 @@ export class ImplicitlyUnreachable {
 }
 
 export namespace ImplicitlyUnreachable {
+    export enum ReachableStatusEnum {
+        ImplicitlyUnreachable = <any> 'implicitly_unreachable'
+    }
 }

@@ -12,7 +12,6 @@
 import { RequestFile } from './models';
 import { Link } from './link';
 import { ListUpdateActionData } from './listUpdateActionData';
-import { ListUpdateEnum } from './listUpdateEnum';
 export class ListUpdateAction {
     /**
     * The real ID of an action. Not allowed on create.
@@ -23,7 +22,7 @@ export class ListUpdateAction {
     */
     'temporaryId'?: string | null;
     'data': ListUpdateActionData;
-    'type': ListUpdateEnum | 'list-update';
+    'type': ListUpdateAction.TypeEnum | 'list-update';
     'links'?: Link;
 
 
@@ -46,7 +45,7 @@ export class ListUpdateAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ListUpdateEnum"
+            "type": "ListUpdateAction.TypeEnum"
         },
         {
             "name": "links",
@@ -60,4 +59,7 @@ export class ListUpdateAction {
 }
 
 export namespace ListUpdateAction {
+    export enum TypeEnum {
+        ListUpdate = <any> 'list-update'
+    }
 }

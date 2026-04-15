@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { CloseEnum } from './closeEnum';
 import { CloseProperties } from './closeProperties';
 export class Close {
     /**
@@ -18,7 +17,7 @@ export class Close {
     */
     'id'?: string | null;
     'submit': boolean;
-    'type': CloseEnum | 'close';
+    'type': Close.TypeEnum | 'close';
     'properties'?: CloseProperties;
 
 
@@ -36,7 +35,7 @@ export class Close {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CloseEnum"
+            "type": "Close.TypeEnum"
         },
         {
             "name": "properties",
@@ -50,4 +49,7 @@ export class Close {
 }
 
 export namespace Close {
+    export enum TypeEnum {
+        Close = <any> 'close'
+    }
 }

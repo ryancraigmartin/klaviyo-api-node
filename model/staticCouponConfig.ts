@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { StaticEnum } from './staticEnum';
 export class StaticCouponConfig {
-    'type': StaticEnum | 'static';
+    'type': StaticCouponConfig.TypeEnum | 'static';
     'text'?: string | null;
 
 
@@ -20,7 +19,7 @@ export class StaticCouponConfig {
         {
             "name": "type",
             "baseName": "type",
-            "type": "StaticEnum"
+            "type": "StaticCouponConfig.TypeEnum"
         },
         {
             "name": "text",
@@ -34,4 +33,7 @@ export class StaticCouponConfig {
 }
 
 export namespace StaticCouponConfig {
+    export enum TypeEnum {
+        Static = <any> 'static'
+    }
 }

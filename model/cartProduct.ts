@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { CartProductEnum } from './cartProductEnum';
 import { CartProductProperties } from './cartProductProperties';
 export class CartProduct {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': CartProductEnum | 'cart_product';
+    'type': CartProduct.TypeEnum | 'cart_product';
     'properties'?: CartProductProperties;
 
 
@@ -30,7 +29,7 @@ export class CartProduct {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CartProductEnum"
+            "type": "CartProduct.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class CartProduct {
 }
 
 export namespace CartProduct {
+    export enum TypeEnum {
+        CartProduct = <any> 'cart_product'
+    }
 }

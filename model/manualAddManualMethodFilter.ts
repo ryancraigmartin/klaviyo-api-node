@@ -11,11 +11,9 @@
 
 import { RequestFile } from './models';
 import { InStringArrayFilter } from './inStringArrayFilter';
-import { ManualAddEnum } from './manualAddEnum';
-import { MethodEnum } from './methodEnum';
 export class ManualAddManualMethodFilter {
-    'field': MethodEnum | 'method';
-    'method': ManualAddEnum | 'manual_add';
+    'field': ManualAddManualMethodFilter.FieldEnum | 'method';
+    'method': ManualAddManualMethodFilter.MethodEnum | 'manual_add';
     'filter'?: InStringArrayFilter;
 
 
@@ -23,12 +21,12 @@ export class ManualAddManualMethodFilter {
         {
             "name": "field",
             "baseName": "field",
-            "type": "MethodEnum"
+            "type": "ManualAddManualMethodFilter.FieldEnum"
         },
         {
             "name": "method",
             "baseName": "method",
-            "type": "ManualAddEnum"
+            "type": "ManualAddManualMethodFilter.MethodEnum"
         },
         {
             "name": "filter",
@@ -42,4 +40,10 @@ export class ManualAddManualMethodFilter {
 }
 
 export namespace ManualAddManualMethodFilter {
+    export enum FieldEnum {
+        Method = <any> 'method'
+    }
+    export enum MethodEnum {
+        ManualAdd = <any> 'manual_add'
+    }
 }

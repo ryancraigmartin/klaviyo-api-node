@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { ListEnum } from './listEnum';
 export class ListContainsOperatorListContainsFilter {
-    'type': ListEnum | 'list';
+    'type': ListContainsOperatorListContainsFilter.TypeEnum | 'list';
     /**
     * Operators for list contains filters.
     */
@@ -24,7 +23,7 @@ export class ListContainsOperatorListContainsFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ListEnum"
+            "type": "ListContainsOperatorListContainsFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -43,6 +42,9 @@ export class ListContainsOperatorListContainsFilter {
 }
 
 export namespace ListContainsOperatorListContainsFilter {
+    export enum TypeEnum {
+        List = <any> 'list'
+    }
     export enum OperatorEnum {
         Contains = <any> 'contains',
         NotContains = <any> 'not-contains'

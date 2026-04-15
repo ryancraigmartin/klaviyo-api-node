@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { Link } from './link';
-import { SendMobilePushEnum } from './sendMobilePushEnum';
 import { SendPushNotificationActionData } from './sendPushNotificationActionData';
 export class SendPushNotificationAction {
     /**
@@ -22,7 +21,7 @@ export class SendPushNotificationAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': SendMobilePushEnum | 'send-mobile-push';
+    'type': SendPushNotificationAction.TypeEnum | 'send-mobile-push';
     'links'?: Link;
     'data'?: SendPushNotificationActionData;
 
@@ -41,7 +40,7 @@ export class SendPushNotificationAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SendMobilePushEnum"
+            "type": "SendPushNotificationAction.TypeEnum"
         },
         {
             "name": "links",
@@ -60,4 +59,7 @@ export class SendPushNotificationAction {
 }
 
 export namespace SendPushNotificationAction {
+    export enum TypeEnum {
+        SendMobilePush = <any> 'send-mobile-push'
+    }
 }

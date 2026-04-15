@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { StringEnum } from './stringEnum';
 export class StringOperatorStringFilter {
-    'type': StringEnum | 'string';
+    'type': StringOperatorStringFilter.TypeEnum | 'string';
     /**
     * Operators for string filters.
     */
@@ -24,7 +23,7 @@ export class StringOperatorStringFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "StringEnum"
+            "type": "StringOperatorStringFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -43,6 +42,9 @@ export class StringOperatorStringFilter {
 }
 
 export namespace StringOperatorStringFilter {
+    export enum TypeEnum {
+        String = <any> 'string'
+    }
     export enum OperatorEnum {
         Contains = <any> 'contains',
         EndsWith = <any> 'ends-with',

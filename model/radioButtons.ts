@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { RadioButtonsEnum } from './radioButtonsEnum';
 import { RadioButtonsProperties } from './radioButtonsProperties';
 import { RadioButtonsStyles } from './radioButtonsStyles';
 export class RadioButtons {
@@ -18,7 +17,7 @@ export class RadioButtons {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': RadioButtonsEnum | 'radio_buttons';
+    'type': RadioButtons.TypeEnum | 'radio_buttons';
     'styles'?: RadioButtonsStyles;
     'properties': RadioButtonsProperties;
 
@@ -32,7 +31,7 @@ export class RadioButtons {
         {
             "name": "type",
             "baseName": "type",
-            "type": "RadioButtonsEnum"
+            "type": "RadioButtons.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class RadioButtons {
 }
 
 export namespace RadioButtons {
+    export enum TypeEnum {
+        RadioButtons = <any> 'radio_buttons'
+    }
 }

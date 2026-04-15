@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
-import { ProfilePredictiveAnalyticsEnum } from './profilePredictiveAnalyticsEnum';
 export class ProfilePredictiveAnalyticsNumericCondition {
-    'type': ProfilePredictiveAnalyticsEnum | 'profile-predictive-analytics';
+    'type': ProfilePredictiveAnalyticsNumericCondition.TypeEnum | 'profile-predictive-analytics';
     /**
     * Dimensions for numeric profile predictive analytics conditions.
     */
@@ -25,7 +24,7 @@ export class ProfilePredictiveAnalyticsNumericCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfilePredictiveAnalyticsEnum"
+            "type": "ProfilePredictiveAnalyticsNumericCondition.TypeEnum"
         },
         {
             "name": "dimension",
@@ -44,6 +43,9 @@ export class ProfilePredictiveAnalyticsNumericCondition {
 }
 
 export namespace ProfilePredictiveAnalyticsNumericCondition {
+    export enum TypeEnum {
+        ProfilePredictiveAnalytics = <any> 'profile-predictive-analytics'
+    }
     export enum DimensionEnum {
         AverageDaysBetweenOrders = <any> 'average_days_between_orders',
         AverageOrderValue = <any> 'average_order_value',

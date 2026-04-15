@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { ReviewEnum } from './reviewEnum';
 import { ReviewProperties } from './reviewProperties';
 import { ReviewStyles } from './reviewStyles';
 export class Review {
@@ -18,7 +17,7 @@ export class Review {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': ReviewEnum | 'review';
+    'type': Review.TypeEnum | 'review';
     'styles'?: ReviewStyles;
     'properties': ReviewProperties;
 
@@ -32,7 +31,7 @@ export class Review {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ReviewEnum"
+            "type": "Review.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class Review {
 }
 
 export namespace Review {
+    export enum TypeEnum {
+        Review = <any> 'review'
+    }
 }

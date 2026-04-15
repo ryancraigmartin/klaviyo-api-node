@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { SubscribeMethodEnum } from './subscribeMethodEnum';
 export class MethodFilter {
-    'field': SubscribeMethodEnum | 'subscribe_method';
+    'field': MethodFilter.FieldEnum | 'subscribe_method';
     /**
     * Method for subscribing / unsubscribing.
     */
@@ -23,7 +22,7 @@ export class MethodFilter {
         {
             "name": "field",
             "baseName": "field",
-            "type": "SubscribeMethodEnum"
+            "type": "MethodFilter.FieldEnum"
         },
         {
             "name": "method",
@@ -37,6 +36,9 @@ export class MethodFilter {
 }
 
 export namespace MethodFilter {
+    export enum FieldEnum {
+        SubscribeMethod = <any> 'subscribe_method'
+    }
     export enum MethodEnum {
         Api = <any> 'api',
         BackInStock = <any> 'back_in_stock',

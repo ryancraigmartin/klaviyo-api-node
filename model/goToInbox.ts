@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { GoToInboxEnum } from './goToInboxEnum';
 export class GoToInbox {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'submit'?: boolean = true;
-    'type': GoToInboxEnum | 'go_to_inbox';
+    'type': GoToInbox.TypeEnum | 'go_to_inbox';
     'properties'?: GoToInbox.PropertiesEnum | 'null';
 
 
@@ -35,7 +34,7 @@ export class GoToInbox {
         {
             "name": "type",
             "baseName": "type",
-            "type": "GoToInboxEnum"
+            "type": "GoToInbox.TypeEnum"
         },
         {
             "name": "properties",
@@ -49,6 +48,9 @@ export class GoToInbox {
 }
 
 export namespace GoToInbox {
+    export enum TypeEnum {
+        GoToInbox = <any> 'go_to_inbox'
+    }
     export enum PropertiesEnum {
         Null = <any> 'null'
     }

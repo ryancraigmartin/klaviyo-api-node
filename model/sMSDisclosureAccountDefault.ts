@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { AccountDefaultEnum } from './accountDefaultEnum';
 export class SMSDisclosureAccountDefault {
-    'type': AccountDefaultEnum | 'account_default';
+    'type': SMSDisclosureAccountDefault.TypeEnum | 'account_default';
     'html'?: any | null;
 
 
@@ -20,7 +19,7 @@ export class SMSDisclosureAccountDefault {
         {
             "name": "type",
             "baseName": "type",
-            "type": "AccountDefaultEnum"
+            "type": "SMSDisclosureAccountDefault.TypeEnum"
         },
         {
             "name": "html",
@@ -34,4 +33,7 @@ export class SMSDisclosureAccountDefault {
 }
 
 export namespace SMSDisclosureAccountDefault {
+    export enum TypeEnum {
+        AccountDefault = <any> 'account_default'
+    }
 }

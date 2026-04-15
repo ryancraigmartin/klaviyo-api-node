@@ -13,7 +13,7 @@ import { RequestFile } from './models';
 import { BorderStyle } from './borderStyle';
 import { ButtonDropShadowStyles } from './buttonDropShadowStyles';
 import { Padding } from './padding';
-import { TextStyle } from './textStyle';
+import { TextStyleV0 } from './textStyleV0';
 export class ButtonStyles {
     'padding'?: Padding;
     'backgroundColor'?: string | null;
@@ -25,7 +25,7 @@ export class ButtonStyles {
     'hoverBackgroundColor'?: string | null;
     'hoverTextColor'?: string | null;
     'borderStyles'?: BorderStyle;
-    'textStyles'?: TextStyle;
+    'textStyles'?: TextStyleV0;
     'color'?: string | null;
     'dropShadow'?: ButtonDropShadowStyles;
 
@@ -69,7 +69,7 @@ export class ButtonStyles {
         {
             "name": "textStyles",
             "baseName": "text_styles",
-            "type": "TextStyle"
+            "type": "TextStyleV0"
         },
         {
             "name": "color",
