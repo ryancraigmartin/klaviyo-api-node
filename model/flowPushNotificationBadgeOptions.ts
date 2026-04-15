@@ -12,6 +12,5 @@
 import { RequestFile } from './models';
 import { Increment } from './increment';
 import { Property } from './property';
-import { SetPropertyEnum } from './setPropertyEnum';
 import { StaticCount } from './staticCount';
 export type FlowPushNotificationBadgeOptions = Increment | StaticCount | Property;

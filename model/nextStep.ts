@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { NextStepEnum } from './nextStepEnum';
 import { NextStepProperties } from './nextStepProperties';
 export class NextStep {
     /**
@@ -18,7 +17,7 @@ export class NextStep {
     */
     'id'?: string | null;
     'submit': boolean;
-    'type': NextStepEnum | 'next_step';
+    'type': NextStep.TypeEnum | 'next_step';
     'properties'?: NextStepProperties;
 
 
@@ -36,7 +35,7 @@ export class NextStep {
         {
             "name": "type",
             "baseName": "type",
-            "type": "NextStepEnum"
+            "type": "NextStep.TypeEnum"
         },
         {
             "name": "properties",
@@ -50,4 +49,7 @@ export class NextStep {
 }
 
 export namespace NextStep {
+    export enum TypeEnum {
+        NextStep = <any> 'next_step'
+    }
 }

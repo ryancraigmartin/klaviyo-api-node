@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { CustomJavascriptEnum } from './customJavascriptEnum';
 export class CustomJavascript {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'properties'?: object;
-    'type': CustomJavascriptEnum | 'custom_javascript';
+    'type': CustomJavascript.TypeEnum | 'custom_javascript';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -34,7 +33,7 @@ export class CustomJavascript {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CustomJavascriptEnum"
+            "type": "CustomJavascript.TypeEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -43,4 +42,7 @@ export class CustomJavascript {
 }
 
 export namespace CustomJavascript {
+    export enum TypeEnum {
+        CustomJavascript = <any> 'custom_javascript'
+    }
 }

@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { ProfileHasNotReceivedPushMessageConditionTimeframeFilter } from './profileHasNotReceivedPushMessageConditionTimeframeFilter';
-import { ProfileNotSentEmailEnum } from './profileNotSentEmailEnum';
 export class ProfileHasNotReceivedEmailMessageCondition {
-    'type': ProfileNotSentEmailEnum | 'profile-not-sent-email';
+    'type': ProfileHasNotReceivedEmailMessageCondition.TypeEnum | 'profile-not-sent-email';
     'timeframeFilter': ProfileHasNotReceivedPushMessageConditionTimeframeFilter;
 
 
@@ -21,7 +20,7 @@ export class ProfileHasNotReceivedEmailMessageCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileNotSentEmailEnum"
+            "type": "ProfileHasNotReceivedEmailMessageCondition.TypeEnum"
         },
         {
             "name": "timeframeFilter",
@@ -35,4 +34,7 @@ export class ProfileHasNotReceivedEmailMessageCondition {
 }
 
 export namespace ProfileHasNotReceivedEmailMessageCondition {
+    export enum TypeEnum {
+        ProfileNotSentEmail = <any> 'profile-not-sent-email'
+    }
 }

@@ -10,6 +10,7 @@
  */
 
 import { RequestFile } from './models';
+import { ConversationResponseObjectResource } from './conversationResponseObjectResource';
 import { ListResponseObjectResource } from './listResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 import { PushTokenEnum } from './pushTokenEnum';
@@ -19,10 +20,11 @@ import { SegmentResponseObjectResource } from './segmentResponseObjectResource';
 
 
 
-    export type GetProfileResponseCompoundDocumentIncludedInner = ListResponseObjectResource | PushTokenResponseObjectResource | SegmentResponseObjectResource
+    export type GetProfileResponseCompoundDocumentIncludedInner = ConversationResponseObjectResource | ListResponseObjectResource | PushTokenResponseObjectResource | SegmentResponseObjectResource
 
     export class GetProfileResponseCompoundDocumentIncludedInnerHelper {
         static mapping: {[index: string]: any} = {
+            "conversation": "ConversationResponseObjectResource",
             "list": "ListResponseObjectResource",
             "push-token": "PushTokenResponseObjectResource",
             "segment": "SegmentResponseObjectResource",

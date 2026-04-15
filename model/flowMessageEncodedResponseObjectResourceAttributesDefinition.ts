@@ -18,5 +18,6 @@ import { FlowPushNotificationBadgeOptions } from './flowPushNotificationBadgeOpt
 import { FlowSms } from './flowSms';
 import { FlowWebhook } from './flowWebhook';
 import { FlowWhatsApp } from './flowWhatsApp';
+import { PushActionButton } from './pushActionButton';
 import { UtmParam } from './utmParam';
 export type FlowMessageEncodedResponseObjectResourceAttributesDefinition = FlowEmail | FlowInternalAlert | FlowPushNotification | FlowSms | FlowWebhook | FlowWhatsApp;

@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { PreviouslySubmittedEnum } from './previouslySubmittedEnum';
 export class PreviouslySubmitted {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'properties'?: object;
-    'type': PreviouslySubmittedEnum | 'previously_submitted';
+    'type': PreviouslySubmitted.TypeEnum | 'previously_submitted';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -34,7 +33,7 @@ export class PreviouslySubmitted {
         {
             "name": "type",
             "baseName": "type",
-            "type": "PreviouslySubmittedEnum"
+            "type": "PreviouslySubmitted.TypeEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -43,4 +42,7 @@ export class PreviouslySubmitted {
 }
 
 export namespace PreviouslySubmitted {
+    export enum TypeEnum {
+        PreviouslySubmitted = <any> 'previously_submitted'
+    }
 }

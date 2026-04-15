@@ -12,12 +12,12 @@
 import { RequestFile } from './models';
 import { Padding } from './padding';
 import { SpinToWinSliceStyle } from './spinToWinSliceStyle';
-import { TextStyle } from './textStyle';
+import { TextStyleV0 } from './textStyleV0';
 export class SpinToWinStyles {
     'padding'?: Padding;
     'backgroundColor'?: string | null;
     'sliceStyles'?: Array<SpinToWinSliceStyle>;
-    'textStyles'?: TextStyle;
+    'textStyles'?: TextStyleV0;
     'centerColor'?: string = 'rgba(255,255,255,1)';
     'outlineColor'?: string = 'rgba(0,0,0,1)';
     'outlineThickness'?: number = 12;
@@ -44,7 +44,7 @@ export class SpinToWinStyles {
         {
             "name": "textStyles",
             "baseName": "text_styles",
-            "type": "TextStyle"
+            "type": "TextStyleV0"
         },
         {
             "name": "centerColor",

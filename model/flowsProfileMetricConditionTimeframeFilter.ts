@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { AlltimeDateFilter } from './alltimeDateFilter';
-import { DateEnum } from './dateEnum';
 import { RelativeAnniversaryDateFilter } from './relativeAnniversaryDateFilter';
 import { RelativeDateOperatorBaseRelativeDateFilter } from './relativeDateOperatorBaseRelativeDateFilter';
 import { RelativeDateRangeFilter } from './relativeDateRangeFilter';

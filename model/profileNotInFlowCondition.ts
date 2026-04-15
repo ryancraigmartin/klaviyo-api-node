@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { ProfileHasNotReceivedPushMessageConditionTimeframeFilter } from './profileHasNotReceivedPushMessageConditionTimeframeFilter';
-import { ProfileNotInFlowEnum } from './profileNotInFlowEnum';
 export class ProfileNotInFlowCondition {
-    'type': ProfileNotInFlowEnum | 'profile-not-in-flow';
+    'type': ProfileNotInFlowCondition.TypeEnum | 'profile-not-in-flow';
     'timeframeFilter': ProfileHasNotReceivedPushMessageConditionTimeframeFilter;
 
 
@@ -21,7 +20,7 @@ export class ProfileNotInFlowCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileNotInFlowEnum"
+            "type": "ProfileNotInFlowCondition.TypeEnum"
         },
         {
             "name": "timeframeFilter",
@@ -35,4 +34,7 @@ export class ProfileNotInFlowCondition {
 }
 
 export namespace ProfileNotInFlowCondition {
+    export enum TypeEnum {
+        ProfileNotInFlow = <any> 'profile-not-in-flow'
+    }
 }

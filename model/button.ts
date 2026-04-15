@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { ButtonAction } from './buttonAction';
-import { ButtonEnum } from './buttonEnum';
 import { ButtonProperties } from './buttonProperties';
 import { ButtonStyles } from './buttonStyles';
 export class Button {
@@ -19,7 +18,7 @@ export class Button {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': ButtonEnum | 'button';
+    'type': Button.TypeEnum | 'button';
     'styles'?: ButtonStyles;
     'properties': ButtonProperties;
     'action'?: ButtonAction;
@@ -34,7 +33,7 @@ export class Button {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ButtonEnum"
+            "type": "Button.TypeEnum"
         },
         {
             "name": "styles",
@@ -58,4 +57,7 @@ export class Button {
 }
 
 export namespace Button {
+    export enum TypeEnum {
+        Button = <any> 'button'
+    }
 }

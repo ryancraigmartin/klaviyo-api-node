@@ -11,14 +11,13 @@
 
 import { RequestFile } from './models';
 import { SubscribeViaSMSProperties } from './subscribeViaSMSProperties';
-import { SubscribeViaSmsEnum } from './subscribeViaSmsEnum';
 export class SubscribeViaSMS {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'submit'?: boolean = true;
-    'type': SubscribeViaSmsEnum | 'subscribe_via_sms';
+    'type': SubscribeViaSMS.TypeEnum | 'subscribe_via_sms';
     'properties': SubscribeViaSMSProperties;
 
 
@@ -36,7 +35,7 @@ export class SubscribeViaSMS {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SubscribeViaSmsEnum"
+            "type": "SubscribeViaSMS.TypeEnum"
         },
         {
             "name": "properties",
@@ -50,4 +49,7 @@ export class SubscribeViaSMS {
 }
 
 export namespace SubscribeViaSMS {
+    export enum TypeEnum {
+        SubscribeViaSms = <any> 'subscribe_via_sms'
+    }
 }

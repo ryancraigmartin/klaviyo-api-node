@@ -12,6 +12,7 @@
 import { RequestFile } from './models';
 import { FlowPushNotificationAdditionalFilters } from './flowPushNotificationAdditionalFilters';
 import { FlowPushNotificationBadgeOptions } from './flowPushNotificationBadgeOptions';
+import { PushActionButton } from './pushActionButton';
 export class FlowPushNotification {
     'title'?: string | null;
     'body': string;
@@ -44,6 +45,7 @@ export class FlowPushNotification {
     'conversionMetricId'?: string | null;
     'smartSendingEnabled'?: boolean = true;
     'additionalFilters'?: FlowPushNotificationAdditionalFilters | null;
+    'actionButtons'?: Array<PushActionButton> | null;
     'name'?: string | null;
     /**
     * Not allowed on create.
@@ -131,6 +133,11 @@ export class FlowPushNotification {
             "name": "additionalFilters",
             "baseName": "additional_filters",
             "type": "FlowPushNotificationAdditionalFilters"
+        },
+        {
+            "name": "actionButtons",
+            "baseName": "action_buttons",
+            "type": "Array<PushActionButton>"
         },
         {
             "name": "name",

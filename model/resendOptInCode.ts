@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { ResendOptInCodeEnum } from './resendOptInCodeEnum';
 export class ResendOptInCode {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'submit'?: boolean = false;
-    'type': ResendOptInCodeEnum | 'resend_opt_in_code';
+    'type': ResendOptInCode.TypeEnum | 'resend_opt_in_code';
     'properties'?: ResendOptInCode.PropertiesEnum | 'null';
 
 
@@ -35,7 +34,7 @@ export class ResendOptInCode {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ResendOptInCodeEnum"
+            "type": "ResendOptInCode.TypeEnum"
         },
         {
             "name": "properties",
@@ -49,6 +48,9 @@ export class ResendOptInCode {
 }
 
 export namespace ResendOptInCode {
+    export enum TypeEnum {
+        ResendOptInCode = <any> 'resend_opt_in_code'
+    }
     export enum PropertiesEnum {
         Null = <any> 'null'
     }

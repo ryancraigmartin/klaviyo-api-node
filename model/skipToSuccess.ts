@@ -10,13 +10,12 @@
  */
 
 import { RequestFile } from './models';
-import { SkipToSuccessEnum } from './skipToSuccessEnum';
 export class SkipToSuccess {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': SkipToSuccessEnum | 'skip_to_success';
+    'type': SkipToSuccess.TypeEnum | 'skip_to_success';
     'submit'?: boolean = false;
     'properties': object;
 
@@ -30,7 +29,7 @@ export class SkipToSuccess {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SkipToSuccessEnum"
+            "type": "SkipToSuccess.TypeEnum"
         },
         {
             "name": "submit",
@@ -49,4 +48,7 @@ export class SkipToSuccess {
 }
 
 export namespace SkipToSuccess {
+    export enum TypeEnum {
+        SkipToSuccess = <any> 'skip_to_success'
+    }
 }

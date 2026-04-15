@@ -12,13 +12,12 @@
 import { RequestFile } from './models';
 import { HTMLTextProperties } from './hTMLTextProperties';
 import { HTMLTextStyles } from './hTMLTextStyles';
-import { HtmlTextEnum } from './htmlTextEnum';
 export class HTMLText {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': HtmlTextEnum | 'html_text';
+    'type': HTMLText.TypeEnum | 'html_text';
     'styles'?: HTMLTextStyles;
     'properties'?: HTMLTextProperties;
 
@@ -32,7 +31,7 @@ export class HTMLText {
         {
             "name": "type",
             "baseName": "type",
-            "type": "HtmlTextEnum"
+            "type": "HTMLText.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class HTMLText {
 }
 
 export namespace HTMLText {
+    export enum TypeEnum {
+        HtmlText = <any> 'html_text'
+    }
 }

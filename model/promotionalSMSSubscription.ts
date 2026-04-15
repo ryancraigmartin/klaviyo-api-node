@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { PromotionalSmsSubscriptionEnum } from './promotionalSmsSubscriptionEnum';
 export class PromotionalSMSSubscription {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'submit'?: boolean = true;
-    'type': PromotionalSmsSubscriptionEnum | 'promotional_sms_subscription';
+    'type': PromotionalSMSSubscription.TypeEnum | 'promotional_sms_subscription';
     'properties'?: PromotionalSMSSubscription.PropertiesEnum | 'null';
 
 
@@ -35,7 +34,7 @@ export class PromotionalSMSSubscription {
         {
             "name": "type",
             "baseName": "type",
-            "type": "PromotionalSmsSubscriptionEnum"
+            "type": "PromotionalSMSSubscription.TypeEnum"
         },
         {
             "name": "properties",
@@ -49,6 +48,9 @@ export class PromotionalSMSSubscription {
 }
 
 export namespace PromotionalSMSSubscription {
+    export enum TypeEnum {
+        PromotionalSmsSubscription = <any> 'promotional_sms_subscription'
+    }
     export enum PropertiesEnum {
         Null = <any> 'null'
     }

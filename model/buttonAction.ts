@@ -18,7 +18,6 @@ import { PromotionalSMSSubscription } from './promotionalSMSSubscription';
 import { Redirect } from './redirect';
 import { ResendOptInCode } from './resendOptInCode';
 import { SkipToSuccess } from './skipToSuccess';
-import { SkipToSuccessEnum } from './skipToSuccessEnum';
 import { SubmitBackInStock } from './submitBackInStock';
 import { SubmitOptInCode } from './submitOptInCode';
 import { SubscribeViaSMS } from './subscribeViaSMS';

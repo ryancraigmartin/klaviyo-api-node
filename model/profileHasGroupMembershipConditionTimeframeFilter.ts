@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { DateEnum } from './dateEnum';
 import { RelativeDateOperatorBaseRelativeDateFilter } from './relativeDateOperatorBaseRelativeDateFilter';
 import { RelativeDateRangeFilter } from './relativeDateRangeFilter';
 import { StaticDateFilter } from './staticDateFilter';

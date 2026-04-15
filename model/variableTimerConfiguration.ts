@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { VariableEnum } from './variableEnum';
 export class VariableTimerConfiguration {
-    'type': VariableEnum | 'variable';
+    'type': VariableTimerConfiguration.TypeEnum | 'variable';
     'days': number;
     'hours': number;
     'minutes': number;
@@ -22,7 +21,7 @@ export class VariableTimerConfiguration {
         {
             "name": "type",
             "baseName": "type",
-            "type": "VariableEnum"
+            "type": "VariableTimerConfiguration.TypeEnum"
         },
         {
             "name": "days",
@@ -46,4 +45,7 @@ export class VariableTimerConfiguration {
 }
 
 export namespace VariableTimerConfiguration {
+    export enum TypeEnum {
+        Variable = <any> 'variable'
+    }
 }

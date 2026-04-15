@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { AccountDefaultEnum } from './accountDefaultEnum';
 import { SMSDisclosureAccountDefault } from './sMSDisclosureAccountDefault';
 import { SMSDisclosureCustom } from './sMSDisclosureCustom';
 export type SMSDisclosurePropertiesContent = SMSDisclosureCustom | SMSDisclosureAccountDefault;

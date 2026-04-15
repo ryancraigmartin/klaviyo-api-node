@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { DeviceEnum } from './deviceEnum';
 import { DeviceProperties } from './deviceProperties';
 export class Device {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': DeviceEnum | 'device';
+    'type': Device.TypeEnum | 'device';
     'properties'?: DeviceProperties;
 
 
@@ -30,7 +29,7 @@ export class Device {
         {
             "name": "type",
             "baseName": "type",
-            "type": "DeviceEnum"
+            "type": "Device.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class Device {
 }
 
 export namespace Device {
+    export enum TypeEnum {
+        Device = <any> 'device'
+    }
 }

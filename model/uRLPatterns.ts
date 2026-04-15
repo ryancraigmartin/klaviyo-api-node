@@ -11,13 +11,12 @@
 
 import { RequestFile } from './models';
 import { URLPatternsProperties } from './uRLPatternsProperties';
-import { UrlPatternsEnum } from './urlPatternsEnum';
 export class URLPatterns {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': UrlPatternsEnum | 'url_patterns';
+    'type': URLPatterns.TypeEnum | 'url_patterns';
     'properties'?: URLPatternsProperties;
 
 
@@ -30,7 +29,7 @@ export class URLPatterns {
         {
             "name": "type",
             "baseName": "type",
-            "type": "UrlPatternsEnum"
+            "type": "URLPatterns.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class URLPatterns {
 }
 
 export namespace URLPatterns {
+    export enum TypeEnum {
+        UrlPatterns = <any> 'url_patterns'
+    }
 }

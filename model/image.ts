@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { ImageAction } from './imageAction';
-import { ImageEnum } from './imageEnum';
 import { ImageProperties } from './imageProperties';
 import { ImageStyles } from './imageStyles';
 export class Image {
@@ -19,7 +18,7 @@ export class Image {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': ImageEnum | 'image';
+    'type': Image.TypeEnum | 'image';
     'styles'?: ImageStyles;
     'properties': ImageProperties;
     'action'?: ImageAction | null;
@@ -34,7 +33,7 @@ export class Image {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ImageEnum"
+            "type": "Image.TypeEnum"
         },
         {
             "name": "styles",
@@ -58,4 +57,7 @@ export class Image {
 }
 
 export namespace Image {
+    export enum TypeEnum {
+        Image = <any> 'image'
+    }
 }

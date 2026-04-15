@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { ScheduleReportEnum } from './scheduleReportEnum';
 export class InternalScheduledReportData {
-    'serviceMethodType': ScheduleReportEnum | 'schedule-report';
+    'serviceMethodType': InternalScheduledReportData.ServiceMethodTypeEnum | 'schedule-report';
     'reportId': string;
 
 
@@ -20,7 +19,7 @@ export class InternalScheduledReportData {
         {
             "name": "serviceMethodType",
             "baseName": "service_method_type",
-            "type": "ScheduleReportEnum"
+            "type": "InternalScheduledReportData.ServiceMethodTypeEnum"
         },
         {
             "name": "reportId",
@@ -34,4 +33,7 @@ export class InternalScheduledReportData {
 }
 
 export namespace InternalScheduledReportData {
+    export enum ServiceMethodTypeEnum {
+        ScheduleReport = <any> 'schedule-report'
+    }
 }

@@ -22,7 +22,6 @@ import { ProfileMarketingConsentConditionConsent } from './profileMarketingConse
 import { ProfileMetricPropertyFilter } from './profileMetricPropertyFilter';
 import { ProfileNoGroupMembershipCondition } from './profileNoGroupMembershipCondition';
 import { ProfileNotInFlowCondition } from './profileNotInFlowCondition';
-import { ProfileNotInFlowEnum } from './profileNotInFlowEnum';
 import { ProfilePermissionsCondition } from './profilePermissionsCondition';
 import { ProfilePermissionsConditionPermission } from './profilePermissionsConditionPermission';
 import { ProfilePostalCodeDistanceCondition } from './profilePostalCodeDistanceCondition';

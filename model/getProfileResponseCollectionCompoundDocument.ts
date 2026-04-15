@@ -12,11 +12,11 @@
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
 import { GetProfileResponseCollectionCompoundDocumentDataInner } from './getProfileResponseCollectionCompoundDocumentDataInner';
-import { PushTokenResponseObjectResource } from './pushTokenResponseObjectResource';
+import { GetProfileResponseCollectionCompoundDocumentIncludedInner } from './getProfileResponseCollectionCompoundDocumentIncludedInner';
 export class GetProfileResponseCollectionCompoundDocument {
     'data': Array<GetProfileResponseCollectionCompoundDocumentDataInner>;
     'links'?: CollectionLinks;
-    'included'?: Array<PushTokenResponseObjectResource>;
+    'included'?: Array<GetProfileResponseCollectionCompoundDocumentIncludedInner>;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -33,7 +33,7 @@ export class GetProfileResponseCollectionCompoundDocument {
         {
             "name": "included",
             "baseName": "included",
-            "type": "Array<PushTokenResponseObjectResource>"
+            "type": "Array<GetProfileResponseCollectionCompoundDocumentIncludedInner>"
         }    ];
 
     static getAttributeTypeMap() {

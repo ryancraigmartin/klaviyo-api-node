@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { ListEnum } from './listEnum';
 export class ListRegexOperatorListContainsFilter {
-    'type': ListEnum | 'list';
+    'type': ListRegexOperatorListContainsFilter.TypeEnum | 'list';
     /**
     * Operators for list regex filters.
     */
@@ -24,7 +23,7 @@ export class ListRegexOperatorListContainsFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ListEnum"
+            "type": "ListRegexOperatorListContainsFilter.TypeEnum"
         },
         {
             "name": "operator",
@@ -43,6 +42,9 @@ export class ListRegexOperatorListContainsFilter {
 }
 
 export namespace ListRegexOperatorListContainsFilter {
+    export enum TypeEnum {
+        List = <any> 'list'
+    }
     export enum OperatorEnum {
         ContainsEndsWith = <any> 'contains-ends-with',
         ContainsStartsWith = <any> 'contains-starts-with',

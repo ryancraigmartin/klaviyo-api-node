@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { AgeGateEnum } from './ageGateEnum';
 import { AgeGateProperties } from './ageGateProperties';
 import { AgeGateStyles } from './ageGateStyles';
 export class AgeGate {
@@ -18,7 +17,7 @@ export class AgeGate {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': AgeGateEnum | 'age_gate';
+    'type': AgeGate.TypeEnum | 'age_gate';
     'styles'?: AgeGateStyles;
     'properties': AgeGateProperties;
     'displayDevice'?: Array<AgeGate.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
@@ -33,7 +32,7 @@ export class AgeGate {
         {
             "name": "type",
             "baseName": "type",
-            "type": "AgeGateEnum"
+            "type": "AgeGate.TypeEnum"
         },
         {
             "name": "styles",
@@ -57,6 +56,9 @@ export class AgeGate {
 }
 
 export namespace AgeGate {
+    export enum TypeEnum {
+        AgeGate = <any> 'age_gate'
+    }
     export enum DisplayDeviceEnum {
         Both = <any> 'both',
         Desktop = <any> 'desktop',

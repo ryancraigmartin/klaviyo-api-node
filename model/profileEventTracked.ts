@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { ProfileEventTrackedEnum } from './profileEventTrackedEnum';
 import { ProfileEventTrackedProperties } from './profileEventTrackedProperties';
 export class ProfileEventTracked {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': ProfileEventTrackedEnum | 'profile_event_tracked';
+    'type': ProfileEventTracked.TypeEnum | 'profile_event_tracked';
     'properties': ProfileEventTrackedProperties;
 
 
@@ -30,7 +29,7 @@ export class ProfileEventTracked {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileEventTrackedEnum"
+            "type": "ProfileEventTracked.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class ProfileEventTracked {
 }
 
 export namespace ProfileEventTracked {
+    export enum TypeEnum {
+        ProfileEventTracked = <any> 'profile_event_tracked'
+    }
 }

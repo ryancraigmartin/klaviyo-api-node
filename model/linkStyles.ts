@@ -10,10 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { UnderlineEnum } from './underlineEnum';
 export class LinkStyles {
     'color'?: string = '#0066cc';
-    'decoration'?: UnderlineEnum | 'underline';
+    'decoration'?: LinkStyles.DecorationEnum | 'underline' = LinkStyles.DecorationEnum.Underline;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -25,7 +24,7 @@ export class LinkStyles {
         {
             "name": "decoration",
             "baseName": "decoration",
-            "type": "UnderlineEnum"
+            "type": "LinkStyles.DecorationEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -34,4 +33,7 @@ export class LinkStyles {
 }
 
 export namespace LinkStyles {
+    export enum DecorationEnum {
+        Underline = <any> 'underline'
+    }
 }

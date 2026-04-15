@@ -12,13 +12,12 @@
 import { RequestFile } from './models';
 import { BackInStockEmailConsentCheckboxProperties } from './backInStockEmailConsentCheckboxProperties';
 import { BackInStockEmailConsentCheckboxStyles } from './backInStockEmailConsentCheckboxStyles';
-import { BisPromotionalEmailCheckboxEnum } from './bisPromotionalEmailCheckboxEnum';
 export class BackInStockEmailConsentCheckbox {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': BisPromotionalEmailCheckboxEnum | 'bis_promotional_email_checkbox';
+    'type': BackInStockEmailConsentCheckbox.TypeEnum | 'bis_promotional_email_checkbox';
     'styles'?: BackInStockEmailConsentCheckboxStyles;
     'properties': BackInStockEmailConsentCheckboxProperties;
 
@@ -32,7 +31,7 @@ export class BackInStockEmailConsentCheckbox {
         {
             "name": "type",
             "baseName": "type",
-            "type": "BisPromotionalEmailCheckboxEnum"
+            "type": "BackInStockEmailConsentCheckbox.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class BackInStockEmailConsentCheckbox {
 }
 
 export namespace BackInStockEmailConsentCheckbox {
+    export enum TypeEnum {
+        BisPromotionalEmailCheckbox = <any> 'bis_promotional_email_checkbox'
+    }
 }

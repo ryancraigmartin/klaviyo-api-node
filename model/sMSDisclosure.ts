@@ -12,13 +12,12 @@
 import { RequestFile } from './models';
 import { SMSDisclosureProperties } from './sMSDisclosureProperties';
 import { SMSDisclosureStyles } from './sMSDisclosureStyles';
-import { SmsDisclosureEnum } from './smsDisclosureEnum';
 export class SMSDisclosure {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': SmsDisclosureEnum | 'sms_disclosure';
+    'type': SMSDisclosure.TypeEnum | 'sms_disclosure';
     'styles'?: SMSDisclosureStyles;
     'properties'?: SMSDisclosureProperties;
 
@@ -32,7 +31,7 @@ export class SMSDisclosure {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SmsDisclosureEnum"
+            "type": "SMSDisclosure.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class SMSDisclosure {
 }
 
 export namespace SMSDisclosure {
+    export enum TypeEnum {
+        SmsDisclosure = <any> 'sms_disclosure'
+    }
 }

@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { PhoneNumberEnum } from './phoneNumberEnum';
 import { PhoneNumberProperties } from './phoneNumberProperties';
 import { PhoneNumberStyles } from './phoneNumberStyles';
 export class PhoneNumber {
@@ -18,7 +17,7 @@ export class PhoneNumber {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': PhoneNumberEnum | 'phone_number';
+    'type': PhoneNumber.TypeEnum | 'phone_number';
     'styles'?: PhoneNumberStyles;
     'properties': PhoneNumberProperties;
 
@@ -32,7 +31,7 @@ export class PhoneNumber {
         {
             "name": "type",
             "baseName": "type",
-            "type": "PhoneNumberEnum"
+            "type": "PhoneNumber.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class PhoneNumber {
 }
 
 export namespace PhoneNumber {
+    export enum TypeEnum {
+        PhoneNumber = <any> 'phone_number'
+    }
 }

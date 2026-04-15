@@ -10,23 +10,21 @@
  */
 
 import { RequestFile } from './models';
-import { MethodEnum } from './methodEnum';
-import { OneClickUnsubscribeEnum } from './oneClickUnsubscribeEnum';
 export class OneClickUnsubscribeMethodFilter {
-    'field': MethodEnum | 'method';
-    'method': OneClickUnsubscribeEnum | 'one_click_unsubscribe';
+    'field': OneClickUnsubscribeMethodFilter.FieldEnum | 'method';
+    'method': OneClickUnsubscribeMethodFilter.MethodEnum | 'one_click_unsubscribe';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "field",
             "baseName": "field",
-            "type": "MethodEnum"
+            "type": "OneClickUnsubscribeMethodFilter.FieldEnum"
         },
         {
             "name": "method",
             "baseName": "method",
-            "type": "OneClickUnsubscribeEnum"
+            "type": "OneClickUnsubscribeMethodFilter.MethodEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -35,4 +33,10 @@ export class OneClickUnsubscribeMethodFilter {
 }
 
 export namespace OneClickUnsubscribeMethodFilter {
+    export enum FieldEnum {
+        Method = <any> 'method'
+    }
+    export enum MethodEnum {
+        OneClickUnsubscribe = <any> 'one_click_unsubscribe'
+    }
 }

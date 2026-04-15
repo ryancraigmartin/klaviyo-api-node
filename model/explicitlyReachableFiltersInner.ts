@@ -11,10 +11,8 @@
 
 import { RequestFile } from './models';
 import { EffectiveDateFilter } from './effectiveDateFilter';
-import { FormEnum } from './formEnum';
 import { FormSubscribeFilter } from './formSubscribeFilter';
 import { InStringArrayFilter } from './inStringArrayFilter';
 import { MethodFilter } from './methodFilter';
 import { RecordedDateFilter } from './recordedDateFilter';
-import { SubscribeMethodEnum } from './subscribeMethodEnum';
 export type ExplicitlyReachableFiltersInner = EffectiveDateFilter | RecordedDateFilter | MethodFilter | FormSubscribeFilter;

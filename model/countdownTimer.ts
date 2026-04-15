@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { CountdownTimerEnum } from './countdownTimerEnum';
 import { CountdownTimerProperties } from './countdownTimerProperties';
 import { CountdownTimerStyles } from './countdownTimerStyles';
 export class CountdownTimer {
@@ -18,7 +17,7 @@ export class CountdownTimer {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': CountdownTimerEnum | 'countdown_timer';
+    'type': CountdownTimer.TypeEnum | 'countdown_timer';
     'styles'?: CountdownTimerStyles;
     'properties': CountdownTimerProperties;
 
@@ -32,7 +31,7 @@ export class CountdownTimer {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CountdownTimerEnum"
+            "type": "CountdownTimer.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class CountdownTimer {
 }
 
 export namespace CountdownTimer {
+    export enum TypeEnum {
+        CountdownTimer = <any> 'countdown_timer'
+    }
 }

@@ -10,10 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { RecordedDateEnum } from './recordedDateEnum';
 import { StatusDateFilterFilter } from './statusDateFilterFilter';
 export class RecordedDateFilter {
-    'field': RecordedDateEnum | 'recorded_date';
+    'field': RecordedDateFilter.FieldEnum | 'recorded_date';
     'filter': StatusDateFilterFilter;
 
 
@@ -21,7 +20,7 @@ export class RecordedDateFilter {
         {
             "name": "field",
             "baseName": "field",
-            "type": "RecordedDateEnum"
+            "type": "RecordedDateFilter.FieldEnum"
         },
         {
             "name": "filter",
@@ -35,4 +34,7 @@ export class RecordedDateFilter {
 }
 
 export namespace RecordedDateFilter {
+    export enum FieldEnum {
+        RecordedDate = <any> 'recorded_date'
+    }
 }

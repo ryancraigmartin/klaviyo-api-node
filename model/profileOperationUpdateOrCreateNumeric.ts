@@ -10,13 +10,12 @@
  */
 
 import { RequestFile } from './models';
-import { NumericEnum } from './numericEnum';
 export class ProfileOperationUpdateOrCreateNumeric {
     /**
     * The type of operation to perform on a profile property.
     */
     'operator': ProfileOperationUpdateOrCreateNumeric.OperatorEnum | 'create' | 'update';
-    'propertyType': NumericEnum | 'numeric';
+    'propertyType': ProfileOperationUpdateOrCreateNumeric.PropertyTypeEnum | 'numeric';
     'propertyKey': string;
     'propertyValue': number;
 
@@ -30,7 +29,7 @@ export class ProfileOperationUpdateOrCreateNumeric {
         {
             "name": "propertyType",
             "baseName": "property_type",
-            "type": "NumericEnum"
+            "type": "ProfileOperationUpdateOrCreateNumeric.PropertyTypeEnum"
         },
         {
             "name": "propertyKey",
@@ -52,5 +51,8 @@ export namespace ProfileOperationUpdateOrCreateNumeric {
     export enum OperatorEnum {
         Create = <any> 'create',
         Update = <any> 'update'
+    }
+    export enum PropertyTypeEnum {
+        Numeric = <any> 'numeric'
     }
 }

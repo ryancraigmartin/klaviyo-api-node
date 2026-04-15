@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { TrackEventEnum } from './trackEventEnum';
 export class InternalTrackEventData {
-    'serviceMethodType': TrackEventEnum | 'track-event';
+    'serviceMethodType': InternalTrackEventData.ServiceMethodTypeEnum | 'track-event';
     'eventKey'?: string | null;
     'eventPayload'?: object | null;
     'trackingCompanyId'?: string | null;
@@ -22,7 +21,7 @@ export class InternalTrackEventData {
         {
             "name": "serviceMethodType",
             "baseName": "service_method_type",
-            "type": "TrackEventEnum"
+            "type": "InternalTrackEventData.ServiceMethodTypeEnum"
         },
         {
             "name": "eventKey",
@@ -46,4 +45,7 @@ export class InternalTrackEventData {
 }
 
 export namespace InternalTrackEventData {
+    export enum ServiceMethodTypeEnum {
+        TrackEvent = <any> 'track-event'
+    }
 }

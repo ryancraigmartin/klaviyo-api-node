@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { CustomObjectTriggerConditionFilter } from './customObjectTriggerConditionFilter';
-import { CustomObjectTriggerPropertyEnum } from './customObjectTriggerPropertyEnum';
 export class CustomObjectTriggerCondition {
-    'type': CustomObjectTriggerPropertyEnum | 'custom-object-trigger-property';
+    'type': CustomObjectTriggerCondition.TypeEnum | 'custom-object-trigger-property';
     'propertyId': number;
     'filter': CustomObjectTriggerConditionFilter;
 
@@ -22,7 +21,7 @@ export class CustomObjectTriggerCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "CustomObjectTriggerPropertyEnum"
+            "type": "CustomObjectTriggerCondition.TypeEnum"
         },
         {
             "name": "propertyId",
@@ -41,4 +40,7 @@ export class CustomObjectTriggerCondition {
 }
 
 export namespace CustomObjectTriggerCondition {
+    export enum TypeEnum {
+        CustomObjectTriggerProperty = <any> 'custom-object-trigger-property'
+    }
 }

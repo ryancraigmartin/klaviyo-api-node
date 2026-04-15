@@ -15,7 +15,6 @@ import { ExistenceOperatorExistenceFilter } from './existenceOperatorExistenceFi
 import { ListLengthFilter } from './listLengthFilter';
 import { ListSetFilter } from './listSetFilter';
 import { ListSubstringFilter } from './listSubstringFilter';
-import { NumericEnum } from './numericEnum';
 import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
 import { StringArrayOperatorStringArrayFilter } from './stringArrayOperatorStringArrayFilter';
 import { StringOperatorStringFilter } from './stringOperatorStringFilter';

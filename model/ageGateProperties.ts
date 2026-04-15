@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { DollarSignAgeGatedDateOfBirthEnum } from './dollarSignAgeGatedDateOfBirthEnum';
 import { ErrorMessages } from './errorMessages';
 export class AgeGateProperties {
     'displayDevice'?: Array<AgeGateProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
@@ -18,7 +17,7 @@ export class AgeGateProperties {
     'showLabel'?: boolean = false;
     'placeholder'?: string | null;
     'errorMessages'?: ErrorMessages;
-    'propertyName'?: DollarSignAgeGatedDateOfBirthEnum | '$age_gated_date_of_birth';
+    'propertyName'?: AgeGateProperties.PropertyNameEnum | '$age_gated_date_of_birth' = AgeGateProperties.PropertyNameEnum.AgeGatedDateOfBirth;
     'dateFormat'?: string = 'MM/DD/YYYY';
     /**
     * SMS County Code Enum.
@@ -56,7 +55,7 @@ export class AgeGateProperties {
         {
             "name": "propertyName",
             "baseName": "property_name",
-            "type": "DollarSignAgeGatedDateOfBirthEnum"
+            "type": "AgeGateProperties.PropertyNameEnum"
         },
         {
             "name": "dateFormat",
@@ -84,6 +83,9 @@ export namespace AgeGateProperties {
         Both = <any> 'both',
         Desktop = <any> 'desktop',
         Mobile = <any> 'mobile'
+    }
+    export enum PropertyNameEnum {
+        AgeGatedDateOfBirth = <any> '$age_gated_date_of_birth'
     }
     export enum SmsCountryCodeEnum {
         At = <any> 'AT',

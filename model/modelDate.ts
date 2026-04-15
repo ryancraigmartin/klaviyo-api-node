@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { DateEnum } from './dateEnum';
 import { DateProperties } from './dateProperties';
 import { DateStyles } from './dateStyles';
 export class ModelDate {
@@ -18,7 +17,7 @@ export class ModelDate {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': DateEnum | 'date';
+    'type': ModelDate.TypeEnum | 'date';
     'styles'?: DateStyles;
     'properties': DateProperties;
 
@@ -32,7 +31,7 @@ export class ModelDate {
         {
             "name": "type",
             "baseName": "type",
-            "type": "DateEnum"
+            "type": "ModelDate.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class ModelDate {
 }
 
 export namespace ModelDate {
+    export enum TypeEnum {
+        Date = <any> 'date'
+    }
 }

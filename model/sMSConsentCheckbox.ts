@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { PromotionalSmsCheckboxEnum } from './promotionalSmsCheckboxEnum';
 import { SMSConsentCheckboxProperties } from './sMSConsentCheckboxProperties';
 import { SMSConsentCheckboxStyles } from './sMSConsentCheckboxStyles';
 export class SMSConsentCheckbox {
@@ -18,7 +17,7 @@ export class SMSConsentCheckbox {
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': PromotionalSmsCheckboxEnum | 'promotional_sms_checkbox';
+    'type': SMSConsentCheckbox.TypeEnum | 'promotional_sms_checkbox';
     'styles'?: SMSConsentCheckboxStyles;
     'properties': SMSConsentCheckboxProperties;
 
@@ -32,7 +31,7 @@ export class SMSConsentCheckbox {
         {
             "name": "type",
             "baseName": "type",
-            "type": "PromotionalSmsCheckboxEnum"
+            "type": "SMSConsentCheckbox.TypeEnum"
         },
         {
             "name": "styles",
@@ -51,4 +50,7 @@ export class SMSConsentCheckbox {
 }
 
 export namespace SMSConsentCheckbox {
+    export enum TypeEnum {
+        PromotionalSmsCheckbox = <any> 'promotional_sms_checkbox'
+    }
 }

@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { SetCountEnum } from './setCountEnum';
 export class StaticCount {
-    'badgeConfig': SetCountEnum | 'set_count';
+    'badgeConfig': StaticCount.BadgeConfigEnum | 'set_count';
     'value': string;
 
 
@@ -20,7 +19,7 @@ export class StaticCount {
         {
             "name": "badgeConfig",
             "baseName": "badge_config",
-            "type": "SetCountEnum"
+            "type": "StaticCount.BadgeConfigEnum"
         },
         {
             "name": "value",
@@ -34,4 +33,7 @@ export class StaticCount {
 }
 
 export namespace StaticCount {
+    export enum BadgeConfigEnum {
+        SetCount = <any> 'set_count'
+    }
 }

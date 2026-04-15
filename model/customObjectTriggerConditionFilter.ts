@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { BooleanFilter } from './booleanFilter';
-import { ExistenceEnum } from './existenceEnum';
 import { ExistenceOperatorExistenceFilter } from './existenceOperatorExistenceFilter';
 import { ListContainsOperatorListContainsFilter } from './listContainsOperatorListContainsFilter';
 import { ListLengthFilter } from './listLengthFilter';

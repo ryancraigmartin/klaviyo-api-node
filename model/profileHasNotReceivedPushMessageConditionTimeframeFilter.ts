@@ -11,7 +11,5 @@
 
 import { RequestFile } from './models';
 import { AlltimeDateFilter } from './alltimeDateFilter';
-import { DateEnum } from './dateEnum';
 import { InTheLastBaseRelativeDateFilter } from './inTheLastBaseRelativeDateFilter';
-import { InTheLastEnum } from './inTheLastEnum';
 export type ProfileHasNotReceivedPushMessageConditionTimeframeFilter = AlltimeDateFilter | InTheLastBaseRelativeDateFilter;

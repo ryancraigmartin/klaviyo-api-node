@@ -10,16 +10,14 @@
  */
 
 import { RequestFile } from './models';
-import { PriorityEnum } from './priorityEnum';
 import { ProfilePredictiveAnalyticsChannelAffinityPriorityFilter } from './profilePredictiveAnalyticsChannelAffinityPriorityFilter';
-import { ProfilePredictiveAnalyticsEnum } from './profilePredictiveAnalyticsEnum';
 export class ProfilePredictiveAnalyticsChannelAffinityPriorityCondition {
-    'type': ProfilePredictiveAnalyticsEnum | 'profile-predictive-analytics';
+    'type': ProfilePredictiveAnalyticsChannelAffinityPriorityCondition.TypeEnum | 'profile-predictive-analytics';
     /**
     * Possible dimension for channel affinity criterion.
     */
     'dimension': ProfilePredictiveAnalyticsChannelAffinityPriorityCondition.DimensionEnum | 'channel_affinity';
-    'measurement': PriorityEnum | 'priority';
+    'measurement': ProfilePredictiveAnalyticsChannelAffinityPriorityCondition.MeasurementEnum | 'priority';
     /**
     * Possible channels in a channel affinity definition.
     */
@@ -31,7 +29,7 @@ export class ProfilePredictiveAnalyticsChannelAffinityPriorityCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfilePredictiveAnalyticsEnum"
+            "type": "ProfilePredictiveAnalyticsChannelAffinityPriorityCondition.TypeEnum"
         },
         {
             "name": "dimension",
@@ -41,7 +39,7 @@ export class ProfilePredictiveAnalyticsChannelAffinityPriorityCondition {
         {
             "name": "measurement",
             "baseName": "measurement",
-            "type": "PriorityEnum"
+            "type": "ProfilePredictiveAnalyticsChannelAffinityPriorityCondition.MeasurementEnum"
         },
         {
             "name": "predictedChannel",
@@ -60,8 +58,14 @@ export class ProfilePredictiveAnalyticsChannelAffinityPriorityCondition {
 }
 
 export namespace ProfilePredictiveAnalyticsChannelAffinityPriorityCondition {
+    export enum TypeEnum {
+        ProfilePredictiveAnalytics = <any> 'profile-predictive-analytics'
+    }
     export enum DimensionEnum {
         ChannelAffinity = <any> 'channel_affinity'
+    }
+    export enum MeasurementEnum {
+        Priority = <any> 'priority'
     }
     export enum PredictedChannelEnum {
         Email = <any> 'email',

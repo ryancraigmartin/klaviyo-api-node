@@ -10,12 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { FormEnum } from './formEnum';
 import { InStringArrayFilter } from './inStringArrayFilter';
-import { SubscribeMethodEnum } from './subscribeMethodEnum';
 export class FormSubscribeFilter {
-    'field': SubscribeMethodEnum | 'subscribe_method';
-    'method': FormEnum | 'form';
+    'field': FormSubscribeFilter.FieldEnum | 'subscribe_method';
+    'method': FormSubscribeFilter.MethodEnum | 'form';
     'filter'?: InStringArrayFilter;
 
 
@@ -23,12 +21,12 @@ export class FormSubscribeFilter {
         {
             "name": "field",
             "baseName": "field",
-            "type": "SubscribeMethodEnum"
+            "type": "FormSubscribeFilter.FieldEnum"
         },
         {
             "name": "method",
             "baseName": "method",
-            "type": "FormEnum"
+            "type": "FormSubscribeFilter.MethodEnum"
         },
         {
             "name": "filter",
@@ -42,4 +40,10 @@ export class FormSubscribeFilter {
 }
 
 export namespace FormSubscribeFilter {
+    export enum FieldEnum {
+        SubscribeMethod = <any> 'subscribe_method'
+    }
+    export enum MethodEnum {
+        Form = <any> 'form'
+    }
 }

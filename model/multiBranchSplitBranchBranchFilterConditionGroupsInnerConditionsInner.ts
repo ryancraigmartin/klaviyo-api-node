@@ -12,7 +12,6 @@
 import { RequestFile } from './models';
 import { CustomObjectTriggerCondition } from './customObjectTriggerCondition';
 import { CustomObjectTriggerConditionFilter } from './customObjectTriggerConditionFilter';
-import { CustomObjectTriggerPropertyEnum } from './customObjectTriggerPropertyEnum';
 import { FlowsProfileMetricCondition } from './flowsProfileMetricCondition';
 import { FlowsProfileMetricConditionTimeframeFilter } from './flowsProfileMetricConditionTimeframeFilter';
 import { MetricPropertyCondition } from './metricPropertyCondition';

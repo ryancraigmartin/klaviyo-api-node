@@ -10,10 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { EffectiveDateEnum } from './effectiveDateEnum';
 import { StatusDateFilterFilter } from './statusDateFilterFilter';
 export class EffectiveDateFilter {
-    'field': EffectiveDateEnum | 'effective_date';
+    'field': EffectiveDateFilter.FieldEnum | 'effective_date';
     'filter': StatusDateFilterFilter;
 
 
@@ -21,7 +20,7 @@ export class EffectiveDateFilter {
         {
             "name": "field",
             "baseName": "field",
-            "type": "EffectiveDateEnum"
+            "type": "EffectiveDateFilter.FieldEnum"
         },
         {
             "name": "filter",
@@ -35,4 +34,7 @@ export class EffectiveDateFilter {
 }
 
 export namespace EffectiveDateFilter {
+    export enum FieldEnum {
+        EffectiveDate = <any> 'effective_date'
+    }
 }

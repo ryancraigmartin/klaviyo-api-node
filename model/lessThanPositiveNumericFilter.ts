@@ -10,11 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { LessThanEnum } from './lessThanEnum';
-import { NumericEnum } from './numericEnum';
 export class LessThanPositiveNumericFilter {
-    'type': NumericEnum | 'numeric';
-    'operator': LessThanEnum | 'less-than';
+    'type': LessThanPositiveNumericFilter.TypeEnum | 'numeric';
+    'operator': LessThanPositiveNumericFilter.OperatorEnum | 'less-than';
     'value': number;
 
 
@@ -22,12 +20,12 @@ export class LessThanPositiveNumericFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "NumericEnum"
+            "type": "LessThanPositiveNumericFilter.TypeEnum"
         },
         {
             "name": "operator",
             "baseName": "operator",
-            "type": "LessThanEnum"
+            "type": "LessThanPositiveNumericFilter.OperatorEnum"
         },
         {
             "name": "value",
@@ -41,4 +39,10 @@ export class LessThanPositiveNumericFilter {
 }
 
 export namespace LessThanPositiveNumericFilter {
+    export enum TypeEnum {
+        Numeric = <any> 'numeric'
+    }
+    export enum OperatorEnum {
+        LessThan = <any> 'less-than'
+    }
 }

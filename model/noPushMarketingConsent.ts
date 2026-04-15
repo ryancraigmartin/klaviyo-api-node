@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { NoPushMarketing } from './noPushMarketing';
-import { PushEnum } from './pushEnum';
 export class NoPushMarketingConsent {
-    'channel': PushEnum | 'push';
+    'channel': NoPushMarketingConsent.ChannelEnum | 'push';
     'canReceiveMarketing': boolean;
     'consentStatus': NoPushMarketing;
 
@@ -22,7 +21,7 @@ export class NoPushMarketingConsent {
         {
             "name": "channel",
             "baseName": "channel",
-            "type": "PushEnum"
+            "type": "NoPushMarketingConsent.ChannelEnum"
         },
         {
             "name": "canReceiveMarketing",
@@ -41,4 +40,7 @@ export class NoPushMarketingConsent {
 }
 
 export namespace NoPushMarketingConsent {
+    export enum ChannelEnum {
+        Push = <any> 'push'
+    }
 }

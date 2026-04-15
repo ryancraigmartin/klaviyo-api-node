@@ -11,6 +11,5 @@
 
 import { RequestFile } from './models';
 import { StaticCouponConfig } from './staticCouponConfig';
-import { StaticEnum } from './staticEnum';
 import { UniqueCouponConfig } from './uniqueCouponConfig';
 export type CouponPropertiesCoupon = UniqueCouponConfig | StaticCouponConfig;

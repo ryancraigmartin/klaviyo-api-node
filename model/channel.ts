@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { ChannelEnum } from './channelEnum';
 import { ChannelProperties } from './channelProperties';
 export class Channel {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
-    'type': ChannelEnum | 'channel';
+    'type': Channel.TypeEnum | 'channel';
     'properties': ChannelProperties;
 
 
@@ -30,7 +29,7 @@ export class Channel {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ChannelEnum"
+            "type": "Channel.TypeEnum"
         },
         {
             "name": "properties",
@@ -44,4 +43,7 @@ export class Channel {
 }
 
 export namespace Channel {
+    export enum TypeEnum {
+        Channel = <any> 'channel'
+    }
 }

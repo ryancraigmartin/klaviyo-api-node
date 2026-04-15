@@ -11,9 +11,8 @@
 
 import { RequestFile } from './models';
 import { ExplicitlyReachableFiltersInner } from './explicitlyReachableFiltersInner';
-import { ExplicitlyUnreachableEnum } from './explicitlyUnreachableEnum';
 export class ExplicitlyUnreachable {
-    'reachableStatus': ExplicitlyUnreachableEnum | 'explicitly_unreachable';
+    'reachableStatus': ExplicitlyUnreachable.ReachableStatusEnum | 'explicitly_unreachable';
     'filters': Array<ExplicitlyReachableFiltersInner>;
 
 
@@ -21,7 +20,7 @@ export class ExplicitlyUnreachable {
         {
             "name": "reachableStatus",
             "baseName": "reachable_status",
-            "type": "ExplicitlyUnreachableEnum"
+            "type": "ExplicitlyUnreachable.ReachableStatusEnum"
         },
         {
             "name": "filters",
@@ -35,4 +34,7 @@ export class ExplicitlyUnreachable {
 }
 
 export namespace ExplicitlyUnreachable {
+    export enum ReachableStatusEnum {
+        ExplicitlyUnreachable = <any> 'explicitly_unreachable'
+    }
 }

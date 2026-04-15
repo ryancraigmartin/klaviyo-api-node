@@ -10,9 +10,8 @@
  */
 
 import { RequestFile } from './models';
-import { ProfileGroupMembershipEnum } from './profileGroupMembershipEnum';
 export class ProfileNoGroupMembershipCondition {
-    'type': ProfileGroupMembershipEnum | 'profile-group-membership';
+    'type': ProfileNoGroupMembershipCondition.TypeEnum | 'profile-group-membership';
     'isMember': boolean;
     'groupIds': Array<string>;
 
@@ -21,7 +20,7 @@ export class ProfileNoGroupMembershipCondition {
         {
             "name": "type",
             "baseName": "type",
-            "type": "ProfileGroupMembershipEnum"
+            "type": "ProfileNoGroupMembershipCondition.TypeEnum"
         },
         {
             "name": "isMember",
@@ -40,4 +39,7 @@ export class ProfileNoGroupMembershipCondition {
 }
 
 export namespace ProfileNoGroupMembershipCondition {
+    export enum TypeEnum {
+        ProfileGroupMembership = <any> 'profile-group-membership'
+    }
 }

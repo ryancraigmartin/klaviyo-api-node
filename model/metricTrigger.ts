@@ -10,10 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { MetricEnum } from './metricEnum';
 import { MetricPropertyConditionFilter } from './metricPropertyConditionFilter';
 export class MetricTrigger {
-    'type': MetricEnum | 'metric';
+    'type': MetricTrigger.TypeEnum | 'metric';
     'id'?: string | null;
     'triggerFilter'?: MetricPropertyConditionFilter;
 
@@ -22,7 +21,7 @@ export class MetricTrigger {
         {
             "name": "type",
             "baseName": "type",
-            "type": "MetricEnum"
+            "type": "MetricTrigger.TypeEnum"
         },
         {
             "name": "id",
@@ -41,4 +40,7 @@ export class MetricTrigger {
 }
 
 export namespace MetricTrigger {
+    export enum TypeEnum {
+        Metric = <any> 'metric'
+    }
 }

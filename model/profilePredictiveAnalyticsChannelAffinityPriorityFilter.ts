@@ -10,11 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { EqualsEnum } from './equalsEnum';
-import { NumericEnum } from './numericEnum';
 export class ProfilePredictiveAnalyticsChannelAffinityPriorityFilter {
-    'type': NumericEnum | 'numeric';
-    'operator': EqualsEnum | 'equals';
+    'type': ProfilePredictiveAnalyticsChannelAffinityPriorityFilter.TypeEnum | 'numeric';
+    'operator': ProfilePredictiveAnalyticsChannelAffinityPriorityFilter.OperatorEnum | 'equals';
     'value': number;
 
 
@@ -22,12 +20,12 @@ export class ProfilePredictiveAnalyticsChannelAffinityPriorityFilter {
         {
             "name": "type",
             "baseName": "type",
-            "type": "NumericEnum"
+            "type": "ProfilePredictiveAnalyticsChannelAffinityPriorityFilter.TypeEnum"
         },
         {
             "name": "operator",
             "baseName": "operator",
-            "type": "EqualsEnum"
+            "type": "ProfilePredictiveAnalyticsChannelAffinityPriorityFilter.OperatorEnum"
         },
         {
             "name": "value",
@@ -41,4 +39,10 @@ export class ProfilePredictiveAnalyticsChannelAffinityPriorityFilter {
 }
 
 export namespace ProfilePredictiveAnalyticsChannelAffinityPriorityFilter {
+    export enum TypeEnum {
+        Numeric = <any> 'numeric'
+    }
+    export enum OperatorEnum {
+        Equals = <any> 'equals'
+    }
 }

@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { BooleanFilter } from './booleanFilter';
-import { ExistenceEnum } from './existenceEnum';
 import { ExistenceOperatorExistenceFilter } from './existenceOperatorExistenceFilter';
 import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
 import { NumericRangeFilter } from './numericRangeFilter';

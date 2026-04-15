@@ -13,7 +13,6 @@ import { RequestFile } from './models';
 import { BooleanFilter } from './booleanFilter';
 import { ExistenceOperatorExistenceFilter } from './existenceOperatorExistenceFilter';
 import { ListContainsOperatorListContainsFilter } from './listContainsOperatorListContainsFilter';
-import { ListEnum } from './listEnum';
 import { ListRegexOperatorListContainsFilter } from './listRegexOperatorListContainsFilter';
 import { ListSubstringFilter } from './listSubstringFilter';
 import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';

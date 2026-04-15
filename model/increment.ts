@@ -10,16 +10,15 @@
  */
 
 import { RequestFile } from './models';
-import { IncrementOneEnum } from './incrementOneEnum';
 export class Increment {
-    'badgeConfig': IncrementOneEnum | 'increment_one';
+    'badgeConfig': Increment.BadgeConfigEnum | 'increment_one';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "badgeConfig",
             "baseName": "badge_config",
-            "type": "IncrementOneEnum"
+            "type": "Increment.BadgeConfigEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -28,4 +27,7 @@ export class Increment {
 }
 
 export namespace Increment {
+    export enum BadgeConfigEnum {
+        IncrementOne = <any> 'increment_one'
+    }
 }

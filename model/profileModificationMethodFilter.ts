@@ -10,23 +10,21 @@
  */
 
 import { RequestFile } from './models';
-import { MethodEnum } from './methodEnum';
-import { ProfileModificationEnum } from './profileModificationEnum';
 export class ProfileModificationMethodFilter {
-    'field': MethodEnum | 'method';
-    'method': ProfileModificationEnum | 'profile_modification';
+    'field': ProfileModificationMethodFilter.FieldEnum | 'method';
+    'method': ProfileModificationMethodFilter.MethodEnum | 'profile_modification';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "field",
             "baseName": "field",
-            "type": "MethodEnum"
+            "type": "ProfileModificationMethodFilter.FieldEnum"
         },
         {
             "name": "method",
             "baseName": "method",
-            "type": "ProfileModificationEnum"
+            "type": "ProfileModificationMethodFilter.MethodEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -35,4 +33,10 @@ export class ProfileModificationMethodFilter {
 }
 
 export namespace ProfileModificationMethodFilter {
+    export enum FieldEnum {
+        Method = <any> 'method'
+    }
+    export enum MethodEnum {
+        ProfileModification = <any> 'profile_modification'
+    }
 }

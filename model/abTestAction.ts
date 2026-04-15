@@ -11,7 +11,6 @@
 
 import { RequestFile } from './models';
 import { AbTestActionData } from './abTestActionData';
-import { AbTestEnum } from './abTestEnum';
 import { Link } from './link';
 export class AbTestAction {
     /**
@@ -22,7 +21,7 @@ export class AbTestAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': AbTestEnum | 'ab-test';
+    'type': AbTestAction.TypeEnum | 'ab-test';
     'links'?: Link;
     'data': AbTestActionData;
 
@@ -41,7 +40,7 @@ export class AbTestAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "AbTestEnum"
+            "type": "AbTestAction.TypeEnum"
         },
         {
             "name": "links",
@@ -60,4 +59,7 @@ export class AbTestAction {
 }
 
 export namespace AbTestAction {
+    export enum TypeEnum {
+        AbTest = <any> 'ab-test'
+    }
 }

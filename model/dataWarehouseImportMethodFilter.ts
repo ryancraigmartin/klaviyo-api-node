@@ -10,23 +10,21 @@
  */
 
 import { RequestFile } from './models';
-import { DataWarehouseImportEnum } from './dataWarehouseImportEnum';
-import { MethodEnum } from './methodEnum';
 export class DataWarehouseImportMethodFilter {
-    'field': MethodEnum | 'method';
-    'method': DataWarehouseImportEnum | 'data_warehouse_import';
+    'field': DataWarehouseImportMethodFilter.FieldEnum | 'method';
+    'method': DataWarehouseImportMethodFilter.MethodEnum | 'data_warehouse_import';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "field",
             "baseName": "field",
-            "type": "MethodEnum"
+            "type": "DataWarehouseImportMethodFilter.FieldEnum"
         },
         {
             "name": "method",
             "baseName": "method",
-            "type": "DataWarehouseImportEnum"
+            "type": "DataWarehouseImportMethodFilter.MethodEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -35,4 +33,10 @@ export class DataWarehouseImportMethodFilter {
 }
 
 export namespace DataWarehouseImportMethodFilter {
+    export enum FieldEnum {
+        Method = <any> 'method'
+    }
+    export enum MethodEnum {
+        DataWarehouseImport = <any> 'data_warehouse_import'
+    }
 }

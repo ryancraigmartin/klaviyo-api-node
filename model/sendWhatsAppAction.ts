@@ -12,7 +12,6 @@
 import { RequestFile } from './models';
 import { Link } from './link';
 import { SendWhatsAppActionData } from './sendWhatsAppActionData';
-import { SendWhatsappEnum } from './sendWhatsappEnum';
 export class SendWhatsAppAction {
     /**
     * The real ID of an action. Not allowed on create.
@@ -22,7 +21,7 @@ export class SendWhatsAppAction {
     * A temporary ID to use only during a create operation. Existing actions should use the id field.
     */
     'temporaryId'?: string | null;
-    'type': SendWhatsappEnum | 'send-whatsapp';
+    'type': SendWhatsAppAction.TypeEnum | 'send-whatsapp';
     'links'?: Link;
     'data'?: SendWhatsAppActionData;
 
@@ -41,7 +40,7 @@ export class SendWhatsAppAction {
         {
             "name": "type",
             "baseName": "type",
-            "type": "SendWhatsappEnum"
+            "type": "SendWhatsAppAction.TypeEnum"
         },
         {
             "name": "links",
@@ -60,4 +59,7 @@ export class SendWhatsAppAction {
 }
 
 export namespace SendWhatsAppAction {
+    export enum TypeEnum {
+        SendWhatsapp = <any> 'send-whatsapp'
+    }
 }

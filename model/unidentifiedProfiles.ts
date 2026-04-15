@@ -10,14 +10,13 @@
  */
 
 import { RequestFile } from './models';
-import { UnidentifiedProfilesEnum } from './unidentifiedProfilesEnum';
 export class UnidentifiedProfiles {
     /**
     * Not allowed on create.
     */
     'id'?: string | null;
     'properties'?: object;
-    'type': UnidentifiedProfilesEnum | 'unidentified_profiles';
+    'type': UnidentifiedProfiles.TypeEnum | 'unidentified_profiles';
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -34,7 +33,7 @@ export class UnidentifiedProfiles {
         {
             "name": "type",
             "baseName": "type",
-            "type": "UnidentifiedProfilesEnum"
+            "type": "UnidentifiedProfiles.TypeEnum"
         }    ];
 
     static getAttributeTypeMap() {
@@ -43,4 +42,7 @@ export class UnidentifiedProfiles {
 }
 
 export namespace UnidentifiedProfiles {
+    export enum TypeEnum {
+        UnidentifiedProfiles = <any> 'unidentified_profiles'
+    }
 }

@@ -10,7 +10,6 @@
  */
 
 import { RequestFile } from './models';
-import { DeepLinkEnum } from './deepLinkEnum';
 import { PushOnOpenApp } from './pushOnOpenApp';
 import { PushOnOpenDeepLink } from './pushOnOpenDeepLink';
 export type MobilePushOptionsOnOpen = PushOnOpenApp | PushOnOpenDeepLink;
