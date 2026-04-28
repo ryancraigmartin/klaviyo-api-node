@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { CustomMetricEnum } from './customMetricEnum';
 import { CustomMetricResponseObjectResource } from './customMetricResponseObjectResource';
 import { CustomMetricResponseObjectResourceAttributes } from './customMetricResponseObjectResourceAttributes';
+import { CustomMetricResponseObjectResourceRelationships } from './customMetricResponseObjectResourceRelationships';
 import { MetricResponseObjectResource } from './metricResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 

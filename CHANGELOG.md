@@ -1,6 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [22.0.1] - revision 2026-04-15
+###  Fixed
+- Fixed several issues with the automatic retry behavior
+- Fixed incorrect intersection types on some fields
+- Fixed response types for Templates API
+- Fixed deserialization of fields nested under `relationships` which were previously omitted
+
 ## [22.0.0] - revision 2026-04-15
 ### Added
 - Conversations API

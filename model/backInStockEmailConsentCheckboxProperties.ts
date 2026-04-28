@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
 export class BackInStockEmailConsentCheckboxProperties {
     'displayDevice'?: Array<BackInStockEmailConsentCheckboxProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'label'?: string | null;
     'showLabel'?: boolean = false;
     'errorMessages'?: ErrorMessages;
@@ -27,6 +28,11 @@ export class BackInStockEmailConsentCheckboxProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<BackInStockEmailConsentCheckboxProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "label",

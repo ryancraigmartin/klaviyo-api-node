@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetConversationResponseData } from './getConversationResponseData';
+import { ConversationResponseObjectResource } from './conversationResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetConversationResponse {
-    'data': GetConversationResponseData;
+    'data': ConversationResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetConversationResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetConversationResponseData"
+            "type": "ConversationResponseObjectResource"
         },
         {
             "name": "links",

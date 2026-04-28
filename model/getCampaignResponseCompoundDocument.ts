@@ -10,11 +10,11 @@
  */
 
 import { RequestFile } from './models';
-import { GetCampaignResponseCollectionCompoundDocumentDataInner } from './getCampaignResponseCollectionCompoundDocumentDataInner';
+import { CampaignResponseObjectResource } from './campaignResponseObjectResource';
 import { GetCampaignResponseCollectionCompoundDocumentIncludedInner } from './getCampaignResponseCollectionCompoundDocumentIncludedInner';
 import { ObjectLinks } from './objectLinks';
 export class GetCampaignResponseCompoundDocument {
-    'data': GetCampaignResponseCollectionCompoundDocumentDataInner;
+    'data': CampaignResponseObjectResource;
     'included'?: Array<GetCampaignResponseCollectionCompoundDocumentIncludedInner>;
     'links'?: ObjectLinks;
 
@@ -23,7 +23,7 @@ export class GetCampaignResponseCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetCampaignResponseCollectionCompoundDocumentDataInner"
+            "type": "CampaignResponseObjectResource"
         },
         {
             "name": "included",

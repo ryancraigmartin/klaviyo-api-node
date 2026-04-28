@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { SMSDisclosurePropertiesContent } from './sMSDisclosurePropertiesContent';
 export class SMSDisclosureProperties {
     'displayDevice'?: Array<SMSDisclosureProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'content'?: SMSDisclosurePropertiesContent;
 
 
@@ -21,6 +22,11 @@ export class SMSDisclosureProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<SMSDisclosureProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "content",

@@ -12,6 +12,7 @@
 import { RequestFile } from './models';
 import { FlowMessageEncodedResponseObjectResource } from './flowMessageEncodedResponseObjectResource';
 import { FlowMessageEncodedResponseObjectResourceAttributes } from './flowMessageEncodedResponseObjectResourceAttributes';
+import { FlowMessageEncodedResponseObjectResourceRelationships } from './flowMessageEncodedResponseObjectResourceRelationships';
 import { FlowMessageEnum } from './flowMessageEnum';
 import { FlowResponseObjectResource } from './flowResponseObjectResource';
 import { ObjectLinks } from './objectLinks';

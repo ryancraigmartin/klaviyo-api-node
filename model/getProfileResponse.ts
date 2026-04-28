@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetProfileResponseData } from './getProfileResponseData';
 import { ObjectLinks } from './objectLinks';
+import { ProfileResponseObjectResourceExtended } from './profileResponseObjectResourceExtended';
 export class GetProfileResponse {
-    'data': GetProfileResponseData;
+    'data': ProfileResponseObjectResourceExtended;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetProfileResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetProfileResponseData"
+            "type": "ProfileResponseObjectResourceExtended"
         },
         {
             "name": "links",

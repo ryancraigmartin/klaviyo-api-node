@@ -12,6 +12,7 @@
 import { RequestFile } from './models';
 import { MappedMetricEnum } from './mappedMetricEnum';
 import { MappedMetricResponseObjectResourceAttributes } from './mappedMetricResponseObjectResourceAttributes';
+import { MappedMetricResponseObjectResourceRelationships } from './mappedMetricResponseObjectResourceRelationships';
 import { ObjectLinks } from './objectLinks';
 export class MappedMetricResponseObjectResource {
     'type': MappedMetricEnum | 'mapped-metric';
@@ -20,6 +21,7 @@ export class MappedMetricResponseObjectResource {
     */
     'id': MappedMetricResponseObjectResource.IdEnum | 'added_to_cart' | 'cancelled_sales' | 'ordered_product' | 'refunded_sales' | 'revenue' | 'started_checkout' | 'viewed_product';
     'attributes': MappedMetricResponseObjectResourceAttributes;
+    'relationships'?: MappedMetricResponseObjectResourceRelationships;
     'links': ObjectLinks;
 
 
@@ -38,6 +40,11 @@ export class MappedMetricResponseObjectResource {
             "name": "attributes",
             "baseName": "attributes",
             "type": "MappedMetricResponseObjectResourceAttributes"
+        },
+        {
+            "name": "relationships",
+            "baseName": "relationships",
+            "type": "MappedMetricResponseObjectResourceRelationships"
         },
         {
             "name": "links",

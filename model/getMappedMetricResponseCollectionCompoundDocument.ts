@@ -11,10 +11,10 @@
 
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
-import { GetMappedMetricResponseCollectionCompoundDocumentDataInner } from './getMappedMetricResponseCollectionCompoundDocumentDataInner';
 import { GetMappedMetricResponseCollectionCompoundDocumentIncludedInner } from './getMappedMetricResponseCollectionCompoundDocumentIncludedInner';
+import { MappedMetricResponseObjectResource } from './mappedMetricResponseObjectResource';
 export class GetMappedMetricResponseCollectionCompoundDocument {
-    'data': Array<GetMappedMetricResponseCollectionCompoundDocumentDataInner>;
+    'data': Array<MappedMetricResponseObjectResource>;
     'links'?: CollectionLinks;
     'included'?: Array<GetMappedMetricResponseCollectionCompoundDocumentIncludedInner>;
 
@@ -23,7 +23,7 @@ export class GetMappedMetricResponseCollectionCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<GetMappedMetricResponseCollectionCompoundDocumentDataInner>"
+            "type": "Array<MappedMetricResponseObjectResource>"
         },
         {
             "name": "links",

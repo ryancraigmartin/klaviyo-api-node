@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { CountdownTimerPropertiesConfiguration } from './countdownTimerPropertiesConfiguration';
 export class CountdownTimerProperties {
     'displayDevice'?: Array<CountdownTimerProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     /**
     * Options for displaying a timer.
     */
@@ -29,6 +30,11 @@ export class CountdownTimerProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<CountdownTimerProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "clockFace",

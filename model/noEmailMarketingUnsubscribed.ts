@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { NoEmailMarketingUnsubscribedFiltersInner } from './noEmailMarketingUnsubscribedFiltersInner';
+import { NoEmailMarketingUnsubscribedFilters } from './noEmailMarketingUnsubscribedFilters';
 export class NoEmailMarketingUnsubscribed {
     'subscription': NoEmailMarketingUnsubscribed.SubscriptionEnum | 'unsubscribed';
-    'filters'?: Array<NoEmailMarketingUnsubscribedFiltersInner> | null;
+    'filters'?: NoEmailMarketingUnsubscribedFilters | null;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -25,7 +25,7 @@ export class NoEmailMarketingUnsubscribed {
         {
             "name": "filters",
             "baseName": "filters",
-            "type": "Array<NoEmailMarketingUnsubscribedFiltersInner>"
+            "type": "NoEmailMarketingUnsubscribedFilters"
         }    ];
 
     static getAttributeTypeMap() {

@@ -14,6 +14,7 @@ import { AdditionalField } from './additionalField';
 import { ImageAssetProperties } from './imageAssetProperties';
 export class ImageProperties {
     'displayDevice'?: Array<ImageProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'image': ImageAssetProperties;
     'additionalFields'?: Array<AdditionalField> | null;
 
@@ -23,6 +24,11 @@ export class ImageProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<ImageProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "image",

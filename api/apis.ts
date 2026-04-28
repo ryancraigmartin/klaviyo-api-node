@@ -49,7 +49,7 @@ import {AxiosRequestConfig, AxiosResponse, AxiosHeaders, AxiosError, isAxiosErro
 export { RequestFile } from '../model/models';
 
 const revision =  "2026-04-15";
-const userAgent = "klaviyo-api-node/22.0.0";
+const userAgent = "klaviyo-api-node/22.0.1";
 
 export class RetryWithExponentialBackoff {
 
@@ -74,16 +74,16 @@ export class RetryWithExponentialBackoff {
     }
 
     async requestWithRetry(config: AxiosRequestConfig): Promise<AxiosResponse> {
-        let lastRequestRetryAfter
-        let lastRequestTimestamp
+        let lastRequestRetryAfterSec
+        let lastRequestTimestampMs
         let attempt = 0
         let iteration = 0
 
         while (true) {
             try {
-                const currentTime = Date.now()
-                const retryAfterValueLapsed = (!lastRequestRetryAfter ||
-                    currentTime - lastRequestTimestamp > lastRequestRetryAfter)
+                const currentTimeMs = Date.now()
+                const retryAfterValueLapsed = (!lastRequestRetryAfterSec ||
+                    currentTimeMs - lastRequestTimestampMs > lastRequestRetryAfterSec * 1000)
                 if (retryAfterValueLapsed) {
                     attempt += 1
 
@@ -101,11 +101,11 @@ export class RetryWithExponentialBackoff {
                 }
 
                 const responseHeaders = headers || {}
-                lastRequestRetryAfter = responseHeaders['Retry-After']
-                if (lastRequestRetryAfter) {
-                    lastRequestRetryAfter = parseInt(lastRequestRetryAfter, 10)
+                lastRequestRetryAfterSec = responseHeaders['retry-after']
+                if (lastRequestRetryAfterSec) {
+                    lastRequestRetryAfterSec = parseInt(lastRequestRetryAfterSec, 10)
                 }
-                lastRequestTimestamp = Date.now()
+                lastRequestTimestampMs = Date.now()
             }
             const sleepSeconds = this.exponentialBackoff(iteration)
             await this.sleep(sleepSeconds)

@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsFlowTriggersDataInner } from './getMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsFlowTriggersDataInner';
+import { MetricResponseObjectResourceRelationshipsFlowTriggersDataInner } from './metricResponseObjectResourceRelationshipsFlowTriggersDataInner';
 import { ObjectLinks } from './objectLinks';
 export class GetFlowActionFlowRelationshipResponse {
-    'data': GetMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsFlowTriggersDataInner;
+    'data': MetricResponseObjectResourceRelationshipsFlowTriggersDataInner;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetFlowActionFlowRelationshipResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsFlowTriggersDataInner"
+            "type": "MetricResponseObjectResourceRelationshipsFlowTriggersDataInner"
         },
         {
             "name": "links",

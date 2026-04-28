@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
 export class EmailProperties {
     'displayDevice'?: Array<EmailProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'label'?: string | null;
     'showLabel'?: boolean = false;
     'placeholder'?: string | null;
@@ -26,6 +27,11 @@ export class EmailProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<EmailProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "label",

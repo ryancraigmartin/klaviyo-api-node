@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { BooleanFilter } from './booleanFilter';
 import { ExistenceOperatorExistenceFilter } from './existenceOperatorExistenceFilter';
 import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
+import { NumericOperatorNumericFilterValue } from './numericOperatorNumericFilterValue';
 import { NumericRangeFilter } from './numericRangeFilter';
 import { StringArrayOperatorStringArrayFilter } from './stringArrayOperatorStringArrayFilter';
 import { StringOperatorStringFilter } from './stringOperatorStringFilter';

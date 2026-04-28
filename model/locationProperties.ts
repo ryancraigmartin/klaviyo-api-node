@@ -10,21 +10,22 @@
  */
 
 import { RequestFile } from './models';
+import { LocationPropertiesAllowListInner } from './locationPropertiesAllowListInner';
 export class LocationProperties {
-    'allowList'?: Array<LocationProperties.AllowListEnum> | Array<'con_AF' | 'con_AS' | 'con_EU' | 'con_EUP' | 'con_NA' | 'con_OC' | 'con_SA'> | null;
-    'denyList'?: Array<LocationProperties.DenyListEnum> | Array<'con_AF' | 'con_AS' | 'con_EU' | 'con_EUP' | 'con_NA' | 'con_OC' | 'con_SA'> | null;
+    'allowList'?: Array<LocationPropertiesAllowListInner> | null;
+    'denyList'?: Array<LocationPropertiesAllowListInner> | null;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
         {
             "name": "allowList",
             "baseName": "allow_list",
-            "type": "Array<LocationProperties.AllowListEnum>"
+            "type": "Array<LocationPropertiesAllowListInner>"
         },
         {
             "name": "denyList",
             "baseName": "deny_list",
-            "type": "Array<LocationProperties.DenyListEnum>"
+            "type": "Array<LocationPropertiesAllowListInner>"
         }    ];
 
     static getAttributeTypeMap() {
@@ -32,23 +33,3 @@ export class LocationProperties {
     }
 }
 
-export namespace LocationProperties {
-    export enum AllowListEnum {
-        Af = <any> 'con_AF',
-        As = <any> 'con_AS',
-        Eu = <any> 'con_EU',
-        Eup = <any> 'con_EUP',
-        Na = <any> 'con_NA',
-        Oc = <any> 'con_OC',
-        Sa = <any> 'con_SA'
-    }
-    export enum DenyListEnum {
-        Af = <any> 'con_AF',
-        As = <any> 'con_AS',
-        Eu = <any> 'con_EU',
-        Eup = <any> 'con_EUP',
-        Na = <any> 'con_NA',
-        Oc = <any> 'con_OC',
-        Sa = <any> 'con_SA'
-    }
-}

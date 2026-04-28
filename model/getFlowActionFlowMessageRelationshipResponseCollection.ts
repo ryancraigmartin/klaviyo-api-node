@@ -11,9 +11,9 @@
 
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
-import { GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationshipsFlowMessagesDataInner } from './getFlowActionEncodedResponseCompoundDocumentDataAllOfRelationshipsFlowMessagesDataInner';
+import { FlowActionEncodedResponseObjectResourceRelationshipsFlowMessagesDataInner } from './flowActionEncodedResponseObjectResourceRelationshipsFlowMessagesDataInner';
 export class GetFlowActionFlowMessageRelationshipResponseCollection {
-    'data': Array<GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationshipsFlowMessagesDataInner>;
+    'data': Array<FlowActionEncodedResponseObjectResourceRelationshipsFlowMessagesDataInner>;
     'links'?: CollectionLinks;
 
 
@@ -21,7 +21,7 @@ export class GetFlowActionFlowMessageRelationshipResponseCollection {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationshipsFlowMessagesDataInner>"
+            "type": "Array<FlowActionEncodedResponseObjectResourceRelationshipsFlowMessagesDataInner>"
         },
         {
             "name": "links",

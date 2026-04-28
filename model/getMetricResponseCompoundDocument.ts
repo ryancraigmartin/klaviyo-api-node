@@ -11,10 +11,10 @@
 
 import { RequestFile } from './models';
 import { FlowResponseObjectResource } from './flowResponseObjectResource';
-import { GetMetricResponseCollectionCompoundDocumentDataInner } from './getMetricResponseCollectionCompoundDocumentDataInner';
+import { MetricResponseObjectResource } from './metricResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetMetricResponseCompoundDocument {
-    'data': GetMetricResponseCollectionCompoundDocumentDataInner;
+    'data': MetricResponseObjectResource;
     'included'?: Array<FlowResponseObjectResource>;
     'links'?: ObjectLinks;
 
@@ -23,7 +23,7 @@ export class GetMetricResponseCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetMetricResponseCollectionCompoundDocumentDataInner"
+            "type": "MetricResponseObjectResource"
         },
         {
             "name": "included",

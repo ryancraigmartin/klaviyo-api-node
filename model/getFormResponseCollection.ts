@@ -11,9 +11,9 @@
 
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
-import { GetFormResponseCollectionDataInner } from './getFormResponseCollectionDataInner';
+import { FormResponseObjectResource } from './formResponseObjectResource';
 export class GetFormResponseCollection {
-    'data': Array<GetFormResponseCollectionDataInner>;
+    'data': Array<FormResponseObjectResource>;
     'links'?: CollectionLinks;
 
 
@@ -21,7 +21,7 @@ export class GetFormResponseCollection {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<GetFormResponseCollectionDataInner>"
+            "type": "Array<FormResponseObjectResource>"
         },
         {
             "name": "links",

@@ -11,9 +11,9 @@
 
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
-import { TemplateDndResponseObjectResource } from './templateDndResponseObjectResource';
+import { TemplateDndResponseObjectResourceExtended } from './templateDndResponseObjectResourceExtended';
 export class GetTemplateDndResponseCollection {
-    'data': Array<TemplateDndResponseObjectResource>;
+    'data': Array<TemplateDndResponseObjectResourceExtended>;
     'links'?: CollectionLinks;
 
 
@@ -21,7 +21,7 @@ export class GetTemplateDndResponseCollection {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<TemplateDndResponseObjectResource>"
+            "type": "Array<TemplateDndResponseObjectResourceExtended>"
         },
         {
             "name": "links",

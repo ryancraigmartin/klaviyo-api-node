@@ -11,6 +11,7 @@
 
 import { RequestFile } from './models';
 import { FlowActionEncodedResponseObjectResource } from './flowActionEncodedResponseObjectResource';
+import { FlowActionEncodedResponseObjectResourceRelationships } from './flowActionEncodedResponseObjectResourceRelationships';
 import { ObjectLinks } from './objectLinks';
 import { TemplateEnum } from './templateEnum';
 import { TemplateResponseObjectResource } from './templateResponseObjectResource';

@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetMetricResponseData } from './getMetricResponseData';
+import { MetricResponseObjectResource } from './metricResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetMetricResponse {
-    'data': GetMetricResponseData;
+    'data': MetricResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetMetricResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetMetricResponseData"
+            "type": "MetricResponseObjectResource"
         },
         {
             "name": "links",

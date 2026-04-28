@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetCustomMetricResponseData } from './getCustomMetricResponseData';
+import { CustomMetricResponseObjectResource } from './customMetricResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetCustomMetricResponse {
-    'data': GetCustomMetricResponseData;
+    'data': CustomMetricResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetCustomMetricResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetCustomMetricResponseData"
+            "type": "CustomMetricResponseObjectResource"
         },
         {
             "name": "links",

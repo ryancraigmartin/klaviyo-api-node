@@ -12,6 +12,7 @@
 import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
 export class OptInCodeProperties {
+    'classname'?: string | null;
     'label'?: string | null;
     'showLabel'?: boolean = false;
     'placeholder'?: string | null;
@@ -22,6 +23,11 @@ export class OptInCodeProperties {
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
+        },
         {
             "name": "label",
             "baseName": "label",

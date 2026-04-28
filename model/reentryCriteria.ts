@@ -10,12 +10,10 @@
  */
 
 import { RequestFile } from './models';
+import { ReentryCriteriaUnit } from './reentryCriteriaUnit';
 export class ReentryCriteria {
     'duration': number;
-    /**
-    * Units for relative date filters.
-    */
-    'unit': ReentryCriteria.UnitEnum | 'day' | 'hour' | 'week';
+    'unit': ReentryCriteriaUnit;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -27,7 +25,7 @@ export class ReentryCriteria {
         {
             "name": "unit",
             "baseName": "unit",
-            "type": "ReentryCriteria.UnitEnum"
+            "type": "ReentryCriteriaUnit"
         }    ];
 
     static getAttributeTypeMap() {
@@ -35,10 +33,3 @@ export class ReentryCriteria {
     }
 }
 
-export namespace ReentryCriteria {
-    export enum UnitEnum {
-        Day = <any> 'day',
-        Hour = <any> 'hour',
-        Week = <any> 'week'
-    }
-}

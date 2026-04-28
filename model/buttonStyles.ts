@@ -12,6 +12,7 @@
 import { RequestFile } from './models';
 import { BorderStyle } from './borderStyle';
 import { ButtonDropShadowStyles } from './buttonDropShadowStyles';
+import { ButtonStylesHeight } from './buttonStylesHeight';
 import { Padding } from './padding';
 import { TextStyleV0 } from './textStyleV0';
 export class ButtonStyles {
@@ -21,7 +22,11 @@ export class ButtonStyles {
     * Valid button block widths.
     */
     'width'?: ButtonStyles.WidthEnum | 'fill' | 'fit' = ButtonStyles.WidthEnum.Fill;
-    'height'?: number = 50;
+    'height'?: ButtonStylesHeight;
+    /**
+    * Horizontal alignment enumeration.
+    */
+    'alignment'?: ButtonStyles.AlignmentEnum | 'center' | 'left' | 'right' = ButtonStyles.AlignmentEnum.Center;
     'hoverBackgroundColor'?: string | null;
     'hoverTextColor'?: string | null;
     'borderStyles'?: BorderStyle;
@@ -49,7 +54,12 @@ export class ButtonStyles {
         {
             "name": "height",
             "baseName": "height",
-            "type": "number"
+            "type": "ButtonStylesHeight"
+        },
+        {
+            "name": "alignment",
+            "baseName": "alignment",
+            "type": "ButtonStyles.AlignmentEnum"
         },
         {
             "name": "hoverBackgroundColor",
@@ -91,5 +101,10 @@ export namespace ButtonStyles {
     export enum WidthEnum {
         Fill = <any> 'fill',
         Fit = <any> 'fit'
+    }
+    export enum AlignmentEnum {
+        Center = <any> 'center',
+        Left = <any> 'left',
+        Right = <any> 'right'
     }
 }

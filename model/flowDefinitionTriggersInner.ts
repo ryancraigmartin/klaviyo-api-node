@@ -14,6 +14,7 @@ import { ListTrigger } from './listTrigger';
 import { LowInventoryConditionFilter } from './lowInventoryConditionFilter';
 import { LowInventoryTrigger } from './lowInventoryTrigger';
 import { MetricTrigger } from './metricTrigger';
+import { NumericOperatorNumericFilterValue } from './numericOperatorNumericFilterValue';
 import { PriceDropTrigger } from './priceDropTrigger';
 import { ProfilePropertyDateTrigger } from './profilePropertyDateTrigger';
 import { SegmentTrigger } from './segmentTrigger';

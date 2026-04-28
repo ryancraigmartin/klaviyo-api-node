@@ -12,4 +12,5 @@
 import { RequestFile } from './models';
 import { GreaterThanPositiveNumericFilter } from './greaterThanPositiveNumericFilter';
 import { LessThanPositiveNumericFilter } from './lessThanPositiveNumericFilter';
+import { NumericOperatorNumericFilterValue } from './numericOperatorNumericFilterValue';
 export type ProfilePostalCodeDistanceConditionFilter = GreaterThanPositiveNumericFilter | LessThanPositiveNumericFilter;

@@ -12,6 +12,7 @@
 import { RequestFile } from './models';
 export class ReviewProperties {
     'displayDevice'?: Array<ReviewProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'author'?: string | null;
     'content'?: string | null;
     'rating'?: number = 5;
@@ -27,6 +28,11 @@ export class ReviewProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<ReviewProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "author",

@@ -16,6 +16,7 @@ import { ObjectLinks } from './objectLinks';
 import { PushTokenEnum } from './pushTokenEnum';
 import { PushTokenResponseObjectResource } from './pushTokenResponseObjectResource';
 import { PushTokenResponseObjectResourceAttributes } from './pushTokenResponseObjectResourceAttributes';
+import { PushTokenResponseObjectResourceRelationships } from './pushTokenResponseObjectResourceRelationships';
 import { SegmentResponseObjectResource } from './segmentResponseObjectResource';
 
 

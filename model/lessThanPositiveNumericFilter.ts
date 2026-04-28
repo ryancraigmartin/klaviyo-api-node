@@ -10,10 +10,11 @@
  */
 
 import { RequestFile } from './models';
+import { NumericOperatorNumericFilterValue } from './numericOperatorNumericFilterValue';
 export class LessThanPositiveNumericFilter {
     'type': LessThanPositiveNumericFilter.TypeEnum | 'numeric';
     'operator': LessThanPositiveNumericFilter.OperatorEnum | 'less-than';
-    'value': number;
+    'value': NumericOperatorNumericFilterValue;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -30,7 +31,7 @@ export class LessThanPositiveNumericFilter {
         {
             "name": "value",
             "baseName": "value",
-            "type": "number"
+            "type": "NumericOperatorNumericFilterValue"
         }    ];
 
     static getAttributeTypeMap() {

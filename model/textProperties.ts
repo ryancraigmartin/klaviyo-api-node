@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
 export class TextProperties {
     'displayDevice'?: Array<TextProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'propertyName': string;
     'label'?: string | null;
     'showLabel'?: boolean = false;
@@ -26,6 +27,11 @@ export class TextProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<TextProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "propertyName",

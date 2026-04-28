@@ -11,10 +11,7 @@
 
 import { RequestFile } from './models';
 export class ImageBlockCroppingProperties {
-    /**
-    * Aspect ratio options.
-    */
-    'aspectRatio'?: ImageBlockCroppingProperties.AspectRatioEnum | '16:9' | '1:1' | '2:3' | '3:4' | '4:3' | 'circle' | 'custom' | 'original' | null;
+    'aspectRatio'?: string | null;
     'assetId'?: string | null;
     'height'?: number | null;
     'src'?: string | null;
@@ -27,7 +24,7 @@ export class ImageBlockCroppingProperties {
         {
             "name": "aspectRatio",
             "baseName": "aspect_ratio",
-            "type": "ImageBlockCroppingProperties.AspectRatioEnum"
+            "type": "string"
         },
         {
             "name": "assetId",
@@ -65,15 +62,3 @@ export class ImageBlockCroppingProperties {
     }
 }
 
-export namespace ImageBlockCroppingProperties {
-    export enum AspectRatioEnum {
-        _169 = <any> '16:9',
-        _11 = <any> '1:1',
-        _23 = <any> '2:3',
-        _34 = <any> '3:4',
-        _43 = <any> '4:3',
-        Circle = <any> 'circle',
-        Custom = <any> 'custom',
-        Original = <any> 'original'
-    }
-}

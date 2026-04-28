@@ -11,11 +11,9 @@
 
 import { RequestFile } from './models';
 import { RichTextMargin } from './richTextMargin';
+import { TextStyleV0FontFamily } from './textStyleV0FontFamily';
 export class RichTextStyle {
-    /**
-    * Web safe font enumeration.
-    */
-    'fontFamily'?: RichTextStyle.FontFamilyEnum | 'Arial Black,Arial' | 'Arial, \'Helvetica Neue\', Helvetica, sans-serif' | 'Century Gothic,AppleGothic,Arial' | 'Comic Sans MS,Comic Sans,cursive' | 'Courier' | 'Courier New' | 'Geneva,Arial' | 'Georgia' | 'Helvetica,Arial' | 'Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif' | 'Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif' | 'Lucida,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif' | 'MS Serif,Georgia' | 'New York,Georgia' | 'Palatino Linotype,Palatino,Georgia' | 'Palatino,Georgia' | 'Tahoma,sans-serif' | 'Times New Roman' | 'Trebuchet MS' | 'Verdana' = RichTextStyle.FontFamilyEnum.ArialHelveticaNeueHelveticaSansSerif;
+    'fontFamily'?: TextStyleV0FontFamily;
     'fontSize'?: number = 16;
     /**
     * Font weight enumeration.
@@ -37,7 +35,7 @@ export class RichTextStyle {
         {
             "name": "fontFamily",
             "baseName": "font_family",
-            "type": "RichTextStyle.FontFamilyEnum"
+            "type": "TextStyleV0FontFamily"
         },
         {
             "name": "fontSize",
@@ -91,28 +89,6 @@ export class RichTextStyle {
 }
 
 export namespace RichTextStyle {
-    export enum FontFamilyEnum {
-        ArialBlackArial = <any> 'Arial Black,Arial',
-        ArialHelveticaNeueHelveticaSansSerif = <any> 'Arial, \'Helvetica Neue\', Helvetica, sans-serif',
-        CenturyGothicAppleGothicArial = <any> 'Century Gothic,AppleGothic,Arial',
-        ComicSansMsComicSanscursive = <any> 'Comic Sans MS,Comic Sans,cursive',
-        Courier = <any> 'Courier',
-        CourierNew = <any> 'Courier New',
-        GenevaArial = <any> 'Geneva,Arial',
-        Georgia = <any> 'Georgia',
-        HelveticaArial = <any> 'Helvetica,Arial',
-        LucidaGrandeLucidaSansUnicodeLucidaSansGenevaVerdanasansSerif = <any> 'Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif',
-        LucidaSansUnicodeLucidaSansGenevaVerdanasansSerif = <any> 'Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif',
-        LucidaLucidaSansUnicodeLucidaSansGenevaVerdanasansSerif = <any> 'Lucida,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif',
-        MsSerifGeorgia = <any> 'MS Serif,Georgia',
-        NewYorkGeorgia = <any> 'New York,Georgia',
-        PalatinoLinotypePalatinoGeorgia = <any> 'Palatino Linotype,Palatino,Georgia',
-        PalatinoGeorgia = <any> 'Palatino,Georgia',
-        TahomasansSerif = <any> 'Tahoma,sans-serif',
-        TimesNewRoman = <any> 'Times New Roman',
-        TrebuchetMs = <any> 'Trebuchet MS',
-        Verdana = <any> 'Verdana'
-    }
     export enum FontWeightEnum {
         NUMBER_100 = <any> 100,
         NUMBER_200 = <any> 200,

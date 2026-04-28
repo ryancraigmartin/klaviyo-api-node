@@ -11,9 +11,9 @@
 
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
-import { GetMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsFlowTriggersDataInner } from './getMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsFlowTriggersDataInner';
+import { MetricResponseObjectResourceRelationshipsFlowTriggersDataInner } from './metricResponseObjectResourceRelationshipsFlowTriggersDataInner';
 export class GetSegmentFlowTriggersRelationshipsResponseCollection {
-    'data': Array<GetMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsFlowTriggersDataInner>;
+    'data': Array<MetricResponseObjectResourceRelationshipsFlowTriggersDataInner>;
     'links'?: CollectionLinks;
 
 
@@ -21,7 +21,7 @@ export class GetSegmentFlowTriggersRelationshipsResponseCollection {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<GetMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsFlowTriggersDataInner>"
+            "type": "Array<MetricResponseObjectResourceRelationshipsFlowTriggersDataInner>"
         },
         {
             "name": "links",

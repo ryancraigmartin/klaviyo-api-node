@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetTagGroupResponseCollectionDataInner } from './getTagGroupResponseCollectionDataInner';
 import { ObjectLinks } from './objectLinks';
+import { TagGroupResponseObjectResource } from './tagGroupResponseObjectResource';
 export class GetTagGroupResponse {
-    'data': GetTagGroupResponseCollectionDataInner;
+    'data': TagGroupResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetTagGroupResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetTagGroupResponseCollectionDataInner"
+            "type": "TagGroupResponseObjectResource"
         },
         {
             "name": "links",

@@ -10,9 +10,10 @@
  */
 
 import { RequestFile } from './models';
+import { ProfilePredictiveAnalyticsStringFilterOperator } from './profilePredictiveAnalyticsStringFilterOperator';
 export class ProfilePredictiveAnalyticsChannelAffinityRankFilter {
     'type': ProfilePredictiveAnalyticsChannelAffinityRankFilter.TypeEnum | 'string';
-    'operator': ProfilePredictiveAnalyticsChannelAffinityRankFilter.OperatorEnum | 'equals';
+    'operator': ProfilePredictiveAnalyticsStringFilterOperator;
     /**
     * Possible rank values in a channel affinity definition.
     */
@@ -28,7 +29,7 @@ export class ProfilePredictiveAnalyticsChannelAffinityRankFilter {
         {
             "name": "operator",
             "baseName": "operator",
-            "type": "ProfilePredictiveAnalyticsChannelAffinityRankFilter.OperatorEnum"
+            "type": "ProfilePredictiveAnalyticsStringFilterOperator"
         },
         {
             "name": "value",
@@ -44,9 +45,6 @@ export class ProfilePredictiveAnalyticsChannelAffinityRankFilter {
 export namespace ProfilePredictiveAnalyticsChannelAffinityRankFilter {
     export enum TypeEnum {
         String = <any> 'string'
-    }
-    export enum OperatorEnum {
-        Equals = <any> 'equals'
     }
     export enum ValueEnum {
         High = <any> 'high',

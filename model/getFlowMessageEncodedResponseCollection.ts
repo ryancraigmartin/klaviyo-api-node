@@ -11,9 +11,9 @@
 
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
-import { GetFlowMessageEncodedResponseCollectionDataInner } from './getFlowMessageEncodedResponseCollectionDataInner';
+import { FlowMessageEncodedResponseObjectResource } from './flowMessageEncodedResponseObjectResource';
 export class GetFlowMessageEncodedResponseCollection {
-    'data': Array<GetFlowMessageEncodedResponseCollectionDataInner>;
+    'data': Array<FlowMessageEncodedResponseObjectResource>;
     'links'?: CollectionLinks;
 
 
@@ -21,7 +21,7 @@ export class GetFlowMessageEncodedResponseCollection {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<GetFlowMessageEncodedResponseCollectionDataInner>"
+            "type": "Array<FlowMessageEncodedResponseObjectResource>"
         },
         {
             "name": "links",
