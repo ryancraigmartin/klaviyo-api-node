@@ -10,11 +10,11 @@
  */
 
 import { RequestFile } from './models';
+import { CouponCodeCreateJobResponseObjectResource } from './couponCodeCreateJobResponseObjectResource';
 import { CouponCodeResponseObjectResource } from './couponCodeResponseObjectResource';
-import { GetCouponCodeCreateJobResponseCollectionCompoundDocumentDataInner } from './getCouponCodeCreateJobResponseCollectionCompoundDocumentDataInner';
 import { ObjectLinks } from './objectLinks';
 export class GetCouponCodeCreateJobResponseCompoundDocument {
-    'data': GetCouponCodeCreateJobResponseCollectionCompoundDocumentDataInner;
+    'data': CouponCodeCreateJobResponseObjectResource;
     'included'?: Array<CouponCodeResponseObjectResource>;
     'links'?: ObjectLinks;
 
@@ -23,7 +23,7 @@ export class GetCouponCodeCreateJobResponseCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetCouponCodeCreateJobResponseCollectionCompoundDocumentDataInner"
+            "type": "CouponCodeCreateJobResponseObjectResource"
         },
         {
             "name": "included",

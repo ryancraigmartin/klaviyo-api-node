@@ -14,6 +14,7 @@ import { ErrorMessages } from './errorMessages';
 import { PropertyOption } from './propertyOption';
 export class RadioButtonsProperties {
     'displayDevice'?: Array<RadioButtonsProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'propertyName': string;
     'label'?: string | null;
     'showLabel'?: boolean = false;
@@ -28,6 +29,11 @@ export class RadioButtonsProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<RadioButtonsProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "propertyName",

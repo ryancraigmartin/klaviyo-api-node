@@ -16,6 +16,7 @@ import { ListLengthFilter } from './listLengthFilter';
 import { ListSetFilter } from './listSetFilter';
 import { ListSubstringFilter } from './listSubstringFilter';
 import { NumericOperatorNumericFilter } from './numericOperatorNumericFilter';
+import { NumericOperatorNumericFilterValue } from './numericOperatorNumericFilterValue';
 import { StringArrayOperatorStringArrayFilter } from './stringArrayOperatorStringArrayFilter';
 import { StringOperatorStringFilter } from './stringOperatorStringFilter';
 export type ProfileMetricPropertyFilterFilter = StringOperatorStringFilter | StringArrayOperatorStringArrayFilter | ExistenceOperatorExistenceFilter | ListSetFilter | ListLengthFilter | ListSubstringFilter | BooleanFilter | NumericOperatorNumericFilter;

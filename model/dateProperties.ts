@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
 export class DateProperties {
     'displayDevice'?: Array<DateProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'propertyName': string;
     'label'?: string | null;
     'showLabel'?: boolean = false;
@@ -27,6 +28,11 @@ export class DateProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<DateProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "propertyName",

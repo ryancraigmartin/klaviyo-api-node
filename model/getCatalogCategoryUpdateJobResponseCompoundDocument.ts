@@ -11,10 +11,10 @@
 
 import { RequestFile } from './models';
 import { CatalogCategoryResponseObjectResource } from './catalogCategoryResponseObjectResource';
-import { GetCatalogCategoryUpdateJobResponseCollectionCompoundDocumentDataInner } from './getCatalogCategoryUpdateJobResponseCollectionCompoundDocumentDataInner';
+import { CatalogCategoryUpdateJobResponseObjectResource } from './catalogCategoryUpdateJobResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetCatalogCategoryUpdateJobResponseCompoundDocument {
-    'data': GetCatalogCategoryUpdateJobResponseCollectionCompoundDocumentDataInner;
+    'data': CatalogCategoryUpdateJobResponseObjectResource;
     'included'?: Array<CatalogCategoryResponseObjectResource>;
     'links'?: ObjectLinks;
 
@@ -23,7 +23,7 @@ export class GetCatalogCategoryUpdateJobResponseCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetCatalogCategoryUpdateJobResponseCollectionCompoundDocumentDataInner"
+            "type": "CatalogCategoryUpdateJobResponseObjectResource"
         },
         {
             "name": "included",

@@ -10,9 +10,9 @@
  */
 
 import { RequestFile } from './models';
-import { GetMappedMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationships } from './getMappedMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationships';
 import { MappedMetricEnum } from './mappedMetricEnum';
 import { MappedMetricResponseObjectResourceAttributes } from './mappedMetricResponseObjectResourceAttributes';
+import { MappedMetricResponseObjectResourceRelationships } from './mappedMetricResponseObjectResourceRelationships';
 import { ObjectLinks } from './objectLinks';
 export class PatchMappedMetricResponseData {
     'type': MappedMetricEnum | 'mapped-metric';
@@ -21,7 +21,7 @@ export class PatchMappedMetricResponseData {
     */
     'id': PatchMappedMetricResponseData.IdEnum | 'added_to_cart' | 'cancelled_sales' | 'ordered_product' | 'refunded_sales' | 'revenue' | 'started_checkout' | 'viewed_product';
     'attributes': MappedMetricResponseObjectResourceAttributes;
-    'relationships'?: GetMappedMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationships;
+    'relationships'?: MappedMetricResponseObjectResourceRelationships;
     'links': ObjectLinks;
 
 
@@ -44,7 +44,7 @@ export class PatchMappedMetricResponseData {
         {
             "name": "relationships",
             "baseName": "relationships",
-            "type": "GetMappedMetricResponseCollectionCompoundDocumentDataInnerAllOfRelationships"
+            "type": "MappedMetricResponseObjectResourceRelationships"
         },
         {
             "name": "links",

@@ -10,6 +10,7 @@
  */
 
 import { RequestFile } from './models';
+import { NumericOperatorNumericFilterValue } from './numericOperatorNumericFilterValue';
 export class ProfileOperationUpdateOrCreateNumeric {
     /**
     * The type of operation to perform on a profile property.
@@ -17,7 +18,7 @@ export class ProfileOperationUpdateOrCreateNumeric {
     'operator': ProfileOperationUpdateOrCreateNumeric.OperatorEnum | 'create' | 'update';
     'propertyType': ProfileOperationUpdateOrCreateNumeric.PropertyTypeEnum | 'numeric';
     'propertyKey': string;
-    'propertyValue': number;
+    'propertyValue': NumericOperatorNumericFilterValue;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -39,7 +40,7 @@ export class ProfileOperationUpdateOrCreateNumeric {
         {
             "name": "propertyValue",
             "baseName": "property_value",
-            "type": "number"
+            "type": "NumericOperatorNumericFilterValue"
         }    ];
 
     static getAttributeTypeMap() {

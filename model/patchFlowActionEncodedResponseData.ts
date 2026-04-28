@@ -11,14 +11,14 @@
 
 import { RequestFile } from './models';
 import { FlowActionEncodedResponseObjectResourceAttributes } from './flowActionEncodedResponseObjectResourceAttributes';
+import { FlowActionEncodedResponseObjectResourceRelationships } from './flowActionEncodedResponseObjectResourceRelationships';
 import { FlowActionEnum } from './flowActionEnum';
-import { GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationships } from './getFlowActionEncodedResponseCompoundDocumentDataAllOfRelationships';
 import { ObjectLinks } from './objectLinks';
 export class PatchFlowActionEncodedResponseData {
     'type': FlowActionEnum | 'flow-action';
     'id': string;
     'attributes': FlowActionEncodedResponseObjectResourceAttributes;
-    'relationships'?: GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationships;
+    'relationships'?: FlowActionEncodedResponseObjectResourceRelationships;
     'links': ObjectLinks;
 
 
@@ -41,7 +41,7 @@ export class PatchFlowActionEncodedResponseData {
         {
             "name": "relationships",
             "baseName": "relationships",
-            "type": "GetFlowActionEncodedResponseCompoundDocumentDataAllOfRelationships"
+            "type": "FlowActionEncodedResponseObjectResourceRelationships"
         },
         {
             "name": "links",

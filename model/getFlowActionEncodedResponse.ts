@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetFlowActionEncodedResponseCollectionDataInner } from './getFlowActionEncodedResponseCollectionDataInner';
+import { FlowActionEncodedResponseObjectResource } from './flowActionEncodedResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetFlowActionEncodedResponse {
-    'data': GetFlowActionEncodedResponseCollectionDataInner;
+    'data': FlowActionEncodedResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetFlowActionEncodedResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetFlowActionEncodedResponseCollectionDataInner"
+            "type": "FlowActionEncodedResponseObjectResource"
         },
         {
             "name": "links",

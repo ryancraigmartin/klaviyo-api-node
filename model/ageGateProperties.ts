@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { ErrorMessages } from './errorMessages';
 export class AgeGateProperties {
     'displayDevice'?: Array<AgeGateProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'label'?: string | null;
     'showLabel'?: boolean = false;
     'placeholder'?: string | null;
@@ -31,6 +32,11 @@ export class AgeGateProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<AgeGateProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "label",

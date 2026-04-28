@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { SpinToWinSliceConfig } from './spinToWinSliceConfig';
 export class SpinToWinProperties {
     'displayDevice'?: Array<SpinToWinProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'duplicateSlices'?: boolean = false;
     'slices': Array<SpinToWinSliceConfig>;
 
@@ -22,6 +23,11 @@ export class SpinToWinProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<SpinToWinProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "duplicateSlices",

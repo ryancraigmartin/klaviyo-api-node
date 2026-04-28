@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetFormResponseCollectionDataInner } from './getFormResponseCollectionDataInner';
+import { FormResponseObjectResource } from './formResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetFormResponse {
-    'data': GetFormResponseCollectionDataInner;
+    'data': FormResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetFormResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetFormResponseCollectionDataInner"
+            "type": "FormResponseObjectResource"
         },
         {
             "name": "links",

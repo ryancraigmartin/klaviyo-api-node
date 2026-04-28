@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { CouponPropertiesCoupon } from './couponPropertiesCoupon';
 export class CouponProperties {
     'displayDevice'?: Array<CouponProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'coupon': CouponPropertiesCoupon;
     'successMessage'?: string | null;
 
@@ -22,6 +23,11 @@ export class CouponProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<CouponProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "coupon",

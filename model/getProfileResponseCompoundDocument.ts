@@ -10,11 +10,11 @@
  */
 
 import { RequestFile } from './models';
-import { GetProfileResponseCompoundDocumentData } from './getProfileResponseCompoundDocumentData';
 import { GetProfileResponseCompoundDocumentIncludedInner } from './getProfileResponseCompoundDocumentIncludedInner';
 import { ObjectLinks } from './objectLinks';
+import { ProfileResponseObjectResourceExtended } from './profileResponseObjectResourceExtended';
 export class GetProfileResponseCompoundDocument {
-    'data': GetProfileResponseCompoundDocumentData;
+    'data': ProfileResponseObjectResourceExtended;
     'included'?: Array<GetProfileResponseCompoundDocumentIncludedInner>;
     'links'?: ObjectLinks;
 
@@ -23,7 +23,7 @@ export class GetProfileResponseCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetProfileResponseCompoundDocumentData"
+            "type": "ProfileResponseObjectResourceExtended"
         },
         {
             "name": "included",

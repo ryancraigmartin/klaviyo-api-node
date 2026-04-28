@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetFlowResponseCollectionDataInner } from './getFlowResponseCollectionDataInner';
+import { FlowResponseObjectResource } from './flowResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetFlowResponse {
-    'data': GetFlowResponseCollectionDataInner;
+    'data': FlowResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetFlowResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetFlowResponseCollectionDataInner"
+            "type": "FlowResponseObjectResource"
         },
         {
             "name": "links",

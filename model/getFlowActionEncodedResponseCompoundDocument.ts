@@ -10,11 +10,11 @@
  */
 
 import { RequestFile } from './models';
-import { GetFlowActionEncodedResponseCompoundDocumentData } from './getFlowActionEncodedResponseCompoundDocumentData';
+import { FlowActionEncodedResponseObjectResource } from './flowActionEncodedResponseObjectResource';
 import { GetFlowActionEncodedResponseCompoundDocumentIncludedInner } from './getFlowActionEncodedResponseCompoundDocumentIncludedInner';
 import { ObjectLinks } from './objectLinks';
 export class GetFlowActionEncodedResponseCompoundDocument {
-    'data': GetFlowActionEncodedResponseCompoundDocumentData;
+    'data': FlowActionEncodedResponseObjectResource;
     'included'?: Array<GetFlowActionEncodedResponseCompoundDocumentIncludedInner>;
     'links'?: ObjectLinks;
 
@@ -23,7 +23,7 @@ export class GetFlowActionEncodedResponseCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetFlowActionEncodedResponseCompoundDocumentData"
+            "type": "FlowActionEncodedResponseObjectResource"
         },
         {
             "name": "included",

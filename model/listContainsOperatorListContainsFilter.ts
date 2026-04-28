@@ -10,13 +10,14 @@
  */
 
 import { RequestFile } from './models';
+import { ListContainsOperatorListContainsFilterValue } from './listContainsOperatorListContainsFilterValue';
 export class ListContainsOperatorListContainsFilter {
     'type': ListContainsOperatorListContainsFilter.TypeEnum | 'list';
     /**
     * Operators for list contains filters.
     */
     'operator': ListContainsOperatorListContainsFilter.OperatorEnum | 'contains' | 'not-contains';
-    'value': string | null;
+    'value': ListContainsOperatorListContainsFilterValue | null;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -33,7 +34,7 @@ export class ListContainsOperatorListContainsFilter {
         {
             "name": "value",
             "baseName": "value",
-            "type": "string"
+            "type": "ListContainsOperatorListContainsFilterValue"
         }    ];
 
     static getAttributeTypeMap() {

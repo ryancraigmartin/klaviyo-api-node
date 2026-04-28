@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetEventResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsMetricData } from './getEventResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsMetricData';
+import { EventResponseObjectResourceRelationshipsMetricData } from './eventResponseObjectResourceRelationshipsMetricData';
 import { ObjectLinks } from './objectLinks';
 export class GetMappedMetricMetricRelationshipResponse {
-    'data': GetEventResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsMetricData;
+    'data': EventResponseObjectResourceRelationshipsMetricData;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetMappedMetricMetricRelationshipResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetEventResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsMetricData"
+            "type": "EventResponseObjectResourceRelationshipsMetricData"
         },
         {
             "name": "links",

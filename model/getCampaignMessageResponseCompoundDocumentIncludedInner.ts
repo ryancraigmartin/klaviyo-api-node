@@ -11,6 +11,7 @@
 
 import { RequestFile } from './models';
 import { CampaignResponseObjectResource } from './campaignResponseObjectResource';
+import { CampaignResponseObjectResourceRelationships } from './campaignResponseObjectResourceRelationships';
 import { ImageEnum } from './imageEnum';
 import { ImageResponseObjectResource } from './imageResponseObjectResource';
 import { ImageResponseObjectResourceAttributes } from './imageResponseObjectResourceAttributes';

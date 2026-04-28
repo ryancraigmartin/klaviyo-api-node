@@ -15,6 +15,7 @@ import { ObjectLinks } from './objectLinks';
 import { TagEnum } from './tagEnum';
 import { TagResponseObjectResource } from './tagResponseObjectResource';
 import { TagResponseObjectResourceAttributes } from './tagResponseObjectResourceAttributes';
+import { TagResponseObjectResourceRelationships } from './tagResponseObjectResourceRelationships';
 
 
 

@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetCatalogCategoryResponseCollectionDataInner } from './getCatalogCategoryResponseCollectionDataInner';
+import { CatalogCategoryResponseObjectResource } from './catalogCategoryResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetCatalogCategoryResponse {
-    'data': GetCatalogCategoryResponseCollectionDataInner;
+    'data': CatalogCategoryResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetCatalogCategoryResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetCatalogCategoryResponseCollectionDataInner"
+            "type": "CatalogCategoryResponseObjectResource"
         },
         {
             "name": "links",

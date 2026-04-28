@@ -12,6 +12,7 @@
 import { RequestFile } from './models';
 export class HTMLTextProperties {
     'displayDevice'?: Array<HTMLTextProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'content'?: string = '';
 
 
@@ -20,6 +21,11 @@ export class HTMLTextProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<HTMLTextProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "content",

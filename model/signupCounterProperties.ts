@@ -12,6 +12,7 @@
 import { RequestFile } from './models';
 export class SignupCounterProperties {
     'displayDevice'?: Array<SignupCounterProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     /**
     * Timeframes for the signup counter lookback.
     */
@@ -25,6 +26,11 @@ export class SignupCounterProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<SignupCounterProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "timeframe",

@@ -11,9 +11,9 @@
 
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
-import { GetEventResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsMetricData } from './getEventResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsMetricData';
+import { EventResponseObjectResourceRelationshipsMetricData } from './eventResponseObjectResourceRelationshipsMetricData';
 export class GetCustomMetricMetricsRelationshipsResponseCollection {
-    'data': Array<GetEventResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsMetricData>;
+    'data': Array<EventResponseObjectResourceRelationshipsMetricData>;
     'links'?: CollectionLinks;
 
 
@@ -21,7 +21,7 @@ export class GetCustomMetricMetricsRelationshipsResponseCollection {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<GetEventResponseCollectionCompoundDocumentDataInnerAllOfRelationshipsMetricData>"
+            "type": "Array<EventResponseObjectResourceRelationshipsMetricData>"
         },
         {
             "name": "links",

@@ -13,6 +13,7 @@ import { RequestFile } from './models';
 import { AdditionalField } from './additionalField';
 export class ButtonProperties {
     'displayDevice'?: Array<ButtonProperties.DisplayDeviceEnum> | Array<'both' | 'desktop' | 'mobile'>;
+    'classname'?: string | null;
     'label': string;
     'additionalFields'?: Array<AdditionalField> | null;
 
@@ -22,6 +23,11 @@ export class ButtonProperties {
             "name": "displayDevice",
             "baseName": "display_device",
             "type": "Array<ButtonProperties.DisplayDeviceEnum>"
+        },
+        {
+            "name": "classname",
+            "baseName": "classname",
+            "type": "string"
         },
         {
             "name": "label",

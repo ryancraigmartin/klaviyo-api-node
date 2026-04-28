@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetBulkProfileSuppressionsCreateJobResponseCollectionDataInner } from './getBulkProfileSuppressionsCreateJobResponseCollectionDataInner';
+import { BulkProfileSuppressionsCreateJobResponseObjectResource } from './bulkProfileSuppressionsCreateJobResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetBulkProfileSuppressionsCreateJobResponse {
-    'data': GetBulkProfileSuppressionsCreateJobResponseCollectionDataInner;
+    'data': BulkProfileSuppressionsCreateJobResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetBulkProfileSuppressionsCreateJobResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetBulkProfileSuppressionsCreateJobResponseCollectionDataInner"
+            "type": "BulkProfileSuppressionsCreateJobResponseObjectResource"
         },
         {
             "name": "links",

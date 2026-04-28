@@ -10,9 +10,10 @@
  */
 
 import { RequestFile } from './models';
+import { ProfilePredictiveAnalyticsStringFilterOperator } from './profilePredictiveAnalyticsStringFilterOperator';
 export class ProfilePredictiveAnalyticsStringFilter {
     'type': ProfilePredictiveAnalyticsStringFilter.TypeEnum | 'string';
-    'operator': ProfilePredictiveAnalyticsStringFilter.OperatorEnum | 'equals';
+    'operator': ProfilePredictiveAnalyticsStringFilterOperator;
     /**
     * Values for profile predictive analytics gender conditions.
     */
@@ -28,7 +29,7 @@ export class ProfilePredictiveAnalyticsStringFilter {
         {
             "name": "operator",
             "baseName": "operator",
-            "type": "ProfilePredictiveAnalyticsStringFilter.OperatorEnum"
+            "type": "ProfilePredictiveAnalyticsStringFilterOperator"
         },
         {
             "name": "value",
@@ -44,9 +45,6 @@ export class ProfilePredictiveAnalyticsStringFilter {
 export namespace ProfilePredictiveAnalyticsStringFilter {
     export enum TypeEnum {
         String = <any> 'string'
-    }
-    export enum OperatorEnum {
-        Equals = <any> 'equals'
     }
     export enum ValueEnum {
         LikelyFemale = <any> 'likely_female',

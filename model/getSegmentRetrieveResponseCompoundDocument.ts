@@ -11,10 +11,10 @@
 
 import { RequestFile } from './models';
 import { GetListListResponseCollectionCompoundDocumentIncludedInner } from './getListListResponseCollectionCompoundDocumentIncludedInner';
-import { GetSegmentRetrieveResponseCompoundDocumentData } from './getSegmentRetrieveResponseCompoundDocumentData';
 import { ObjectLinks } from './objectLinks';
+import { SegmentRetrieveResponseObjectResourceExtended } from './segmentRetrieveResponseObjectResourceExtended';
 export class GetSegmentRetrieveResponseCompoundDocument {
-    'data': GetSegmentRetrieveResponseCompoundDocumentData;
+    'data': SegmentRetrieveResponseObjectResourceExtended;
     'included'?: Array<GetListListResponseCollectionCompoundDocumentIncludedInner>;
     'links'?: ObjectLinks;
 
@@ -23,7 +23,7 @@ export class GetSegmentRetrieveResponseCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetSegmentRetrieveResponseCompoundDocumentData"
+            "type": "SegmentRetrieveResponseObjectResourceExtended"
         },
         {
             "name": "included",

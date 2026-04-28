@@ -10,13 +10,14 @@
  */
 
 import { RequestFile } from './models';
+import { NumericOperatorNumericFilterValue } from './numericOperatorNumericFilterValue';
 export class NumericOperatorNumericFilter {
     'type': NumericOperatorNumericFilter.TypeEnum | 'numeric';
     /**
     * Operators for numeric filters.
     */
     'operator': NumericOperatorNumericFilter.OperatorEnum | 'equals' | 'greater-than' | 'greater-than-or-equal' | 'less-than' | 'less-than-or-equal' | 'not-equals';
-    'value': number;
+    'value': NumericOperatorNumericFilterValue;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -33,7 +34,7 @@ export class NumericOperatorNumericFilter {
         {
             "name": "value",
             "baseName": "value",
-            "type": "number"
+            "type": "NumericOperatorNumericFilterValue"
         }    ];
 
     static getAttributeTypeMap() {

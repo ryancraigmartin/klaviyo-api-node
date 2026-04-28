@@ -34,10 +34,7 @@ export class TableImageSubBlock {
     'cellTextAlign'?: TableImageSubBlock.CellTextAlignEnum | 'center' | 'left' | 'right' | null;
     'croppedAssetId'?: string | null;
     'croppedSrc'?: string | null;
-    /**
-    * Aspect ratio options.
-    */
-    'croppingAspectRatio'?: TableImageSubBlock.CroppingAspectRatioEnum | '16:9' | '1:1' | '2:3' | '3:4' | '4:3' | 'circle' | 'custom' | 'original' | null;
+    'croppingAspectRatio'?: string | null;
     'croppingHeight'?: number | null;
     'croppingWidth'?: number | null;
     'croppingX'?: number | null;
@@ -120,7 +117,7 @@ export class TableImageSubBlock {
         {
             "name": "croppingAspectRatio",
             "baseName": "cropping_aspect_ratio",
-            "type": "TableImageSubBlock.CroppingAspectRatioEnum"
+            "type": "string"
         },
         {
             "name": "croppingHeight",
@@ -173,16 +170,6 @@ export namespace TableImageSubBlock {
         Center = <any> 'center',
         Left = <any> 'left',
         Right = <any> 'right'
-    }
-    export enum CroppingAspectRatioEnum {
-        _169 = <any> '16:9',
-        _11 = <any> '1:1',
-        _23 = <any> '2:3',
-        _34 = <any> '3:4',
-        _43 = <any> '4:3',
-        Circle = <any> 'circle',
-        Custom = <any> 'custom',
-        Original = <any> 'original'
     }
     export enum TypeEnum {
         TableImage = <any> 'table_image'

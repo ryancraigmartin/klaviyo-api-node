@@ -16,7 +16,6 @@ export class PushActionButton {
     * The action type for a push notification action button.
     */
     'actionType': PushActionButton.ActionTypeEnum | 'deep_link' | 'dismiss' | 'open_app' | 'open_url';
-    'position': number;
     'url'?: string | null;
     'icon'?: string | null;
     'customActionId'?: string | null;
@@ -32,11 +31,6 @@ export class PushActionButton {
             "name": "actionType",
             "baseName": "action_type",
             "type": "PushActionButton.ActionTypeEnum"
-        },
-        {
-            "name": "position",
-            "baseName": "position",
-            "type": "number"
         },
         {
             "name": "url",

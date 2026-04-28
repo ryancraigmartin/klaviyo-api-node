@@ -14,6 +14,7 @@ import { BackgroundImage } from './backgroundImage';
 import { BannerStyles } from './bannerStyles';
 import { BorderStyle } from './borderStyle';
 import { CloseButtonStyle } from './closeButtonStyle';
+import { CustomCss } from './customCss';
 import { DropShadow } from './dropShadow';
 import { InputStyles } from './inputStyles';
 import { Margin } from './margin';
@@ -40,6 +41,7 @@ export class VersionStyles {
     'richTextStyles'?: RichTextStyles;
     'mobileOverlay'?: MobileOverlay;
     'bannerStyles'?: BannerStyles;
+    'customCss'?: CustomCss;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -122,6 +124,11 @@ export class VersionStyles {
             "name": "bannerStyles",
             "baseName": "banner_styles",
             "type": "BannerStyles"
+        },
+        {
+            "name": "customCss",
+            "baseName": "custom_css",
+            "type": "CustomCss"
         }    ];
 
     static getAttributeTypeMap() {

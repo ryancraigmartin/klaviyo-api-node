@@ -11,9 +11,9 @@
 
 import { RequestFile } from './models';
 import { ObjectLinks } from './objectLinks';
-import { TemplateDndResponseObjectResource } from './templateDndResponseObjectResource';
+import { TemplateDndResponseObjectResourceExtended } from './templateDndResponseObjectResourceExtended';
 export class GetTemplateDndResponse {
-    'data': TemplateDndResponseObjectResource;
+    'data': TemplateDndResponseObjectResourceExtended;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetTemplateDndResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "TemplateDndResponseObjectResource"
+            "type": "TemplateDndResponseObjectResourceExtended"
         },
         {
             "name": "links",

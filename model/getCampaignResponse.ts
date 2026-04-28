@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetCampaignResponseData } from './getCampaignResponseData';
+import { CampaignResponseObjectResource } from './campaignResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetCampaignResponse {
-    'data': GetCampaignResponseData;
+    'data': CampaignResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetCampaignResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetCampaignResponseData"
+            "type": "CampaignResponseObjectResource"
         },
         {
             "name": "links",

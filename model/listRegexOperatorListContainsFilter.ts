@@ -10,13 +10,14 @@
  */
 
 import { RequestFile } from './models';
+import { ListContainsOperatorListContainsFilterValue } from './listContainsOperatorListContainsFilterValue';
 export class ListRegexOperatorListContainsFilter {
     'type': ListRegexOperatorListContainsFilter.TypeEnum | 'list';
     /**
     * Operators for list regex filters.
     */
     'operator': ListRegexOperatorListContainsFilter.OperatorEnum | 'contains-ends-with' | 'contains-starts-with' | 'not-contains-ends-with' | 'not-contains-starts-with';
-    'value': string | null;
+    'value': ListContainsOperatorListContainsFilterValue | null;
 
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
@@ -33,7 +34,7 @@ export class ListRegexOperatorListContainsFilter {
         {
             "name": "value",
             "baseName": "value",
-            "type": "string"
+            "type": "ListContainsOperatorListContainsFilterValue"
         }    ];
 
     static getAttributeTypeMap() {

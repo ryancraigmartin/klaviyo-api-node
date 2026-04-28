@@ -11,10 +11,10 @@
 
 import { RequestFile } from './models';
 import { CollectionLinks } from './collectionLinks';
-import { GetProfileResponseCollectionCompoundDocumentDataInner } from './getProfileResponseCollectionCompoundDocumentDataInner';
 import { GetProfileResponseCollectionCompoundDocumentIncludedInner } from './getProfileResponseCollectionCompoundDocumentIncludedInner';
+import { ProfileResponseObjectResourceExtended } from './profileResponseObjectResourceExtended';
 export class GetProfileResponseCollectionCompoundDocument {
-    'data': Array<GetProfileResponseCollectionCompoundDocumentDataInner>;
+    'data': Array<ProfileResponseObjectResourceExtended>;
     'links'?: CollectionLinks;
     'included'?: Array<GetProfileResponseCollectionCompoundDocumentIncludedInner>;
 
@@ -23,7 +23,7 @@ export class GetProfileResponseCollectionCompoundDocument {
         {
             "name": "data",
             "baseName": "data",
-            "type": "Array<GetProfileResponseCollectionCompoundDocumentDataInner>"
+            "type": "Array<ProfileResponseObjectResourceExtended>"
         },
         {
             "name": "links",

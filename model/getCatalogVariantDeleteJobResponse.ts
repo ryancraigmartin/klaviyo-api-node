@@ -10,10 +10,10 @@
  */
 
 import { RequestFile } from './models';
-import { GetCatalogVariantDeleteJobResponseCollectionDataInner } from './getCatalogVariantDeleteJobResponseCollectionDataInner';
+import { CatalogVariantDeleteJobResponseObjectResource } from './catalogVariantDeleteJobResponseObjectResource';
 import { ObjectLinks } from './objectLinks';
 export class GetCatalogVariantDeleteJobResponse {
-    'data': GetCatalogVariantDeleteJobResponseCollectionDataInner;
+    'data': CatalogVariantDeleteJobResponseObjectResource;
     'links'?: ObjectLinks;
 
 
@@ -21,7 +21,7 @@ export class GetCatalogVariantDeleteJobResponse {
         {
             "name": "data",
             "baseName": "data",
-            "type": "GetCatalogVariantDeleteJobResponseCollectionDataInner"
+            "type": "CatalogVariantDeleteJobResponseObjectResource"
         },
         {
             "name": "links",
